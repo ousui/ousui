@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>
+    
+    linux 报告了个BUG并解决了 
+      | { GFO } 
+    
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <link rel="alternate" href="" title="{ GFO }" type="application/atom+xml">
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <style>
+      /* menu nav active status */
+      
+        .menu-home .menu-item-home {
+          color: #b71c1c
+        }
+      
+        .menu-categories .menu-item-categories {
+          color: #b71c1c
+        }
+      
+        .menu-tags .menu-item-tags {
+          color: #b71c1c
+        }
+      
+        .menu-about .menu-item-about {
+          color: #b71c1c
+        }
+      
+        .menu-rss .menu-item-rss {
+          color: #b71c1c
+        }
+      
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+  <script type="text/javascript">
+    // fix sidebar flashing
+    (function(){
+      if (localStorage.getItem('sidebarState') == 'true') {
+        document.body.className="sideShow"
+      }
+    })()
+  </script>
+  <div id="container">
+    <aside class="sidebar">
+  <div class="head-icon">
+  
+    <a href="/about">
+      <img src="/images/avatar.jpg">
+    </a>
+  
+  </div>
+  <div class="name">ousui</div>
+  <div class="desc">
+    <h4>Github For Ousui</h4>  
+  </div>
+  <nav class="side-nav">
+    <div class="nav-item">
+      <a href="/">
+        <span>
+          6
+        </span>
+        <span>posts</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/categories">
+        <span>
+          0
+        </span>
+        <span>categories</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/tags">
+        <span>
+          11
+        </span>
+        <span>tags</span>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="social-wrap">
+    
+    <a href="https://github.com/ousui" target="_blank">
+      <div class="item">
+        <i class="i-github"></i>
+      </div>
+    </a>
+    
+    <a href="http://v2ex.com/member/ppwangs" target="_blank">
+      <div class="item">
+        <i class="i-v2ex"></i>
+      </div>
+    </a>
+    
+    <a href="https://www.zhihu.com/people/ousui" target="_blank">
+      <div class="item">
+        <i class="i-zhihu"></i>
+      </div>
+    </a>
+    
+  </div>
+  
+</aside>
+    <div class="wrap">
+      <div class="side">
+  <div class="top" id="back-top"></div>
+  <div class="arrows" id="nav-btn"></div>
+</div>
+      
+<header class="header menu-2016">
+  <span>
+    <a href="/">{ GFO }</a>
+  </span>
+  <nav>
+  
+    <a class='menu-item-home' href="/">
+    Home
+    </a>
+  
+    <a class='menu-item-categories' href="/categories">
+    Categories
+    </a>
+  
+    <a class='menu-item-tags' href="/tags">
+    Tags
+    </a>
+  
+    <a class='menu-item-about' href="/about">
+    About
+    </a>
+  
+    <a class='menu-item-rss' href="/atom.xml">
+    RSS
+    </a>
+  
+  </nav> 
+</header>
+
+      <section id="main" class="content">
+        
+<div class="archives-wrap">
+  <div class="archives">
+    <div class="title-wrap">
+      <h1>linux 报告了个BUG并解决了 </h1>
+      <div class="page-info">
+      
+        <span>By <a href="/about">ousui</a> on</span>
+      
+        <time datetime="2016-07-17T05:31:48.000Z" itemprop="datePublished">2016-07-17</time>
+      </div>
+    </div>
+    <div class="content-wrap">
+    <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1357235" target="_blank" rel="external">https://bugzilla.redhat.com/show_bug.cgi?id=1357235</a><br><a href="https://github.com/hluk/CopyQ/issues/530" target="_blank" rel="external">https://github.com/hluk/CopyQ/issues/530</a></p>
+<p>copyq 是一款跨平台的高级的剪贴板管理工具。<br>十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui，很好看<br><img src="/images/160717-1.png" alt="screen"></p>
+
+<p>然而 fedora 官方源装完以后，无法选择语言……明明自己编译的就可以。<br>经过一晚上折腾，不断的编译尝试最后还看了 rpmbuild，最终确认问题是 cmake 编译的时候有个参数写错了。。导致了查找 translations 路径有问题。<br>所以就造成了，如果在 <code>/usr</code> 目录下执行命令就没问题，但是在别的目录下执行就会找不到的奇怪问题。</p>
+<p>这一晚上折腾的，学了好多只是。。</p>
+<p>最后再安利下 copyq 吧，真的很好用：</p>
+<ul>
+<li>可以插件，可以扩展</li>
+<li>可以执行 ecmascript，可以执行 shell</li>
+<li>全平台</li>
+<li>支持图片复制，不支持文件复制，但是复制文件以后，会把路径存储</li>
+<li>支持多标签</li>
+<li>可以自定义多种操作，例如转换文字为二维码；过滤一些内容到单独的标签（例如图像）</li>
+<li>好处多多，自行体会。</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="ds-thread" data-thread-key="2016/07/17/linux-报告了个BUG并解决了/" data-title="linux 报告了个BUG并解决了" data-url="http://ousui.github.io/2016/07/17/linux-报告了个BUG并解决了/">
+    </div>
+
+
+      </section>
+    <footer class="footer">
+  <div>Github For Ousui, Powered by <a href="https://hexo.io/">Hexo</a> | Theme: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
+</footer>
+
+    </div>
+  </div>
+  <script src="/js/simple_build.js"></script>
+  
+    <script type="text/javascript">
+  var duoshuoQuery = {short_name:"ousui"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+  
+</body>
+</html>

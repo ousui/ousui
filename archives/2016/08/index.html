@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>
+    
+    Archive: 2016/8 
+      | { GFO } 
+    
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <link rel="alternate" href="" title="{ GFO }" type="application/atom+xml">
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <style>
+      /* menu nav active status */
+      
+        .menu-home .menu-item-home {
+          color: #b71c1c
+        }
+      
+        .menu-categories .menu-item-categories {
+          color: #b71c1c
+        }
+      
+        .menu-tags .menu-item-tags {
+          color: #b71c1c
+        }
+      
+        .menu-about .menu-item-about {
+          color: #b71c1c
+        }
+      
+        .menu-rss .menu-item-rss {
+          color: #b71c1c
+        }
+      
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+  <script type="text/javascript">
+    // fix sidebar flashing
+    (function(){
+      if (localStorage.getItem('sidebarState') == 'true') {
+        document.body.className="sideShow"
+      }
+    })()
+  </script>
+  <div id="container">
+    <aside class="sidebar">
+  <div class="head-icon">
+  
+    <a href="/about">
+      <img src="/images/avatar.jpg">
+    </a>
+  
+  </div>
+  <div class="name">ousui</div>
+  <div class="desc">
+    <h4>Github For Ousui</h4>  
+  </div>
+  <nav class="side-nav">
+    <div class="nav-item">
+      <a href="/">
+        <span>
+          6
+        </span>
+        <span>posts</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/categories">
+        <span>
+          0
+        </span>
+        <span>categories</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/tags">
+        <span>
+          11
+        </span>
+        <span>tags</span>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="social-wrap">
+    
+    <a href="https://github.com/ousui" target="_blank">
+      <div class="item">
+        <i class="i-github"></i>
+      </div>
+    </a>
+    
+    <a href="http://v2ex.com/member/ppwangs" target="_blank">
+      <div class="item">
+        <i class="i-v2ex"></i>
+      </div>
+    </a>
+    
+    <a href="https://www.zhihu.com/people/ousui" target="_blank">
+      <div class="item">
+        <i class="i-zhihu"></i>
+      </div>
+    </a>
+    
+  </div>
+  
+</aside>
+    <div class="wrap">
+      <div class="side">
+  <div class="top" id="back-top"></div>
+  <div class="arrows" id="nav-btn"></div>
+</div>
+      
+<header class="header menu-archives">
+  <span>
+    <a href="/">{ GFO }</a>
+  </span>
+  <nav>
+  
+    <a class='menu-item-home' href="/">
+    Home
+    </a>
+  
+    <a class='menu-item-categories' href="/categories">
+    Categories
+    </a>
+  
+    <a class='menu-item-tags' href="/tags">
+    Tags
+    </a>
+  
+    <a class='menu-item-about' href="/about">
+    About
+    </a>
+  
+    <a class='menu-item-rss' href="/atom.xml">
+    RSS
+    </a>
+  
+  </nav> 
+</header>
+
+      <section id="main" class="content">
+        <section class="archives-wrap">
+  
+  
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2016/08/07/linux-切换到-archlinux/">
+          <h1>linux 切换到 archlinux </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">ousui</a> on</span>
+        
+          <time datetime="2016-08-07T04:30:50.000Z" itemprop="datePublished">2016-08-07</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了……<br>尝试恢复的时候，报文件可能损坏。<br>恩，然后想干脆直接重装 archlinux 吧。<br>于是开始折腾……</p>
+<p>安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。<br>GUI还是装的 KDE，因为真心漂亮。</p>
+<p>需要注意的是，在<code>mkinitcpio -p linux</code>前，需要修改 <code>/etc/mkinitcpio.conf</code> 文件的 <code>HOOK</code> 一行，加入 lvm2<br><code>HOOKS=&quot;base udev ... block lvm2 filesystems&quot;</code>，否则启动不了。<br>其他没有太大的变化。</p>
+<p>其实，archlinux 的文档写的很清楚： <a href="https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM" target="_blank" rel="external">https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM</a></p>
+
+        
+        <div class='read-more'>
+          <a href="/2016/08/07/linux-切换到-archlinux/"><span class='i-next'>Read More</span></a>
+        </div>
+      </div>
+    </div>
+  
+  
+</section>
+      </section>
+    <footer class="footer">
+  <div>Github For Ousui, Powered by <a href="https://hexo.io/">Hexo</a> | Theme: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
+</footer>
+
+    </div>
+  </div>
+  <script src="/js/simple_build.js"></script>
+  
+    <script type="text/javascript">
+  var duoshuoQuery = {short_name:"ousui"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+  
+</body>
+</html>
