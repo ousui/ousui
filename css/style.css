@@ -339,7 +339,6 @@ body {
 }
 .archives {
   margin-bottom: 50px;
-  border-bottom: 2px dotted;
 }
 .archives .title-wrap {
   margin: 20px 0;
@@ -386,6 +385,9 @@ body {
 }
 .archives .read-more {
   text-align: right;
+  padding: 0 40px;
+  margin: 0 -20px;
+  border-bottom: 2px dotted;
 }
 .archives .read-more a {
   color: #202020;
@@ -397,6 +399,7 @@ body {
 }
 .archives .read-more a:hover span {
   color: #000;
+  font-size: 16px;
 }
 .archives .read-more a span {
   font-size: 14px;
@@ -427,11 +430,13 @@ body {
 .archives .content-wrap blockquote p {
   padding-left: 0.8em;
 }
-.archives .content-wrap ul {
+.archives .content-wrap ul,
+.archives .content-wrap ol {
   padding-left: 1.5em;
 }
-.archives .content-wrap ul li {
-  list-style: circle;
+.archives .content-wrap ul li,
+.archives .content-wrap ol li {
+  list-style: initial;
 }
 .archives .content-wrap .code {
   border: none;

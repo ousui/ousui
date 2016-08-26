@@ -4,7 +4,7 @@
     
     <title>
     
-    Archive: 2016/8 
+    Tag: centos 
       | { GFO } 
     
     </title>
@@ -118,7 +118,7 @@
   <div class="arrows" id="nav-btn"></div>
 </div>
       
-<header class="header menu-archives">
+<header class="header menu-tags">
   <span>
     <a href="/">{ GFO }</a>
   </span>
@@ -151,6 +151,10 @@
         <section class="archives-wrap">
   
   
+    <div class="ct-title">
+      <h2>centos  <small>Tags</small></h2>
+    </div>
+  
   
     <div class="archives">
       <div class="title-wrap">
@@ -173,32 +177,6 @@
         
         <div class='read-more'>
           <a href="/2016/08/24/linux-把公司服务器搞挂了/"><span class='i-next'>Read More</span></a>
-        </div>
-      </div>
-    </div>
-  
-    <div class="archives">
-      <div class="title-wrap">
-        <a class="post-title" href="/2016/08/07/linux-切换到-archlinux/">
-          <h1>linux 切换到 archlinux </h1>
-        </a>
-        <div class="page-info">
-        
-          <span>By <a href="/about">ousui</a> on</span>
-        
-          <time datetime="2016-08-07T04:30:50.000Z" itemprop="datePublished">2016-08-07</time>
-        </div>
-      </div>
-      <div class="content-wrap">
-        
-          <p>周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了……<br>尝试恢复的时候，报文件可能损坏。<br>恩，然后想干脆直接重装 archlinux 吧。<br>于是开始折腾……</p>
-<p>安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。<br>GUI还是装的 KDE，因为真心漂亮。</p>
-<p>需要注意的是，在<code>mkinitcpio -p linux</code>前，需要修改 <code>/etc/mkinitcpio.conf</code> 文件的 <code>HOOK</code> 一行，加入 lvm2<br><code>HOOKS=&quot;base udev ... block lvm2 filesystems&quot;</code>，否则启动不了。<br>其他没有太大的变化。</p>
-<p>其实，archlinux 的文档写的很清楚： <a href="https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM" target="_blank" rel="external">https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM</a></p>
-
-        
-        <div class='read-more'>
-          <a href="/2016/08/07/linux-切换到-archlinux/"><span class='i-next'>Read More</span></a>
         </div>
       </div>
     </div>

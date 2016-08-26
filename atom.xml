@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ousui.github.io/"/>
-  <updated>2016-08-07T04:42:38.714Z</updated>
+  <updated>2016-08-26T04:16:45.821Z</updated>
   <id>http://ousui.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux-把公司服务器搞挂了</title>
+    <link href="http://ousui.github.io/2016/08/24/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/"/>
+    <id>http://ousui.github.io/2016/08/24/linux-把公司服务器搞挂了/</id>
+    <published>2016-08-24T06:08:30.000Z</published>
+    <updated>2016-08-26T04:16:45.821Z</updated>
+    
+    <content type="html"><![CDATA[<p>呃，公司一台测试服务器，我用来装各种服务例如 svn、jenkins 之类的，另外还有 ss 服务，为啥呢，公司 wifi 和 lan 限速500k…… 什么年代了，然后偶然发现服务器不限速，下行可以达到20MB……<br>然后妥妥的在服务器上做了个代理，下载一些东西的时候都走代理，速度蹭蹭的……<br>有时候为了避免影响手头上的工作，就远程下载，下好了再 download 下来。结果，下的东西太多，把分区撑爆了……</p>
+<p>分区是lvm的，扩容前忘记看空闲容量了，其实还有很多呢。就想直接把 /opt 分区挂载的内容放到 / 下的 opt 里。<br>umount /opt 提示 busy，那就先修改 fstab，然后重启呗。<br>结果啊，手贱，看着 vg name太难看了，就改了 vg name，顺手改了 lv name，然后悲摧了。fstab 改了，但是没有往 grub 写，导致系统无法启动……<br>然后联系运维解决，运维懒，说重装，我当时以为 fstab 写错了，就说用其他linux引导进去改 fstab 就行，结果 archlinux 写到 u 盘里，服务器启动不认。然后我发现 grub 没有改，启动时候 e，然后改对了，系统就进去了。。。<br>看来还是 uuid 是王道啊……</p>
+<p>另外，docker 还真是好东西，搞了几天应用，学了太多多新东西了……<br>有空再记录以下。。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;呃，公司一台测试服务器，我用来装各种服务例如 svn、jenkins 之类的，另外还有 ss 服务，为啥呢，公司 wifi 和 lan 限速500k…… 什么年代了，然后偶然发现服务器不限速，下行可以达到20MB……&lt;br&gt;然后妥妥的在服务器上做了个代理，下载一些东西的时候
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="http://ousui.github.io/tags/linux/"/>
+    
+      <category term="centos" scheme="http://ousui.github.io/tags/centos/"/>
+    
+      <category term="server" scheme="http://ousui.github.io/tags/server/"/>
+    
+  </entry>
   
   <entry>
     <title>linux 切换到 archlinux</title>
