@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ousui.github.io/"/>
-  <updated>2016-08-26T04:16:45.821Z</updated>
+  <updated>2016-08-30T01:37:02.711Z</updated>
   <id>http://ousui.github.io/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux-openssh-的巧妙使用跨过sangfor-vpn</title>
+    <link href="http://ousui.github.io/2016/08/30/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/"/>
+    <id>http://ousui.github.io/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/</id>
+    <published>2016-08-30T01:19:49.000Z</published>
+    <updated>2016-08-30T01:37:02.711Z</updated>
+    
+    <content type="html"><![CDATA[<p>公司的网络很让人无语的：<br>  公司无线，网络不是很稳定，经常出现掉线连接不上的情况<br>  公司有线，需要使用 iNode 连接……<br>  公司生产服务器，原本使用 openvpn 连接，后来改成了深信服 sangfor</p>
+<p>然后我使用 linux，不支持inode，部支持 sangfor（配置了很久，可以登录网站，但是不会产生虚拟网卡……）</p>
+<p>刚开始破解 inode，我安装了 xp 虚拟机，内存256，网卡 mac 地址和本机一致，使用桥接模式，连接后，本机可以使用有线上网了，速度稳定够快。<br>然后有一天需要连接生产服务器vpn，使用网站方式连接，有相关组件，java工作正常，但是死活连接不上……没辙，想其他办法。<br>我在同一台虚拟机上，安装了 easyconnect，可以使用 putty 正常连接。<br>我就想拿这台机器做跳板，然后连接到生产服务器行不行，肯定可以啊，主要是什么方式呢。<br>刚开始想用ss，或者http代理，但是本机执行命令的时候，还需要连接一下代理，很麻烦。<br>翻ssh命令的时候发现 ProxyJump，也就是支持 ssh 代理，那就在 虚拟机上搭一个 ssh 服务呗。<br>首先加块网卡，使用 localhost 模式只建立两台机器的通信，<br>然后安装 openssh for windows 5.x 版本，可以启动服务，但是本机 ssh 登录后立刻断开，不知道为什么……<br>后来想，只能模拟一个环境了，那就装 cygwin 吧。</p>
+<ol>
+<li>下载 cygwin，地址就不给了，安装的时候添加镜像 <a href="https://mirrors.ustc.edu.cn/cygwin/" target="_blank" rel="external">https://mirrors.ustc.edu.cn/cygwin/</a> 中科大的镜像速度很快，我各种镜像源都用的这个。</li>
+<li>安装过程在 net 包下，选择 openssh openssl 两个包</li>
+<li>安装好以后，使用 ssh-host-config 配置服务</li>
+<li>使用 cygrunsrv -S sshd 启动服务即可</li>
+<li>如果还是不能登录，可以查看下是否导入了用户使用 mkpasswd mkgroups 保存到 /etc/passwd /etc/group 下</li>
+</ol>
+<p>然后测试登录，使用 -J 参数，可以顺利登录到生产服务器了，在 .ssh/config 下配置中多加一行 ProxyJump [user@]host 即可直接使用别名登录，着实很方便。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;公司的网络很让人无语的：&lt;br&gt;  公司无线，网络不是很稳定，经常出现掉线连接不上的情况&lt;br&gt;  公司有线，需要使用 iNode 连接……&lt;br&gt;  公司生产服务器，原本使用 openvpn 连接，后来改成了深信服 sangfor&lt;/p&gt;
+&lt;p&gt;然后我使用 linux，不
+    
+    </summary>
+    
+      <category term="linux" scheme="http://ousui.github.io/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://ousui.github.io/tags/linux/"/>
+    
+      <category term="openssh" scheme="http://ousui.github.io/tags/openssh/"/>
+    
+      <category term="cygwin" scheme="http://ousui.github.io/tags/cygwin/"/>
+    
+  </entry>
   
   <entry>
     <title>linux-把公司服务器搞挂了</title>
