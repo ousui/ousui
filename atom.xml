@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ousui.github.io/"/>
-  <updated>2016-08-30T01:37:02.711Z</updated>
+  <updated>2016-09-07T08:36:35.304Z</updated>
   <id>http://ousui.github.io/</id>
   
   <author>
@@ -16,11 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>linux-openssh-的巧妙使用跨过sangfor-vpn</title>
+    <title>hardware M570 轨迹球清理</title>
+    <link href="http://ousui.github.io/2016/09/07/hardware-M570-%E8%BD%A8%E8%BF%B9%E7%90%83%E6%B8%85%E7%90%86/"/>
+    <id>http://ousui.github.io/2016/09/07/hardware-M570-轨迹球清理/</id>
+    <published>2016-09-07T08:34:44.000Z</published>
+    <updated>2016-09-07T08:36:35.304Z</updated>
+    
+    <content type="html"><![CDATA[<p>逻辑 M570 轨迹球是个不错的鼠标，用起来手不累很舒适，很适合大手。<br>自从买来轨迹球就不太好滚，也懒得弄。<br>今天闲着没事搜了以下，发现轨迹球可以扣出来……<br>然后就抠出来清理了一下，真好用。。。再也不用用力转轨迹球了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;逻辑 M570 轨迹球是个不错的鼠标，用起来手不累很舒适，很适合大手。&lt;br&gt;自从买来轨迹球就不太好滚，也懒得弄。&lt;br&gt;今天闲着没事搜了以下，发现轨迹球可以扣出来……&lt;br&gt;然后就抠出来清理了一下，真好用。。。再也不用用力转轨迹球了。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="hadrware" scheme="http://ousui.github.io/categories/hadrware/"/>
+    
+    
+      <category term="硬件" scheme="http://ousui.github.io/tags/%E7%A1%AC%E4%BB%B6/"/>
+    
+      <category term="M570" scheme="http://ousui.github.io/tags/M570/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux openssh 的巧妙使用跨过sangfor vpn</title>
     <link href="http://ousui.github.io/2016/08/30/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/"/>
     <id>http://ousui.github.io/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/</id>
     <published>2016-08-30T01:19:49.000Z</published>
-    <updated>2016-08-30T01:37:02.711Z</updated>
+    <updated>2016-09-05T05:42:51.214Z</updated>
     
     <content type="html"><![CDATA[<p>公司的网络很让人无语的：<br>  公司无线，网络不是很稳定，经常出现掉线连接不上的情况<br>  公司有线，需要使用 iNode 连接……<br>  公司生产服务器，原本使用 openvpn 连接，后来改成了深信服 sangfor</p>
 <p>然后我使用 linux，不支持inode，部支持 sangfor（配置了很久，可以登录网站，但是不会产生虚拟网卡……）</p>
