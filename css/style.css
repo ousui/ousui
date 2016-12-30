@@ -300,7 +300,6 @@ body {
   text-align: center;
   cursor: pointer;
   background-color: #e3e3e3;
-  border-radius: 3px;
 }
 .side .top:after,
 .side .arrows:after {
@@ -485,7 +484,8 @@ body {
   border-bottom: 1px solid #1b1a1a;
 }
 .archives .read-more {
-  text-align: left;
+  text-align: right;
+  margin-top: 25px;
 }
 .archives .read-more a {
   color: #202020;
@@ -523,9 +523,13 @@ body {
 }
 .archives .content-wrap blockquote {
   border-left: 0.3em solid #e0e0e0;
+  margin: 25px;
 }
 .archives .content-wrap blockquote p {
   padding-left: 0.8em;
+}
+.archives .content-wrap blockquote ol li {
+  margin-left: 20px;
 }
 .archives .content-wrap ul {
   padding-left: 1.5em;

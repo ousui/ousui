@@ -37,9 +37,9 @@
     </summary>
     
     
-      <category term="docker" scheme="http://ousui.github.io/tags/docker/"/>
-    
       <category term="linux" scheme="http://ousui.github.io/tags/linux/"/>
+    
+      <category term="docker" scheme="http://ousui.github.io/tags/docker/"/>
     
   </entry>
   
