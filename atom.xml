@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ousui.github.io/"/>
-  <updated>2016-09-07T08:36:35.304Z</updated>
+  <updated>2016-12-30T05:59:48.000Z</updated>
   <id>http://ousui.github.io/</id>
   
   <author>
@@ -16,11 +16,75 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>docker 学习笔记</title>
+    <link href="http://ousui.github.io/2016/12/30/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://ousui.github.io/2016/12/30/docker-学习笔记/</id>
+    <published>2016-12-30T05:57:00.000Z</published>
+    <updated>2016-12-30T05:59:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>docker 是个好东西。<br>常用命令不说了，这个基本上用过几次就会记住，下面是一些比较不容易记的东西：</p>
+<ol>
+<li>当 dubbo 使用 docker 作为容器的时候，dubbo 会 ping 当前的 hostname 来找本机的 ip，由此在创建容器的时候，可以制定本地 host 文件，或者覆盖 hostname 文件。 或者干脆做一个专用容器……</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;docker 是个好东西。&lt;br&gt;常用命令不说了，这个基本上用过几次就会记住，下面是一些比较不容易记的东西：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;当 dubbo 使用 docker 作为容器的时候，dubbo 会 ping 当前的 hostname 来找本机的 ip，由此在创建容器的
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="http://ousui.github.io/tags/docker/"/>
+    
+      <category term="linux" scheme="http://ousui.github.io/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>macos-开发环境切换</title>
+    <link href="http://ousui.github.io/2016/11/18/macos-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%88%87%E6%8D%A2/"/>
+    <id>http://ousui.github.io/2016/11/18/macos-开发环境切换/</id>
+    <published>2016-11-18T11:16:23.000Z</published>
+    <updated>2016-12-30T05:55:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>10 月份 苹果发布了新 macbook pro，结果对于我来说相当失望…… 当然主要是价格贵了。</p>
+<p>双十一到来，价格合适了，然后走姐夫单位的帐，便宜入一台 mac 用用，毕竟 alienware 太沉了，出门带相当不方便。</p>
+<p>使用一个礼拜基本上手，感受如下：</p>
+<ul>
+<li>啥啥都要钱，最基本的 ntfs 驱动都找不到好用的。</li>
+<li>开发环境类 Unix，还算友好，但是和 linux 诸多不一样的地方，需要慢慢适应</li>
+<li>将来一定换 13 寸的</li>
+<li></li>
+</ul>
+<p>下面是一些问题的解决方法：<br>  虚拟机是必备的，但是 mac下虚拟机太坑了，据说Pd体验最好，但是最贵。我毫不犹豫装了早已习惯的 vbox。<br>  但是，刚开始用的很好，某天提示升级，手贱点了以后，就打不开了…… （抱歉隔了太久忘记怎么解决了）</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;10 月份 苹果发布了新 macbook pro，结果对于我来说相当失望…… 当然主要是价格贵了。&lt;/p&gt;
+&lt;p&gt;双十一到来，价格合适了，然后走姐夫单位的帐，便宜入一台 mac 用用，毕竟 alienware 太沉了，出门带相当不方便。&lt;/p&gt;
+&lt;p&gt;使用一个礼拜基本上手，
+    
+    </summary>
+    
+      <category term="macos" scheme="http://ousui.github.io/categories/macos/"/>
+    
+    
+      <category term="硬件" scheme="http://ousui.github.io/tags/%E7%A1%AC%E4%BB%B6/"/>
+    
+      <category term="M570" scheme="http://ousui.github.io/tags/M570/"/>
+    
+  </entry>
+  
+  <entry>
     <title>hardware M570 轨迹球清理</title>
     <link href="http://ousui.github.io/2016/09/07/hardware-M570-%E8%BD%A8%E8%BF%B9%E7%90%83%E6%B8%85%E7%90%86/"/>
     <id>http://ousui.github.io/2016/09/07/hardware-M570-轨迹球清理/</id>
     <published>2016-09-07T08:34:44.000Z</published>
-    <updated>2016-09-07T08:36:35.304Z</updated>
+    <updated>2016-09-07T08:36:35.000Z</updated>
     
     <content type="html"><![CDATA[<p>逻辑 M570 轨迹球是个不错的鼠标，用起来手不累很舒适，很适合大手。<br>自从买来轨迹球就不太好滚，也懒得弄。<br>今天闲着没事搜了以下，发现轨迹球可以扣出来……<br>然后就抠出来清理了一下，真好用。。。再也不用用力转轨迹球了。</p>
 ]]></content>
@@ -46,7 +110,7 @@
     <link href="http://ousui.github.io/2016/08/30/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/"/>
     <id>http://ousui.github.io/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/</id>
     <published>2016-08-30T01:19:49.000Z</published>
-    <updated>2016-09-05T05:42:51.214Z</updated>
+    <updated>2016-09-05T05:42:51.000Z</updated>
     
     <content type="html"><![CDATA[<p>公司的网络很让人无语的：<br>  公司无线，网络不是很稳定，经常出现掉线连接不上的情况<br>  公司有线，需要使用 iNode 连接……<br>  公司生产服务器，原本使用 openvpn 连接，后来改成了深信服 sangfor</p>
 <p>然后我使用 linux，不支持inode，部支持 sangfor（配置了很久，可以登录网站，但是不会产生虚拟网卡……）</p>
@@ -84,7 +148,7 @@
     <link href="http://ousui.github.io/2016/08/24/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/"/>
     <id>http://ousui.github.io/2016/08/24/linux-把公司服务器搞挂了/</id>
     <published>2016-08-24T06:08:30.000Z</published>
-    <updated>2016-08-26T04:16:45.821Z</updated>
+    <updated>2016-08-26T04:16:45.000Z</updated>
     
     <content type="html"><![CDATA[<p>呃，公司一台测试服务器，我用来装各种服务例如 svn、jenkins 之类的，另外还有 ss 服务，为啥呢，公司 wifi 和 lan 限速500k…… 什么年代了，然后偶然发现服务器不限速，下行可以达到20MB……<br>然后妥妥的在服务器上做了个代理，下载一些东西的时候都走代理，速度蹭蹭的……<br>有时候为了避免影响手头上的工作，就远程下载，下好了再 download 下来。结果，下的东西太多，把分区撑爆了……</p>
 <p>分区是lvm的，扩容前忘记看空闲容量了，其实还有很多呢。就想直接把 /opt 分区挂载的内容放到 / 下的 opt 里。<br>umount /opt 提示 busy，那就先修改 fstab，然后重启呗。<br>结果啊，手贱，看着 vg name太难看了，就改了 vg name，顺手改了 lv name，然后悲摧了。fstab 改了，但是没有往 grub 写，导致系统无法启动……<br>然后联系运维解决，运维懒，说重装，我当时以为 fstab 写错了，就说用其他linux引导进去改 fstab 就行，结果 archlinux 写到 u 盘里，服务器启动不认。然后我发现 grub 没有改，启动时候 e，然后改对了，系统就进去了。。。<br>看来还是 uuid 是王道啊……</p>
@@ -111,7 +175,7 @@
     <link href="http://ousui.github.io/2016/08/07/linux-%E5%88%87%E6%8D%A2%E5%88%B0-archlinux/"/>
     <id>http://ousui.github.io/2016/08/07/linux-切换到-archlinux/</id>
     <published>2016-08-07T04:30:50.000Z</published>
-    <updated>2016-08-07T04:42:38.714Z</updated>
+    <updated>2016-08-07T04:42:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了……<br>尝试恢复的时候，报文件可能损坏。<br>恩，然后想干脆直接重装 archlinux 吧。<br>于是开始折腾……</p>
 <p>安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。<br>GUI还是装的 KDE，因为真心漂亮。</p>
@@ -137,7 +201,7 @@
     <link href="http://ousui.github.io/2016/07/25/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/"/>
     <id>http://ousui.github.io/2016/07/25/copyq-真是个好东西/</id>
     <published>2016-07-25T07:23:15.000Z</published>
-    <updated>2016-07-25T08:20:18.660Z</updated>
+    <updated>2016-07-25T08:20:18.000Z</updated>
     
     <content type="html"><![CDATA[<p>copyq 真是个好东西，扩展性极高，玩了几天以后，写了一个有道词典的扩展：<br><a href="https://github.com/ousui/copyq-action-youdao，" target="_blank" rel="external">https://github.com/ousui/copyq-action-youdao，</a><br>划中要翻译的语句，然后按你设定好的快捷键即可。<br>也可以在主界面使用右键翻译。</p>
 <p>接下来有空写一个微博图床的工具，顺便熟悉 python。</p>
@@ -162,7 +226,7 @@
     <link href="http://ousui.github.io/2016/07/17/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AABUG%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/"/>
     <id>http://ousui.github.io/2016/07/17/linux-报告了个BUG并解决了/</id>
     <published>2016-07-17T05:31:48.000Z</published>
-    <updated>2016-08-19T03:37:50.997Z</updated>
+    <updated>2016-08-19T03:37:50.000Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1357235" target="_blank" rel="external">https://bugzilla.redhat.com/show_bug.cgi?id=1357235</a><br><a href="https://github.com/hluk/CopyQ/issues/530" target="_blank" rel="external">https://github.com/hluk/CopyQ/issues/530</a></p>
 <p>copyq 是一款跨平台的高级的剪贴板管理工具。<br>十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui，很好看<br><img src="/images/160717-1.png" alt="screen"></p>
@@ -201,7 +265,7 @@
     <link href="http://ousui.github.io/2016/07/15/linux-gnome-%E6%89%A9%E5%B1%95/"/>
     <id>http://ousui.github.io/2016/07/15/linux-gnome-扩展/</id>
     <published>2016-07-15T03:32:22.000Z</published>
-    <updated>2016-07-19T07:22:35.613Z</updated>
+    <updated>2016-07-19T07:22:35.000Z</updated>
     
     <content type="html"><![CDATA[<p>当初选择 Fedora 24 桌面的时候纠结了很久，最后还是决定使用 workstation 版本，作为一个非处女座强迫症，忍受不了装完 kde 以后各种问题……<br>最后还是选择 gnome 桌面吧。折腾了一下扩展以后还是很好用的。</p>
 <p>下面记录一下使用的扩展，做个备份，而后会将扩展打包备份一下。<br>分享一下我装得扩展</p>
@@ -263,7 +327,7 @@
     <link href="http://ousui.github.io/2016/07/13/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/"/>
     <id>http://ousui.github.io/2016/07/13/linux-工作环境积累/</id>
     <published>2016-07-13T01:48:32.000Z</published>
-    <updated>2016-07-14T01:48:09.281Z</updated>
+    <updated>2016-07-14T01:48:09.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>本来打算使用 gnome 自带的 boxes，但是装完系统以后体验实在太差，经过一番调研，在性能和占用上做了平衡之后，决定使用 virtualbox。<br>偶然发现 vbox 支持物理盘直接虚拟化，太爽了，不用装系统了。<br>记录一下正确步骤：</p>
 <blockquote>
@@ -301,7 +365,7 @@
     <link href="http://ousui.github.io/2016/07/12/windows-keys/"/>
     <id>http://ousui.github.io/2016/07/12/windows-keys/</id>
     <published>2016-07-12T07:40:46.000Z</published>
-    <updated>2016-08-22T07:35:15.609Z</updated>
+    <updated>2016-08-22T07:35:15.000Z</updated>
     
     <content type="html"><![CDATA[<p>这个礼拜把工作站正式从 windows10 迁移到了 Fedora24，感觉还不错，就是工作需要必须运行 QQ，虚拟机折腾了不少时间，还好 vbox 支持物理驱动器虚拟化，省了我不少硬盘空间。</p>
 <p>虚拟机启动后，系统需要重新激活，找了很多key都不行，看了下 KMS 激活的原理，听简单的，正好家里路由器空闲着，搭建了 kms 服务器，放开端口，找到 kms key，激活搞定。</p>

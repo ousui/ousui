@@ -12,7 +12,7 @@
     
     <title>
     
-    Category: linux 
+    Category: macos 
       | { GFO } 
     
     </title>
@@ -158,41 +158,40 @@
         <section class="archives-wrap">
   
     <div class="ct-title">
-      <h2>linux <small>Categories</small></h2>
+      <h2>macos <small>Categories</small></h2>
     </div>
   
   
   
     <div class="archives">
       <div class="title-wrap">
-        <a class="post-title" href="/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/">
-          <h1>linux openssh 的巧妙使用跨过sangfor vpn </h1>
+        <a class="post-title" href="/2016/11/18/macos-开发环境切换/">
+          <h1>macos-开发环境切换 </h1>
         </a>
         <div class="page-info">
         
           <span>By <a href="/about">ousui</a> on</span>
         
-          <time datetime="2016-08-30T01:19:49.000Z" itemprop="datePublished">2016-08-30</time>
+          <time datetime="2016-11-18T11:16:23.000Z" itemprop="datePublished">2016-11-18</time>
         </div>
       </div>
       <div class="content-wrap">
         
-          <p>公司的网络很让人无语的：<br>  公司无线，网络不是很稳定，经常出现掉线连接不上的情况<br>  公司有线，需要使用 iNode 连接……<br>  公司生产服务器，原本使用 openvpn 连接，后来改成了深信服 sangfor</p>
-<p>然后我使用 linux，不支持inode，部支持 sangfor（配置了很久，可以登录网站，但是不会产生虚拟网卡……）</p>
-<p>刚开始破解 inode，我安装了 xp 虚拟机，内存256，网卡 mac 地址和本机一致，使用桥接模式，连接后，本机可以使用有线上网了，速度稳定够快。<br>然后有一天需要连接生产服务器vpn，使用网站方式连接，有相关组件，java工作正常，但是死活连接不上……没辙，想其他办法。<br>我在同一台虚拟机上，安装了 easyconnect，可以使用 putty 正常连接。<br>我就想拿这台机器做跳板，然后连接到生产服务器行不行，肯定可以啊，主要是什么方式呢。<br>刚开始想用ss，或者http代理，但是本机执行命令的时候，还需要连接一下代理，很麻烦。<br>翻ssh命令的时候发现 ProxyJump，也就是支持 ssh 代理，那就在 虚拟机上搭一个 ssh 服务呗。<br>首先加块网卡，使用 localhost 模式只建立两台机器的通信，<br>然后安装 openssh for windows 5.x 版本，可以启动服务，但是本机 ssh 登录后立刻断开，不知道为什么……<br>后来想，只能模拟一个环境了，那就装 cygwin 吧。</p>
-<ol>
-<li>下载 cygwin，地址就不给了，安装的时候添加镜像 <a href="https://mirrors.ustc.edu.cn/cygwin/" target="_blank" rel="external">https://mirrors.ustc.edu.cn/cygwin/</a> 中科大的镜像速度很快，我各种镜像源都用的这个。</li>
-<li>安装过程在 net 包下，选择 openssh openssl 两个包</li>
-<li>安装好以后，使用 ssh-host-config 配置服务</li>
-<li>使用 cygrunsrv -S sshd 启动服务即可</li>
-<li>如果还是不能登录，可以查看下是否导入了用户使用 mkpasswd mkgroups 保存到 /etc/passwd /etc/group 下</li>
-</ol>
-<p>然后测试登录，使用 -J 参数，可以顺利登录到生产服务器了，在 .ssh/config 下配置中多加一行 ProxyJump [user@]host 即可直接使用别名登录，着实很方便。</p>
+          <p>10 月份 苹果发布了新 macbook pro，结果对于我来说相当失望…… 当然主要是价格贵了。</p>
+<p>双十一到来，价格合适了，然后走姐夫单位的帐，便宜入一台 mac 用用，毕竟 alienware 太沉了，出门带相当不方便。</p>
+<p>使用一个礼拜基本上手，感受如下：</p>
+<ul>
+<li>啥啥都要钱，最基本的 ntfs 驱动都找不到好用的。</li>
+<li>开发环境类 Unix，还算友好，但是和 linux 诸多不一样的地方，需要慢慢适应</li>
+<li>将来一定换 13 寸的</li>
+<li></li>
+</ul>
+<p>下面是一些问题的解决方法：<br>  虚拟机是必备的，但是 mac下虚拟机太坑了，据说Pd体验最好，但是最贵。我毫不犹豫装了早已习惯的 vbox。<br>  但是，刚开始用的很好，某天提示升级，手贱点了以后，就打不开了…… （抱歉隔了太久忘记怎么解决了）</p>
 
         
       </div>
       <div class='read-more'>
-        <a href="/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/"><span class='i-next'>Read More</span></a>
+        <a href="/2016/11/18/macos-开发环境切换/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
