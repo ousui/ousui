@@ -72,9 +72,9 @@
     <div class="nav-item">
       <a href="/">
         <span>
-          12
+          13
         </span>
-        <span>日志</span>
+        <span>posts</span>
       </a>
     </div>
     <div class="nav-item">
@@ -82,15 +82,15 @@
         <span>
           3
         </span>
-        <span>分类</span>
+        <span>categories</span>
       </a>
     </div>
     <div class="nav-item">
       <a href="/tags">
         <span>
-          19
+          21
         </span>
-        <span>标签</span>
+        <span>tags</span>
       </a>
     </div>
   </nav>
@@ -131,19 +131,19 @@
   <nav>
   
     <a class='menu-item-home' href="/">
-    首页
+    Home
     </a>
   
     <a class='menu-item-categories' href="/categories">
-    分类
+    Categories
     </a>
   
     <a class='menu-item-tags' href="/tags">
-    标签
+    Tags
     </a>
   
     <a class='menu-item-about' href="/about">
-    关于
+    About
     </a>
   
     <a class='menu-item-rss' href="/atom.xml">
@@ -157,6 +157,39 @@
         <section class="archives-wrap">
   
   
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2017/03/30/vmware-fusion-网络配置/">
+          <h1>vmware fusion 网络配置 </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">ousui</a> on</span>
+        
+          <time datetime="2017-03-30T02:49:25.000Z" itemprop="datePublished">2017-03-30</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例如 u 盾无法挂载，资源无法分配，然后试了 pd 和 vmware, 都可以正常使用。<br>无语，故换之。<br>经过对比后，选择了 vmware，还好虚拟机互转还方便。<br>安装后发现了 vmware 的网络配置这里的一些问题，特地记录一下。</p>
+<ul>
+<li>macos 下，ui 上改不了网络配置，需要在 “/Library/Preferences/VMware Fusion” 目录下更改。</li>
+<li>默认网卡配置 vmnet1/only host，vmnet8/nat 都可以修改，修改对应 ip 就可以。</li>
+<li><p>有时候要用到 ssh 代理跳转，例如某些特定的 vpn 只有 windows 版本，那么在 dhcpd.conf 文件下新增</p>
+<pre><code>host windows-xp {
+  hardware ethernet 00:**:**:**:**;
+  fixed-address 172.20.33.*;
+}
+</code></pre></li>
+</ul>
+
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2017/03/30/vmware-fusion-网络配置/"><span class='i-next'>Read More</span></a>
+      </div>
+    </div>
   
     <div class="archives">
       <div class="title-wrap">
@@ -242,7 +275,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2017/02/16/centos-6-x-安装使用-docker/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2017/02/16/centos-6-x-安装使用-docker/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -268,7 +301,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/12/30/docker-学习笔记/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/12/30/docker-学习笔记/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -300,7 +333,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/11/18/macos-开发环境切换/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/11/18/macos-开发环境切换/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -323,7 +356,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/09/07/hardware-M570-轨迹球清理/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/09/07/hardware-M570-轨迹球清理/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -356,7 +389,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -381,7 +414,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/08/24/linux-把公司服务器搞挂了/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/08/24/linux-把公司服务器搞挂了/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -407,7 +440,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/08/07/linux-切换到-archlinux/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/08/07/linux-切换到-archlinux/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -432,7 +465,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/07/25/copyq-真是个好东西/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/07/25/copyq-真是个好东西/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -469,64 +502,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/07/17/linux-报告了个BUG并解决了/"><span class='i-next'>阅读全文</span></a>
-      </div>
-    </div>
-  
-    <div class="archives">
-      <div class="title-wrap">
-        <a class="post-title" href="/2016/07/15/linux-gnome-扩展/">
-          <h1>linux gnome </h1>
-        </a>
-        <div class="page-info">
-        
-          <span>By <a href="/about">ousui</a> on</span>
-        
-          <time datetime="2016-07-15T03:32:22.000Z" itemprop="datePublished">2016-07-15</time>
-        </div>
-      </div>
-      <div class="content-wrap">
-        
-          <p>当初选择 Fedora 24 桌面的时候纠结了很久，最后还是决定使用 workstation 版本，作为一个非处女座强迫症，忍受不了装完 kde 以后各种问题……<br>最后还是选择 gnome 桌面吧。折腾了一下扩展以后还是很好用的。</p>
-<p>下面记录一下使用的扩展，做个备份，而后会将扩展打包备份一下。<br>分享一下我装得扩展</p>
-<blockquote>
-<ol>
-<li><a href="https://extensions.gnome.org/extension/358/activities-configurator/" target="_blank" rel="external">Activities Configurator</a>             # 将 activities 隐藏后，自定一添加的移动到 top right，已经提交给作者建议，作者说会增加功能。</li>
-<li><a href="https://extensions.gnome.org/extension/413/dash-hotkeys/" target="_blank" rel="external">AppKeys</a>                         </li>
-<li><a href="https://extensions.gnome.org/extension/1071/applications-overview-tooltip/" target="_blank" rel="external">Applications Overview Tooltip</a></li>
-<li><a href="https://extensions.gnome.org/extension/16/auto-move-windows/" target="_blank" rel="external">Auto Move Windows</a></li>
-<li><a href="https://extensions.gnome.org/extension/595/autohide-battery/" target="_blank" rel="external">Autohide Battery</a></li>
-<li><a href="undefined">Background Logo</a></li>
-<li><a href="https://extensions.gnome.org/extension/307/dash-to-dock/" target="_blank" rel="external">Dash to Dock</a>                         # 取消圆角效果</li>
-<li><a href="https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/" target="_blank" rel="external">Dynamic Panel Transparency</a> </li>
-<li><a href="https://extensions.gnome.org/extension/2/move-clock/" target="_blank" rel="external">Frippery Move Clock</a>                     # 调整始终显示位置 2</li>
-<li><a href="https://extensions.gnome.org/extension/755/hibernate-status-button/" target="_blank" rel="external">Hibernate Status Button</a>             # // 这个好像有问题，无法休眠</li>
-<li><a href="https://extensions.gnome.org/extension/261/kimpanel/" target="_blank" rel="external">Input Method Panel</a>                     # // 暂时不知道怎么用……</li>
-<li><a href="https://extensions.gnome.org/extension/937/laine/" target="_blank" rel="external">Laine</a>                            # 调整位置到网络连接左侧 -2</li>
-<li><a href="https://extensions.gnome.org/extension/36/lock-keys/" target="_blank" rel="external">Lock Keys</a>                            # 完全隐藏状态栏提示，只有按下 大小写/数字 切换的时候给一个提示。</li>
-<li><a href="https://extensions.gnome.org/extension/1026/maximus-ng/" target="_blank" rel="external">Maximus NG</a></li>
-<li><a href="https://extensions.gnome.org/extension/55/media-player-indicator/" target="_blank" rel="external">Media player indicator</a></li>
-<li><a href="https://extensions.gnome.org/extension/18/native-window-placement/" target="_blank" rel="external">Native Window Placement</a></li>
-<li><a href="https://extensions.gnome.org/extension/708/panel-osd/" target="_blank" rel="external">Panel OSD</a></li>
-<li><a href="https://extensions.gnome.org/extension/771/proxy-switcher/" target="_blank" rel="external">Proxy Switcher</a></li>
-<li><a href="https://extensions.gnome.org/extension/7/removable-drive-menu/" target="_blank" rel="external">Removable Drive Menu</a></li>
-<li><a href="https://extensions.gnome.org/extension/657/shelltile/" target="_blank" rel="external">ShellTile</a></li>
-<li><a href="https://extensions.gnome.org/extension/1085/simple-net-speed/" target="_blank" rel="external">Simple net speed</a>                    # 调整文字居中，位置始终在最左侧 1</li>
-<li><a href="https://extensions.gnome.org/extension/355/status-area-horizontal-spacing/" target="_blank" rel="external">Status Area Horizontal Spacing</a>    </li>
-<li><a href="https://extensions.gnome.org/extension/59/status-title-bar/" target="_blank" rel="external">Status Title Bar</a></li>
-<li><a href="https://extensions.gnome.org/extension/826/suspend-button/" target="_blank" rel="external">Suspend Button</a></li>
-<li><a href="https://extensions.gnome.org/extension/570/todotxt/" target="_blank" rel="external">Todo.txt</a>                            # 调整圆角</li>
-<li><a href="https://extensions.gnome.org/extension/1031/topicons/" target="_blank" rel="external">TopIcons Plus</a></li>
-<li><a href="https://extensions.gnome.org/extension/19/user-themes/" target="_blank" rel="external">User Themes</a></li>
-<li><a href="https://extensions.gnome.org/extension/426/window-buttons/" target="_blank" rel="external">Window Buttons</a></li>
-<li><a href="https://extensions.gnome.org/extension/887/workspace-isolated-dash/" target="_blank" rel="external">Workspace Isolated Dash</a></li>
-</ol>
-</blockquote>
-
-        
-      </div>
-      <div class='read-more'>
-        <a href="/2016/07/15/linux-gnome-扩展/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/07/17/linux-报告了个BUG并解决了/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -538,7 +514,7 @@ sudo yum -y install docker-engine
 </section>
       </section>
     <footer class="footer">
-  <div>Github For Ousui, 由 <a href="https://hexo.io/">Hexo</a> 强力驱动 | 主题: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
+  <div>Github For Ousui, Powered by <a href="https://hexo.io/">Hexo</a> | Theme: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
 </footer>
 
     </div>

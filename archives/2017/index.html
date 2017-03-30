@@ -12,7 +12,7 @@
     
     <title>
     
-    归档: 2017 
+    Archive: 2017 
       | { GFO } 
     
     </title>
@@ -73,9 +73,9 @@
     <div class="nav-item">
       <a href="/">
         <span>
-          12
+          13
         </span>
-        <span>日志</span>
+        <span>posts</span>
       </a>
     </div>
     <div class="nav-item">
@@ -83,15 +83,15 @@
         <span>
           3
         </span>
-        <span>分类</span>
+        <span>categories</span>
       </a>
     </div>
     <div class="nav-item">
       <a href="/tags">
         <span>
-          19
+          21
         </span>
-        <span>标签</span>
+        <span>tags</span>
       </a>
     </div>
   </nav>
@@ -132,19 +132,19 @@
   <nav>
   
     <a class='menu-item-home' href="/">
-    首页
+    Home
     </a>
   
     <a class='menu-item-categories' href="/categories">
-    分类
+    Categories
     </a>
   
     <a class='menu-item-tags' href="/tags">
-    标签
+    Tags
     </a>
   
     <a class='menu-item-about' href="/about">
-    关于
+    About
     </a>
   
     <a class='menu-item-rss' href="/atom.xml">
@@ -158,6 +158,39 @@
         <section class="archives-wrap">
   
   
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2017/03/30/vmware-fusion-网络配置/">
+          <h1>vmware fusion 网络配置 </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">ousui</a> on</span>
+        
+          <time datetime="2017-03-30T02:49:25.000Z" itemprop="datePublished">2017-03-30</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例如 u 盾无法挂载，资源无法分配，然后试了 pd 和 vmware, 都可以正常使用。<br>无语，故换之。<br>经过对比后，选择了 vmware，还好虚拟机互转还方便。<br>安装后发现了 vmware 的网络配置这里的一些问题，特地记录一下。</p>
+<ul>
+<li>macos 下，ui 上改不了网络配置，需要在 “/Library/Preferences/VMware Fusion” 目录下更改。</li>
+<li>默认网卡配置 vmnet1/only host，vmnet8/nat 都可以修改，修改对应 ip 就可以。</li>
+<li><p>有时候要用到 ssh 代理跳转，例如某些特定的 vpn 只有 windows 版本，那么在 dhcpd.conf 文件下新增</p>
+<pre><code>host windows-xp {
+  hardware ethernet 00:**:**:**:**;
+  fixed-address 172.20.33.*;
+}
+</code></pre></li>
+</ul>
+
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2017/03/30/vmware-fusion-网络配置/"><span class='i-next'>Read More</span></a>
+      </div>
+    </div>
   
     <div class="archives">
       <div class="title-wrap">
@@ -243,7 +276,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2017/02/16/centos-6-x-安装使用-docker/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2017/02/16/centos-6-x-安装使用-docker/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -251,7 +284,7 @@ sudo yum -y install docker-engine
 </section>
       </section>
     <footer class="footer">
-  <div>Github For Ousui, 由 <a href="https://hexo.io/">Hexo</a> 强力驱动 | 主题: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
+  <div>Github For Ousui, Powered by <a href="https://hexo.io/">Hexo</a> | Theme: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
 </footer>
 
     </div>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ousui.github.io/"/>
-  <updated>2017-02-20T03:04:37.000Z</updated>
+  <updated>2017-03-30T06:21:02.000Z</updated>
   <id>http://ousui.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vmware fusion 网络配置</title>
+    <link href="http://ousui.github.io/2017/03/30/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/"/>
+    <id>http://ousui.github.io/2017/03/30/vmware-fusion-网络配置/</id>
+    <published>2017-03-30T02:49:25.000Z</published>
+    <updated>2017-03-30T06:21:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例如 u 盾无法挂载，资源无法分配，然后试了 pd 和 vmware, 都可以正常使用。<br>无语，故换之。<br>经过对比后，选择了 vmware，还好虚拟机互转还方便。<br>安装后发现了 vmware 的网络配置这里的一些问题，特地记录一下。</p>
+<ul>
+<li>macos 下，ui 上改不了网络配置，需要在 “/Library/Preferences/VMware Fusion” 目录下更改。</li>
+<li>默认网卡配置 vmnet1/only host，vmnet8/nat 都可以修改，修改对应 ip 就可以。</li>
+<li><p>有时候要用到 ssh 代理跳转，例如某些特定的 vpn 只有 windows 版本，那么在 dhcpd.conf 文件下新增</p>
+<pre><code>host windows-xp {
+  hardware ethernet 00:**:**:**:**;
+  fixed-address 172.20.33.*;
+}
+</code></pre></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前一直是用开源的 virtualbox，后来发现某些 usb 设备例如 u 盾无法挂载，资源无法分配，然后试了 pd 和 vmware, 都可以正常使用。&lt;br&gt;无语，故换之。&lt;br&gt;经过对比后，选择了 vmware，还好虚拟机互转还方便。&lt;br&gt;安装后发现了 vmwar
+    
+    </summary>
+    
+    
+      <category term="虚拟机" scheme="http://ousui.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+      <category term="macos" scheme="http://ousui.github.io/tags/macos/"/>
+    
+  </entry>
   
   <entry>
     <title>centos 6.x 安装使用 docker</title>

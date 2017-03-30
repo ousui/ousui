@@ -12,7 +12,7 @@
     
     <title>
     
-    Tag: archlinux 
+    Tag: macos 
       | { GFO } 
     
     </title>
@@ -159,33 +159,40 @@
   
   
     <div class="ct-title">
-      <h2>archlinux  <small>Tags</small></h2>
+      <h2>macos  <small>Tags</small></h2>
     </div>
   
   
     <div class="archives">
       <div class="title-wrap">
-        <a class="post-title" href="/2016/08/07/linux-切换到-archlinux/">
-          <h1>linux 切换到 archlinux </h1>
+        <a class="post-title" href="/2017/03/30/vmware-fusion-网络配置/">
+          <h1>vmware fusion 网络配置 </h1>
         </a>
         <div class="page-info">
         
           <span>By <a href="/about">ousui</a> on</span>
         
-          <time datetime="2016-08-07T04:30:50.000Z" itemprop="datePublished">2016-08-07</time>
+          <time datetime="2017-03-30T02:49:25.000Z" itemprop="datePublished">2017-03-30</time>
         </div>
       </div>
       <div class="content-wrap">
         
-          <p>周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了……<br>尝试恢复的时候，报文件可能损坏。<br>恩，然后想干脆直接重装 archlinux 吧。<br>于是开始折腾……</p>
-<p>安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。<br>GUI还是装的 KDE，因为真心漂亮。</p>
-<p>需要注意的是，在<code>mkinitcpio -p linux</code>前，需要修改 <code>/etc/mkinitcpio.conf</code> 文件的 <code>HOOK</code> 一行，加入 lvm2<br><code>HOOKS=&quot;base udev ... block lvm2 filesystems&quot;</code>，否则启动不了。<br>其他没有太大的变化。</p>
-<p>其实，archlinux 的文档写的很清楚： <a href="https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM" target="_blank" rel="external">https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM</a></p>
+          <p>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例如 u 盾无法挂载，资源无法分配，然后试了 pd 和 vmware, 都可以正常使用。<br>无语，故换之。<br>经过对比后，选择了 vmware，还好虚拟机互转还方便。<br>安装后发现了 vmware 的网络配置这里的一些问题，特地记录一下。</p>
+<ul>
+<li>macos 下，ui 上改不了网络配置，需要在 “/Library/Preferences/VMware Fusion” 目录下更改。</li>
+<li>默认网卡配置 vmnet1/only host，vmnet8/nat 都可以修改，修改对应 ip 就可以。</li>
+<li><p>有时候要用到 ssh 代理跳转，例如某些特定的 vpn 只有 windows 版本，那么在 dhcpd.conf 文件下新增</p>
+<pre><code>host windows-xp {
+  hardware ethernet 00:**:**:**:**;
+  fixed-address 172.20.33.*;
+}
+</code></pre></li>
+</ul>
 
         
       </div>
       <div class='read-more'>
-        <a href="/2016/08/07/linux-切换到-archlinux/"><span class='i-next'>Read More</span></a>
+        <a href="/2017/03/30/vmware-fusion-网络配置/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
