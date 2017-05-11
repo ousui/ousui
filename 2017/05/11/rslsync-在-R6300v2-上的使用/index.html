@@ -12,7 +12,7 @@
     
     <title>
     
-    Tag: copyq 
+    rslsync  在 R6300v2 上的使用 
       | { GFO } 
     
     </title>
@@ -125,7 +125,7 @@
   <div class="arrows" id="nav-btn"></div>
 </div>
       
-<header class="header menu-tags">
+<header class="header menu-2017">
   <span>
     <a href="/">{ GFO }</a>
   </span>
@@ -155,78 +155,40 @@
 </header>
 
       <section id="main" class="content">
-        <section class="archives-wrap">
-  
-  
-    <div class="ct-title">
-      <h2>copyq  <small>Tags</small></h2>
-    </div>
-  
-  
-    <div class="archives">
-      <div class="title-wrap">
-        <a class="post-title" href="/2016/07/25/copyq-真是个好东西/">
-          <h1>copyq 真是个好东西 </h1>
-        </a>
-        <div class="page-info">
         
-          <span>By <a href="/about">ousui</a> on</span>
-        
-          <time datetime="2016-07-25T07:23:15.000Z" itemprop="datePublished">2016-07-25</time>
-        </div>
-      </div>
-      <div class="content-wrap">
-        
-          <p>copyq 真是个好东西，扩展性极高，玩了几天以后，写了一个有道词典的扩展：<br><a href="https://github.com/ousui/copyq-action-youdao，" target="_blank" rel="external">https://github.com/ousui/copyq-action-youdao，</a><br>划中要翻译的语句，然后按你设定好的快捷键即可。<br>也可以在主界面使用右键翻译。</p>
-<p>接下来有空写一个微博图床的工具，顺便熟悉 python。</p>
-<p>ps. python 轮子太多了……</p>
-
-        
-      </div>
-      <div class='read-more'>
-        <a href="/2016/07/25/copyq-真是个好东西/"><span class='i-next'>Read More</span></a>
+<div class="archives-wrap">
+  <div class="archives">
+    <div class="title-wrap">
+      <h1>rslsync  在 R6300v2 上的使用 </h1>
+      <div class="page-info">
+      
+        <span>By <a href="/about">ousui</a> on</span>
+      
+        <time datetime="2017-05-11T03:34:30.000Z" itemprop="datePublished">2017-05-11</time>
       </div>
     </div>
-  
-    <div class="archives">
-      <div class="title-wrap">
-        <a class="post-title" href="/2016/07/17/linux-报告了个BUG并解决了/">
-          <h1>linux 报告了个BUG并解决了 </h1>
-        </a>
-        <div class="page-info">
-        
-          <span>By <a href="/about">ousui</a> on</span>
-        
-          <time datetime="2016-07-17T05:31:48.000Z" itemprop="datePublished">2016-07-17</time>
-        </div>
-      </div>
-      <div class="content-wrap">
-        
-          <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1357235" target="_blank" rel="external">https://bugzilla.redhat.com/show_bug.cgi?id=1357235</a><br><a href="https://github.com/hluk/CopyQ/issues/530" target="_blank" rel="external">https://github.com/hluk/CopyQ/issues/530</a></p>
-<p>copyq 是一款跨平台的高级的剪贴板管理工具。<br>十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui，很好看<br><img src="/images/160717-1.png" alt="screen"></p>
+    <div class="content-wrap">
+    <p>最近百度网盘要实名制了。家里路由器空闲，挂载着一个 2T 硬盘，想着做个同步什么的挺方便，一直没弄。</p>
+<p>之前偶尔用一下 btsync，现在改名叫 rslsync 了。<br>去官网查看，发现支持 arm 处理器。<br>但是上传到了路由器运行，发现不可以执行，提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-sh: ./rslsync: not found</div></pre></td></tr></table></figure></p>
+<p>我耍了 kongac 的 dd-wrt，一直稳定运行，很舒服。华硕固件会发生偶尔导致 cpu 飙升掉线的情况，故舍弃。</p>
+<p>又下载 x64 尝试提示没权限，那应该是某些依赖有问题了。<br>根据提示看了下 /lib 下的依赖。<br>发现 <code>/lib/ld-musl-arm.so.1</code> 存在。</p>
+<p>于是关键字查找 <a href="https://racede.me/bittorrent-sync-run-on-arm-openwrt.html" target="_blank" rel="external">dd-wrt rslsync</a>，发现这篇文章。<br>直接在路由器执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">file rslsync</div></pre></td></tr></table></figure></p>
+<p>返回<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rslsync: ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-linux.so.3, for GNU/Linux 3.2.0, BuildID[sha1]=aed6ecdcc75f6878bc63d37f153a34f25a9041e2, stripped</div></pre></td></tr></table></figure></p>
+<p>可以看到果然如博主所说，依赖 <code>/lib/ld-linux.so.3</code>，而 dd-wrt 默认 /lib 下没有此依赖，且为只读，不可写。<br>kongac 的固件内置了 entware，所以 <code>/opt/lib</code> 中是有这个依赖的。那就改二进制就好了（当我看到此处感觉好牛逼啊，这个硬件工程师！）。<br>找一台 linux，登录，下载 <a href="https://nixos.org/releases/patchelf/patchelf-0.9/patchelf-0.9.tar.gz" target="_blank" rel="external"></a>，编译安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./configure &amp;&amp; make &amp;&amp; sudo make install</div></pre></td></tr></table></figure></p>
+<p>然后直接执行以下命令即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">patchelf --set-interpreter /opt/lib/ld-linux.so.3 ./rslsync</div></pre></td></tr></table></figure></p>
+<p>可以看到，链接库信息已经变更。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">file rslsync</div><div class="line">rslsync: ELF 32-bit LSB  executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked (uses shared libs), for GNU/Linux 3.2.0, BuildID[sha1]=aed6ecdcc75f6878bc63d37f153a34f25a9041e2, stripped</div></pre></td></tr></table></figure></p>
+<p> 重新传到路由器上运行，没有错误提示，直接压到后台了。</p>
 
-<p>然而 fedora 官方源装完以后，无法选择语言……明明自己编译的就可以。<br>经过一晚上折腾，不断的编译尝试最后还看了 rpmbuild，最终确认问题是 cmake 编译的时候有个参数写错了。。导致了查找 translations 路径有问题。<br>所以就造成了，如果在 <code>/usr</code> 目录下执行命令就没问题，但是在别的目录下执行就会找不到的奇怪问题。</p>
-<p>这一晚上折腾的，学了好多只是。。</p>
-<p>最后再安利下 copyq 吧，真的很好用：</p>
-<ul>
-<li>可以插件，可以扩展</li>
-<li>可以执行 ecmascript，可以执行 shell</li>
-<li>全平台</li>
-<li>支持图片复制，不支持文件复制，但是复制文件以后，会把路径存储</li>
-<li>支持多标签</li>
-<li>可以自定义多种操作，例如转换文字为二维码；过滤一些内容到单独的标签（例如图像）</li>
-<li>好处多多，自行体会。</li>
-</ul>
-
-        
-      </div>
-      <div class='read-more'>
-        <a href="/2016/07/17/linux-报告了个BUG并解决了/"><span class='i-next'>Read More</span></a>
-      </div>
     </div>
-  
-  
-</section>
+  </div>
+</div>
+
+
+
+  <div class="ds-thread" data-thread-key="2017/05/11/rslsync-在-R6300v2-上的使用/" data-title="rslsync  在 R6300v2 上的使用" data-url="http://ousui.github.io/2017/05/11/rslsync-在-R6300v2-上的使用/">
+    </div>
+
+
       </section>
     <footer class="footer">
   <div>Github For Ousui, Powered by <a href="https://hexo.io/">Hexo</a> | Theme: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
