@@ -6,6 +6,8 @@
     <link rel="dns-prefetch" href="//7fvhwe.com1.z0.glb.clouddn.com/">
     <link rel="dns-prefetch" href="//static.duoshuo.com/">
     
+    <link rel="dns-prefetch" href="//ousui.disqus.com">    
+    
     <link rel="dns-prefetch" href="//hm.baidu.com/">
     <link rel="dns-prefetch" href="//www.google-analytics.com/">
     <link rel="dns-prefetch" href="//tajs.qq.com/">
@@ -73,9 +75,9 @@
     <div class="nav-item">
       <a href="/">
         <span>
-          14
+          15
         </span>
-        <span>日志</span>
+        <span>posts</span>
       </a>
     </div>
     <div class="nav-item">
@@ -83,15 +85,15 @@
         <span>
           3
         </span>
-        <span>分类</span>
+        <span>categories</span>
       </a>
     </div>
     <div class="nav-item">
       <a href="/tags">
         <span>
-          21
+          22
         </span>
-        <span>标签</span>
+        <span>tags</span>
       </a>
     </div>
   </nav>
@@ -132,19 +134,19 @@
   <nav>
   
     <a class='menu-item-home' href="/">
-    首页
+    Home
     </a>
   
     <a class='menu-item-categories' href="/categories">
-    分类
+    Categories
     </a>
   
     <a class='menu-item-tags' href="/tags">
-    标签
+    Tags
     </a>
   
     <a class='menu-item-about' href="/about">
-    关于
+    About
     </a>
   
     <a class='menu-item-rss' href="/atom.xml">
@@ -178,31 +180,42 @@
 
 
 
-  <div class="ds-thread" data-thread-key="2016/08/24/linux-把公司服务器搞挂了/" data-title="linux-把公司服务器搞挂了" data-url="http://ousui.github.io/2016/08/24/linux-把公司服务器搞挂了/">
-    </div>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
 
 
       </section>
     <footer class="footer">
-  <div>Github For Ousui, 由 <a href="https://hexo.io/">Hexo</a> 强力驱动 | 主题: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
+  <div>Github For Ousui, Powered by <a href="https://hexo.io/">Hexo</a> | Theme: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
 </footer>
 
     </div>
   </div>
   <script src="/js/simple_build.js"></script>
   
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"ousui"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-</script>
 
+<script type="text/javascript">
+  var disqus_shortname = 'ousui';
+  var disqus_identifier = '2016/08/24/linux-把公司服务器搞挂了/';
+  var disqus_title = 'linux-把公司服务器搞挂了';
+  var disqus_url = 'http://ousui.github.io/2016/08/24/linux-把公司服务器搞挂了/';
+
+  function run_disqus_script(disqus_script){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }
+
+  run_disqus_script('count.js');
+  
+  
+  run_disqus_script('embed.js');
+  
+  
+</script>
 
   
 

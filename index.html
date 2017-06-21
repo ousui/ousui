@@ -6,6 +6,8 @@
     <link rel="dns-prefetch" href="//7fvhwe.com1.z0.glb.clouddn.com/">
     <link rel="dns-prefetch" href="//static.duoshuo.com/">
     
+    <link rel="dns-prefetch" href="//ousui.disqus.com">    
+    
     <link rel="dns-prefetch" href="//hm.baidu.com/">
     <link rel="dns-prefetch" href="//www.google-analytics.com/">
     <link rel="dns-prefetch" href="//tajs.qq.com/">
@@ -72,9 +74,9 @@
     <div class="nav-item">
       <a href="/">
         <span>
-          14
+          15
         </span>
-        <span>日志</span>
+        <span>posts</span>
       </a>
     </div>
     <div class="nav-item">
@@ -82,15 +84,15 @@
         <span>
           3
         </span>
-        <span>分类</span>
+        <span>categories</span>
       </a>
     </div>
     <div class="nav-item">
       <a href="/tags">
         <span>
-          21
+          22
         </span>
-        <span>标签</span>
+        <span>tags</span>
       </a>
     </div>
   </nav>
@@ -131,19 +133,19 @@
   <nav>
   
     <a class='menu-item-home' href="/">
-    首页
+    Home
     </a>
   
     <a class='menu-item-categories' href="/categories">
-    分类
+    Categories
     </a>
   
     <a class='menu-item-tags' href="/tags">
-    标签
+    Tags
     </a>
   
     <a class='menu-item-about' href="/about">
-    关于
+    About
     </a>
   
     <a class='menu-item-rss' href="/atom.xml">
@@ -157,6 +159,36 @@
         <section class="archives-wrap">
   
   
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2017/06/15/spring-4-3-x-spring-security-4-x-升级遇到的问题汇总/">
+          <h1>spring 4.3.x + spring-security 4.x 升级遇到的问题汇总 </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">ousui</a> on</span>
+        
+          <time datetime="2017-06-15T02:39:33.000Z" itemprop="datePublished">2017-06-15</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x，把踩到的坑说一下：</p>
+<ol>
+<li><p>升级 spring-security 遇到的编码问题：<br>升级以后，某些页面莫名其妙中文显示乱码，之前没问题。这时候调整一下 web.xml 中 charsetfilter 的位置倒 spring-security 之前即可。</p>
+</li>
+<li><p>某些页面跨域问题：<br> 访问一些页面会提示：<br> Refused to display ‘<a href="http://localhost:8080/xxx" target="_blank" rel="external">http://localhost:8080/xxx</a>‘ in a frame because it set ‘X-Frame-Options’ to ‘DENY’.<br> 在 http 配置中加入下面的配置。</p>
+</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;headers&gt;</div><div class="line">            &lt;frame-options policy=&quot;SAMEORIGIN&quot; /&gt;</div><div class="line">&lt;/headers&gt;</div></pre></td></tr></table></figure>
+</code></pre>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2017/06/15/spring-4-3-x-spring-security-4-x-升级遇到的问题汇总/"><span class='i-next'>Read More</span></a>
+      </div>
+    </div>
   
     <div class="archives">
       <div class="title-wrap">
@@ -187,7 +219,7 @@
         
       </div>
       <div class='read-more'>
-        <a href="/2017/05/11/rslsync-在-R6300v2-上的使用/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2017/05/11/rslsync-在-R6300v2-上的使用/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -220,7 +252,7 @@
         
       </div>
       <div class='read-more'>
-        <a href="/2017/03/30/vmware-fusion-网络配置/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2017/03/30/vmware-fusion-网络配置/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -308,7 +340,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2017/02/16/centos-6-x-安装使用-docker/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2017/02/16/centos-6-x-安装使用-docker/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -334,7 +366,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/12/30/docker-学习笔记/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/12/30/docker-学习笔记/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -366,7 +398,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/11/18/macos-开发环境切换/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/11/18/macos-开发环境切换/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -389,7 +421,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/09/07/hardware-M570-轨迹球清理/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/09/07/hardware-M570-轨迹球清理/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -422,7 +454,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/08/30/linux-openssh-的巧妙使用跨过sangfor-vpn/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -447,7 +479,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/08/24/linux-把公司服务器搞挂了/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/08/24/linux-把公司服务器搞挂了/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -473,32 +505,7 @@ sudo yum -y install docker-engine
         
       </div>
       <div class='read-more'>
-        <a href="/2016/08/07/linux-切换到-archlinux/"><span class='i-next'>阅读全文</span></a>
-      </div>
-    </div>
-  
-    <div class="archives">
-      <div class="title-wrap">
-        <a class="post-title" href="/2016/07/25/copyq-真是个好东西/">
-          <h1>copyq 真是个好东西 </h1>
-        </a>
-        <div class="page-info">
-        
-          <span>By <a href="/about">ousui</a> on</span>
-        
-          <time datetime="2016-07-25T07:23:15.000Z" itemprop="datePublished">2016-07-25</time>
-        </div>
-      </div>
-      <div class="content-wrap">
-        
-          <p>copyq 真是个好东西，扩展性极高，玩了几天以后，写了一个有道词典的扩展：<br><a href="https://github.com/ousui/copyq-action-youdao，" target="_blank" rel="external">https://github.com/ousui/copyq-action-youdao，</a><br>划中要翻译的语句，然后按你设定好的快捷键即可。<br>也可以在主界面使用右键翻译。</p>
-<p>接下来有空写一个微博图床的工具，顺便熟悉 python。</p>
-<p>ps. python 轮子太多了……</p>
-
-        
-      </div>
-      <div class='read-more'>
-        <a href="/2016/07/25/copyq-真是个好东西/"><span class='i-next'>阅读全文</span></a>
+        <a href="/2016/08/07/linux-切换到-archlinux/"><span class='i-next'>Read More</span></a>
       </div>
     </div>
   
@@ -510,25 +517,33 @@ sudo yum -y install docker-engine
 </section>
       </section>
     <footer class="footer">
-  <div>Github For Ousui, 由 <a href="https://hexo.io/">Hexo</a> 强力驱动 | 主题: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
+  <div>Github For Ousui, Powered by <a href="https://hexo.io/">Hexo</a> | Theme: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
 </footer>
 
     </div>
   </div>
   <script src="/js/simple_build.js"></script>
   
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"ousui"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-</script>
 
+<script type="text/javascript">
+  var disqus_shortname = 'ousui';
+  var disqus_identifier = 'index.html';
+  var disqus_title = 'undefined';
+  var disqus_url = 'undefined';
+
+  function run_disqus_script(disqus_script){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }
+
+  run_disqus_script('count.js');
+  
+  
+  
+</script>
 
   
 

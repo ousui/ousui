@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://ousui.github.io/"/>
-  <updated>2017-05-11T03:52:34.000Z</updated>
+  <updated>2017-06-20T05:28:21.000Z</updated>
   <id>http://ousui.github.io/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>spring 4.3.x + spring-security 4.x 升级遇到的问题汇总</title>
+    <link href="http://ousui.github.io/2017/06/15/spring-4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
+    <id>http://ousui.github.io/2017/06/15/spring-4-3-x-spring-security-4-x-升级遇到的问题汇总/</id>
+    <published>2017-06-15T02:39:33.000Z</published>
+    <updated>2017-06-20T05:28:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x，把踩到的坑说一下：</p>
+<ol>
+<li><p>升级 spring-security 遇到的编码问题：<br>升级以后，某些页面莫名其妙中文显示乱码，之前没问题。这时候调整一下 web.xml 中 charsetfilter 的位置倒 spring-security 之前即可。</p>
+</li>
+<li><p>某些页面跨域问题：<br> 访问一些页面会提示：<br> Refused to display ‘<a href="http://localhost:8080/xxx" target="_blank" rel="external">http://localhost:8080/xxx</a>‘ in a frame because it set ‘X-Frame-Options’ to ‘DENY’.<br> 在 http 配置中加入下面的配置。</p>
+</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;headers&gt;</div><div class="line">            &lt;frame-options policy=&quot;SAMEORIGIN&quot; /&gt;</div><div class="line">&lt;/headers&gt;</div></pre></td></tr></table></figure>
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x，把踩到的坑说一下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;升级 spring-security 遇到的编码问题：&lt;br&gt;升级以后，某些页面莫名其妙中文显示
+    
+    </summary>
+    
+    
+      <category term="spring java" scheme="http://ousui.github.io/tags/spring-java/"/>
+    
+  </entry>
   
   <entry>
     <title>rslsync  在 R6300v2 上的使用</title>

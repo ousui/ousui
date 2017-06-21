@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- dns prefetch -->
+    <link rel="dns-prefetch" href="//7fvhwe.com1.z0.glb.clouddn.com/">
+    <link rel="dns-prefetch" href="//static.duoshuo.com/">
+    
+    <link rel="dns-prefetch" href="//ousui.disqus.com">    
+    
+    <link rel="dns-prefetch" href="//hm.baidu.com/">
+    <link rel="dns-prefetch" href="//www.google-analytics.com/">
+    <link rel="dns-prefetch" href="//tajs.qq.com/">
+    
+    <title>
+    
+    Tag: spring java 
+      | { GFO } 
+    
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="alternate" href="" title="{ GFO }" type="application/atom+xml">
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    <style>
+      /* menu nav active status */
+      
+        .menu-home .menu-item-home {
+          color: #b71c1c
+        }
+      
+        .menu-categories .menu-item-categories {
+          color: #b71c1c
+        }
+      
+        .menu-tags .menu-item-tags {
+          color: #b71c1c
+        }
+      
+        .menu-about .menu-item-about {
+          color: #b71c1c
+        }
+      
+        .menu-rss .menu-item-rss {
+          color: #b71c1c
+        }
+      
+    </style>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+<body>
+  <script type="text/javascript">
+    // fix sidebar flashing
+    (function(){
+      if (localStorage.getItem('sidebarState') == 'true') {
+        document.body.className="sideShow"
+      }
+    })()
+  </script>
+  <div id="container">
+    <aside class="sidebar">
+  <div class="head-icon">
+  
+    <a href="/about">
+      <img src="/images/avatar.jpg">
+    </a>
+  
+  </div>
+  <div class="name">ousui</div>
+  <div class="desc">
+    <h4>Github For Ousui</h4>  
+  </div>
+  <nav class="side-nav">
+    <div class="nav-item">
+      <a href="/">
+        <span>
+          15
+        </span>
+        <span>posts</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/categories">
+        <span>
+          3
+        </span>
+        <span>categories</span>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a href="/tags">
+        <span>
+          22
+        </span>
+        <span>tags</span>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="social-wrap">
+    
+    <a href="https://github.com/ousui" target="_blank">
+      <div class="item">
+        <i class="i-github"></i>
+      </div>
+    </a>
+    
+    <a href="http://v2ex.com/member/ppwangs" target="_blank">
+      <div class="item">
+        <i class="i-v2ex"></i>
+      </div>
+    </a>
+    
+    <a href="https://www.zhihu.com/people/ousui" target="_blank">
+      <div class="item">
+        <i class="i-zhihu"></i>
+      </div>
+    </a>
+    
+  </div>
+  
+</aside>
+    <div class="wrap">
+      <div class="side">
+  <div class="top" id="back-top"></div>
+  <div class="arrows" id="nav-btn"></div>
+</div>
+      
+<header class="header menu-tags">
+  <span>
+    <a href="/">{ GFO }</a>
+  </span>
+  <nav>
+  
+    <a class='menu-item-home' href="/">
+    Home
+    </a>
+  
+    <a class='menu-item-categories' href="/categories">
+    Categories
+    </a>
+  
+    <a class='menu-item-tags' href="/tags">
+    Tags
+    </a>
+  
+    <a class='menu-item-about' href="/about">
+    About
+    </a>
+  
+    <a class='menu-item-rss' href="/atom.xml">
+    RSS
+    </a>
+  
+  </nav> 
+</header>
+
+      <section id="main" class="content">
+        <section class="archives-wrap">
+  
+  
+    <div class="ct-title">
+      <h2>spring java  <small>Tags</small></h2>
+    </div>
+  
+  
+    <div class="archives">
+      <div class="title-wrap">
+        <a class="post-title" href="/2017/06/15/spring-4-3-x-spring-security-4-x-升级遇到的问题汇总/">
+          <h1>spring 4.3.x + spring-security 4.x 升级遇到的问题汇总 </h1>
+        </a>
+        <div class="page-info">
+        
+          <span>By <a href="/about">ousui</a> on</span>
+        
+          <time datetime="2017-06-15T02:39:33.000Z" itemprop="datePublished">2017-06-15</time>
+        </div>
+      </div>
+      <div class="content-wrap">
+        
+          <p>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x，把踩到的坑说一下：</p>
+<ol>
+<li><p>升级 spring-security 遇到的编码问题：<br>升级以后，某些页面莫名其妙中文显示乱码，之前没问题。这时候调整一下 web.xml 中 charsetfilter 的位置倒 spring-security 之前即可。</p>
+</li>
+<li><p>某些页面跨域问题：<br> 访问一些页面会提示：<br> Refused to display ‘<a href="http://localhost:8080/xxx" target="_blank" rel="external">http://localhost:8080/xxx</a>‘ in a frame because it set ‘X-Frame-Options’ to ‘DENY’.<br> 在 http 配置中加入下面的配置。</p>
+</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;headers&gt;</div><div class="line">            &lt;frame-options policy=&quot;SAMEORIGIN&quot; /&gt;</div><div class="line">&lt;/headers&gt;</div></pre></td></tr></table></figure>
+</code></pre>
+        
+      </div>
+      <div class='read-more'>
+        <a href="/2017/06/15/spring-4-3-x-spring-security-4-x-升级遇到的问题汇总/"><span class='i-next'>Read More</span></a>
+      </div>
+    </div>
+  
+  
+</section>
+      </section>
+    <footer class="footer">
+  <div>Github For Ousui, Powered by <a href="https://hexo.io/">Hexo</a> | Theme: <a href="https://github.com/wszgxa/hexo-theme-simple">Simple</a></div>
+</footer>
+
+    </div>
+  </div>
+  <script src="/js/simple_build.js"></script>
+  
+
+<script type="text/javascript">
+  var disqus_shortname = 'ousui';
+  var disqus_identifier = 'tags/spring-java/index.html';
+  var disqus_title = 'undefined';
+  var disqus_url = 'undefined';
+
+  function run_disqus_script(disqus_script){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  }
+
+  run_disqus_script('count.js');
+  
+  
+  
+</script>
+
+  
+
+
+				
+
+</body>
+</html>
