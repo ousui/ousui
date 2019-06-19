@@ -12,10 +12,10 @@
     
     <item>
       <title>spring 4.3.x &#43; spring-security 4.x 升级遇到的问题汇总</title>
-      <link>https://ousui.org/posts/sss.html</link>
+      <link>https://ousui.org/posts/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html</link>
       <pubDate>Thu, 15 Jun 2017 10:39:33 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/sss.html</guid>
+      <guid>https://ousui.org/posts/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB.html</guid>
       <description>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x，把踩到的坑说一下：
  升级 spring-security 遇到的编码问题：
 升级以后，某些页面莫名其妙中文显示乱码，之前没问题。这时候调整一下 web.xml 中 charsetfilter 的位置倒 spring-security 之前即可。
