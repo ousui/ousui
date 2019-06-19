@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on {GFO}</title>
+    <link>https://ousui.org/tags.html</link>
+    <description>Recent content in Tags on {GFO}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 15 Jun 2017 10:39:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://ousui.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java</title>
+      <link>https://ousui.org/tags/java.html</link>
+      <pubDate>Thu, 15 Jun 2017 10:39:33 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/java.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring</title>
+      <link>https://ousui.org/tags/spring.html</link>
+      <pubDate>Thu, 15 Jun 2017 10:39:33 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/spring.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://ousui.org/tags/linux.html</link>
+      <pubDate>Thu, 11 May 2017 11:34:30 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/linux.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macos</title>
+      <link>https://ousui.org/tags/macos.html</link>
+      <pubDate>Thu, 30 Mar 2017 10:49:25 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/macos.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>虚拟机</title>
+      <link>https://ousui.org/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA.html</link>
+      <pubDate>Thu, 30 Mar 2017 10:49:25 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos6.x</title>
+      <link>https://ousui.org/tags/centos6.x.html</link>
+      <pubDate>Thu, 16 Feb 2017 08:54:21 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/centos6.x.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://ousui.org/tags/docker.html</link>
+      <pubDate>Thu, 16 Feb 2017 08:54:21 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/docker.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>M570</title>
+      <link>https://ousui.org/tags/m570.html</link>
+      <pubDate>Fri, 18 Nov 2016 19:16:23 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/m570.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>硬件</title>
+      <link>https://ousui.org/tags/%E7%A1%AC%E4%BB%B6.html</link>
+      <pubDate>Fri, 18 Nov 2016 19:16:23 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/%E7%A1%AC%E4%BB%B6.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cygwin</title>
+      <link>https://ousui.org/tags/cygwin.html</link>
+      <pubDate>Tue, 30 Aug 2016 09:19:49 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/cygwin.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openssh</title>
+      <link>https://ousui.org/tags/openssh.html</link>
+      <pubDate>Tue, 30 Aug 2016 09:19:49 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/openssh.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>centos</title>
+      <link>https://ousui.org/tags/centos.html</link>
+      <pubDate>Wed, 24 Aug 2016 14:08:30 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/centos.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://ousui.org/tags/server.html</link>
+      <pubDate>Wed, 24 Aug 2016 14:08:30 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/server.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>archlinux</title>
+      <link>https://ousui.org/tags/archlinux.html</link>
+      <pubDate>Sun, 07 Aug 2016 12:30:50 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/archlinux.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linxu</title>
+      <link>https://ousui.org/tags/linxu.html</link>
+      <pubDate>Sun, 07 Aug 2016 12:30:50 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/linxu.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>copyq</title>
+      <link>https://ousui.org/tags/copyq.html</link>
+      <pubDate>Mon, 25 Jul 2016 15:23:15 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/copyq.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fedora</title>
+      <link>https://ousui.org/tags/fedora.html</link>
+      <pubDate>Sun, 17 Jul 2016 13:31:48 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/fedora.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gnome</title>
+      <link>https://ousui.org/tags/gnome.html</link>
+      <pubDate>Fri, 15 Jul 2016 11:32:22 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/gnome.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>扩展</title>
+      <link>https://ousui.org/tags/%E6%89%A9%E5%B1%95.html</link>
+      <pubDate>Fri, 15 Jul 2016 11:32:22 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/%E6%89%A9%E5%B1%95.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vboxes</title>
+      <link>https://ousui.org/tags/vboxes.html</link>
+      <pubDate>Wed, 13 Jul 2016 09:48:32 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/vboxes.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>key</title>
+      <link>https://ousui.org/tags/key.html</link>
+      <pubDate>Tue, 12 Jul 2016 15:40:46 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/key.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://ousui.org/tags/windows.html</link>
+      <pubDate>Tue, 12 Jul 2016 15:40:46 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/windows.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>激活</title>
+      <link>https://ousui.org/tags/%E6%BF%80%E6%B4%BB.html</link>
+      <pubDate>Tue, 12 Jul 2016 15:40:46 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/%E6%BF%80%E6%B4%BB.html</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

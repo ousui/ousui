@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>archlinux on {GFO}</title>
+    <link>https://ousui.org/tags/archlinux.html</link>
+    <description>Recent content in archlinux on {GFO}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 07 Aug 2016 12:30:50 +0000</lastBuildDate>
+    
+	<atom:link href="https://ousui.org/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>linux 切换到 archlinux</title>
+      <link>https://ousui.org/posts/linux-%E5%88%87%E6%8D%A2%E5%88%B0-archlinux.html</link>
+      <pubDate>Sun, 07 Aug 2016 12:30:50 +0000</pubDate>
+      
+      <guid>https://ousui.org/posts/linux-%E5%88%87%E6%8D%A2%E5%88%B0-archlinux.html</guid>
+      <description>周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了…… 尝试恢复的时候，报文件可能损坏。 恩，然后想干脆直接重装 archlinux 吧。 于是开始折腾……
+安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。 GUI还是装的 KDE，因为真心漂亮。
+需要注意的是，在mkinitcpio -p linux前，需要修改 /etc/mkinitcpio.conf 文件的 HOOK 一行，加入 lvm2 HOOKS=&amp;quot;base udev ... block lvm2 filesystems&amp;quot;，否则启动不了。 其他没有太大的变化。
+其实，archlinux 的文档写的很清楚： https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM</description>
+    </item>
+    
+  </channel>
+</rss>

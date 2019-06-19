@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>linux 切换到 archlinux // {GFO}</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="SHUAI.W" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://ousui.org/css/main.min.03114f8f09611d603e9c8620893f2e0286ba0bdcaff1dc9b9a225f06888f01bc.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux 切换到 archlinux"/>
+<meta name="twitter:description" content="周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了…… 尝试恢复的时候，报文件可能损坏。 恩，然后想干脆直接重装 archlinux 吧。 于是开始折腾……
+安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。 GUI还是装的 KDE，因为真心漂亮。
+需要注意的是，在mkinitcpio -p linux前，需要修改 /etc/mkinitcpio.conf 文件的 HOOK 一行，加入 lvm2 HOOKS=&quot;base udev ... block lvm2 filesystems&quot;，否则启动不了。 其他没有太大的变化。
+其实，archlinux 的文档写的很清楚： https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM"/>
+
+    <meta property="og:title" content="linux 切换到 archlinux" />
+<meta property="og:description" content="周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了…… 尝试恢复的时候，报文件可能损坏。 恩，然后想干脆直接重装 archlinux 吧。 于是开始折腾……
+安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。 GUI还是装的 KDE，因为真心漂亮。
+需要注意的是，在mkinitcpio -p linux前，需要修改 /etc/mkinitcpio.conf 文件的 HOOK 一行，加入 lvm2 HOOKS=&quot;base udev ... block lvm2 filesystems&quot;，否则启动不了。 其他没有太大的变化。
+其实，archlinux 的文档写的很清楚： https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ousui.org/posts/linux-%E5%88%87%E6%8D%A2%E5%88%B0-archlinux.html" />
+<meta property="article:published_time" content="2016-08-07T12:30:50&#43;00:00"/>
+<meta property="article:modified_time" content="2016-08-07T12:30:50&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://ousui.org"><img class="app-header-avatar" src="https://avatars0.githubusercontent.com/u/2839512?s=460&amp;v=4" alt="SHUAI.W" /></a>
+      <h1>{GFO}</h1>
+      <p>GFO: github.io for ousui. 记录一些该记录的和不该记录的东西。</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ousui"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">linux 切换到 archlinux</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Aug 7, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://ousui.org/tags/linxu.html">linxu</a><a class="tag" href="https://ousui.org/tags/archlinux.html">archlinux</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了……
+尝试恢复的时候，报文件可能损坏。
+恩，然后想干脆直接重装 archlinux 吧。
+于是开始折腾……</p>
+
+<p>安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。
+GUI还是装的 KDE，因为真心漂亮。</p>
+
+<p>需要注意的是，在<code>mkinitcpio -p linux</code>前，需要修改 <code>/etc/mkinitcpio.conf</code> 文件的 <code>HOOK</code> 一行，加入 lvm2
+<code>HOOKS=&quot;base udev ... block lvm2 filesystems&quot;</code>，否则启动不了。
+其他没有太大的变化。</p>
+
+<p>其实，archlinux 的文档写的很清楚： <a href="https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM">https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM</a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

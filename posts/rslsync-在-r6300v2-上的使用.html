@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>rslsync  在 R6300v2 上的使用 // {GFO}</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="SHUAI.W" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://ousui.org/css/main.min.03114f8f09611d603e9c8620893f2e0286ba0bdcaff1dc9b9a225f06888f01bc.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="rslsync  在 R6300v2 上的使用"/>
+<meta name="twitter:description" content="最近百度网盘要实名制了。家里路由器空闲，挂载着一个 2T 硬盘，想着做个同步什么的挺方便，一直没弄。
+之前偶尔用一下 btsync，现在改名叫 rslsync 了。
+去官网查看，发现支持 arm 处理器。
+但是上传到了路由器运行，发现不可以执行，提示
+-sh: ./rslsync: not found  我耍了 kongac 的 dd-wrt，一直稳定运行，很舒服。华硕固件会发生偶尔导致 cpu 飙升掉线的情况，故舍弃。
+又下载 x64 尝试提示没权限，那应该是某些依赖有问题了。
+根据提示看了下 /lib 下的依赖。
+发现 /lib/ld-musl-arm.so.1 存在。
+于是关键字查找 dd-wrt rslsync，发现这篇文章。
+直接在路由器执行：
+file rslsync  返回
+rslsync: ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-linux.so.3, for GNU/Linux 3.2.0, BuildID[sha1]=aed6ecdcc75f6878bc63d37f153a34f25a9041e2, stripped  可以看到果然如博主所说，依赖 /lib/ld-linux.so.3，而 dd-wrt 默认 /lib 下没有此依赖，且为只读，不可写。
+kongac 的固件内置了 entware，所以 /opt/lib 中是有这个依赖的。那就改二进制就好了（当我看到此处感觉好牛逼啊，这个硬件工程师！）。"/>
+
+    <meta property="og:title" content="rslsync  在 R6300v2 上的使用" />
+<meta property="og:description" content="最近百度网盘要实名制了。家里路由器空闲，挂载着一个 2T 硬盘，想着做个同步什么的挺方便，一直没弄。
+之前偶尔用一下 btsync，现在改名叫 rslsync 了。
+去官网查看，发现支持 arm 处理器。
+但是上传到了路由器运行，发现不可以执行，提示
+-sh: ./rslsync: not found  我耍了 kongac 的 dd-wrt，一直稳定运行，很舒服。华硕固件会发生偶尔导致 cpu 飙升掉线的情况，故舍弃。
+又下载 x64 尝试提示没权限，那应该是某些依赖有问题了。
+根据提示看了下 /lib 下的依赖。
+发现 /lib/ld-musl-arm.so.1 存在。
+于是关键字查找 dd-wrt rslsync，发现这篇文章。
+直接在路由器执行：
+file rslsync  返回
+rslsync: ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-linux.so.3, for GNU/Linux 3.2.0, BuildID[sha1]=aed6ecdcc75f6878bc63d37f153a34f25a9041e2, stripped  可以看到果然如博主所说，依赖 /lib/ld-linux.so.3，而 dd-wrt 默认 /lib 下没有此依赖，且为只读，不可写。
+kongac 的固件内置了 entware，所以 /opt/lib 中是有这个依赖的。那就改二进制就好了（当我看到此处感觉好牛逼啊，这个硬件工程师！）。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ousui.org/posts/rslsync-%E5%9C%A8-r6300v2-%E4%B8%8A%E7%9A%84%E4%BD%BF%E7%94%A8.html" />
+<meta property="article:published_time" content="2017-05-11T11:34:30&#43;00:00"/>
+<meta property="article:modified_time" content="2017-05-11T11:34:30&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://ousui.org"><img class="app-header-avatar" src="https://avatars0.githubusercontent.com/u/2839512?s=460&amp;v=4" alt="SHUAI.W" /></a>
+      <h1>{GFO}</h1>
+      <p>GFO: github.io for ousui. 记录一些该记录的和不该记录的东西。</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ousui"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">rslsync  在 R6300v2 上的使用</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          May 11, 2017
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://ousui.org/tags/linux.html">linux</a></div></div>
+    </header>
+    <div class="post-content">
+      <p>最近百度网盘要实名制了。家里路由器空闲，挂载着一个 2T 硬盘，想着做个同步什么的挺方便，一直没弄。</p>
+
+<p>之前偶尔用一下 btsync，现在改名叫 rslsync 了。<br />
+去官网查看，发现支持 arm 处理器。<br />
+但是上传到了路由器运行，发现不可以执行，提示</p>
+
+<pre><code>-sh: ./rslsync: not found
+</code></pre>
+
+<p>我耍了 kongac 的 dd-wrt，一直稳定运行，很舒服。华硕固件会发生偶尔导致 cpu 飙升掉线的情况，故舍弃。</p>
+
+<p>又下载 x64 尝试提示没权限，那应该是某些依赖有问题了。<br />
+根据提示看了下 /lib 下的依赖。<br />
+发现 <code>/lib/ld-musl-arm.so.1</code> 存在。</p>
+
+<p>于是关键字查找 <a href="https://racede.me/bittorrent-sync-run-on-arm-openwrt.html">dd-wrt rslsync</a>，发现这篇文章。<br />
+直接在路由器执行：</p>
+
+<pre><code>file rslsync
+</code></pre>
+
+<p>返回</p>
+
+<pre><code>rslsync: ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-linux.so.3, for GNU/Linux 3.2.0, BuildID[sha1]=aed6ecdcc75f6878bc63d37f153a34f25a9041e2, stripped
+</code></pre>
+
+<p>可以看到果然如博主所说，依赖 <code>/lib/ld-linux.so.3</code>，而 dd-wrt 默认 /lib 下没有此依赖，且为只读，不可写。<br />
+kongac 的固件内置了 entware，所以 <code>/opt/lib</code> 中是有这个依赖的。那就改二进制就好了（当我看到此处感觉好牛逼啊，这个硬件工程师！）。<br />
+找一台 linux，登录，<a href="https://nixos.org/releases/patchelf/patchelf-0.9/patchelf-0.9.tar.gz"> 下载</a>，编译安装</p>
+
+<pre><code>./configure &amp;&amp; make &amp;&amp; sudo make install
+</code></pre>
+
+<p>然后直接执行以下命令即可：</p>
+
+<pre><code>patchelf --set-interpreter /opt/lib/ld-linux.so.3 ./rslsync
+</code></pre>
+
+<p>可以看到，链接库信息已经变更。</p>
+
+<pre><code>file rslsync
+rslsync: ELF 32-bit LSB  executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked (uses shared libs), for GNU/Linux 3.2.0, BuildID[sha1]=aed6ecdcc75f6878bc63d37f153a34f25a9041e2, stripped
+</code></pre>
+
+<p>重新传到路由器上运行，没有错误提示，直接压到后台了。</p>
+
+<p>最后附上已经修改好的 rslsync <a href="../zips/rslsync-R6300v2.tgz">  点击下载 </a></p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

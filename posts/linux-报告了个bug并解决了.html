@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>linux 报告了个BUG并解决了 // {GFO}</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="SHUAI.W" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://ousui.org/css/main.min.03114f8f09611d603e9c8620893f2e0286ba0bdcaff1dc9b9a225f06888f01bc.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux 报告了个BUG并解决了"/>
+<meta name="twitter:description" content="https://bugzilla.redhat.com/show_bug.cgi?id=1357235 https://github.com/hluk/CopyQ/issues/530
+copyq 是一款跨平台的高级的剪贴板管理工具。 十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui，很好看 {% asset_img images/160717-1.png %}
+然而 fedora 官方源装完以后，无法选择语言……明明自己编译的就可以。 经过一晚上折腾，不断的编译尝试最后还看了 rpmbuild，最终确认问题是 cmake 编译的时候有个参数写错了。。导致了查找 translations 路径有问题。 所以就造成了，如果在 /usr 目录下执行命令就没问题，但是在别的目录下执行就会找不到的奇怪问题。
+这一晚上折腾的，学了好多只是。。
+最后再安利下 copyq 吧，真的很好用： * 可以插件，可以扩展 * 可以执行 ecmascript，可以执行 shell * 全平台 * 支持图片复制，不支持文件复制，但是复制文件以后，会把路径存储 * 支持多标签 * 可以自定义多种操作，例如转换文字为二维码；过滤一些内容到单独的标签（例如图像） * 好处多多，自行体会。"/>
+
+    <meta property="og:title" content="linux 报告了个BUG并解决了" />
+<meta property="og:description" content="https://bugzilla.redhat.com/show_bug.cgi?id=1357235 https://github.com/hluk/CopyQ/issues/530
+copyq 是一款跨平台的高级的剪贴板管理工具。 十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui，很好看 {% asset_img images/160717-1.png %}
+然而 fedora 官方源装完以后，无法选择语言……明明自己编译的就可以。 经过一晚上折腾，不断的编译尝试最后还看了 rpmbuild，最终确认问题是 cmake 编译的时候有个参数写错了。。导致了查找 translations 路径有问题。 所以就造成了，如果在 /usr 目录下执行命令就没问题，但是在别的目录下执行就会找不到的奇怪问题。
+这一晚上折腾的，学了好多只是。。
+最后再安利下 copyq 吧，真的很好用： * 可以插件，可以扩展 * 可以执行 ecmascript，可以执行 shell * 全平台 * 支持图片复制，不支持文件复制，但是复制文件以后，会把路径存储 * 支持多标签 * 可以自定义多种操作，例如转换文字为二维码；过滤一些内容到单独的标签（例如图像） * 好处多多，自行体会。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ousui.org/posts/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86.html" />
+<meta property="article:published_time" content="2016-07-17T13:31:48&#43;00:00"/>
+<meta property="article:modified_time" content="2016-07-17T13:31:48&#43;00:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://ousui.org"><img class="app-header-avatar" src="https://avatars0.githubusercontent.com/u/2839512?s=460&amp;v=4" alt="SHUAI.W" /></a>
+      <h1>{GFO}</h1>
+      <p>GFO: github.io for ousui. 记录一些该记录的和不该记录的东西。</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/ousui"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">linux 报告了个BUG并解决了</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Jul 17, 2016
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div><div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tag">
+  <title>tag</title>
+  <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line>
+</svg>
+          <a class="tag" href="https://ousui.org/tags/linux.html">linux</a><a class="tag" href="https://ousui.org/tags/fedora.html">fedora</a><a class="tag" href="https://ousui.org/tags/copyq.html">copyq</a></div></div>
+    </header>
+    <div class="post-content">
+      <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1357235">https://bugzilla.redhat.com/show_bug.cgi?id=1357235</a>
+<a href="https://github.com/hluk/CopyQ/issues/530">https://github.com/hluk/CopyQ/issues/530</a></p>
+
+<p>copyq 是一款跨平台的高级的剪贴板管理工具。
+十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui，很好看
+<img src="/images/160717-1.png" alt="screen" /></p>
+
+<p>{% asset_img images/160717-1.png %}</p>
+
+<p>然而 fedora 官方源装完以后，无法选择语言……明明自己编译的就可以。
+经过一晚上折腾，不断的编译尝试最后还看了 rpmbuild，最终确认问题是 cmake 编译的时候有个参数写错了。。导致了查找 translations 路径有问题。
+所以就造成了，如果在 <code>/usr</code> 目录下执行命令就没问题，但是在别的目录下执行就会找不到的奇怪问题。</p>
+
+<p>这一晚上折腾的，学了好多只是。。</p>
+
+<p>最后再安利下 copyq 吧，真的很好用：
+* 可以插件，可以扩展
+* 可以执行 ecmascript，可以执行 shell
+* 全平台
+* 支持图片复制，不支持文件复制，但是复制文件以后，会把路径存储
+* 支持多标签
+* 可以自定义多种操作，例如转换文字为二维码；过滤一些内容到单独的标签（例如图像）
+* 好处多多，自行体会。</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

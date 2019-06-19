@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on {GFO}</title>
+    <link>https://ousui.org/tags/java.html</link>
+    <description>Recent content in Java on {GFO}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 15 Jun 2017 10:39:33 +0000</lastBuildDate>
+    
+	<atom:link href="https://ousui.org/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>spring 4.3.x &#43; spring-security 4.x 升级遇到的问题汇总</title>
+      <link>https://ousui.org/posts/sss.html</link>
+      <pubDate>Thu, 15 Jun 2017 10:39:33 +0000</pubDate>
+      
+      <guid>https://ousui.org/posts/sss.html</guid>
+      <description>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x，把踩到的坑说一下：
+ 升级 spring-security 遇到的编码问题：
+升级以后，某些页面莫名其妙中文显示乱码，之前没问题。这时候调整一下 web.xml 中 charsetfilter 的位置倒 spring-security 之前即可。
+ 某些页面跨域问题：
+访问一些页面会提示： Refused to display &amp;lsquo;http://localhost:8080/xxx&#39; in a frame because it set &amp;lsquo;X-Frame-Options&amp;rsquo; to &amp;lsquo;DENY&amp;rsquo;. 在 http 配置中加入下面的配置。
+&amp;lt;headers&amp;gt; &amp;lt;frame-options policy=&amp;quot;SAMEORIGIN&amp;quot; /&amp;gt; &amp;lt;/headers&amp;gt;   </description>
+    </item>
+    
+  </channel>
+</rss>
