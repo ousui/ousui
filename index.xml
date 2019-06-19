@@ -5,10 +5,30 @@
     <link>https://ousui.org/</link>
     <description>Recent content on {GFO}</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 15 Jun 2017 10:39:33 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jun 2019 18:05:52 +0800</lastBuildDate>
     
 	<atom:link href="https://ousui.org/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>私服打包升级依赖冲突解决</title>
+      <link>https://ousui.org/posts/%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3.html</link>
+      <pubDate>Wed, 19 Jun 2019 18:05:52 +0800</pubDate>
+      
+      <guid>https://ousui.org/posts/%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3.html</guid>
+      <description>近日升级应用，改了某一行代码以后，使用公司的 j-one 集成部署工具打包发布预发，之后发现某个接口报错。
+因为只改了一行代码且与报错地方无关，异常信息提示
+ NoSuchMethodException&amp;hellip;&amp;hellip;
+ 一般报此异常为 jar 包冲突。
+于是先到服务器目录查看 lib 目录生成的 jar 包是否有异常，无果。
+然后比较线上包的 lib 目录和预发环境有问题的 lib 目录，发现 jar 包数量且版本一致。
+最后，使用对比工具对比 jar 包二进制，发现 apache 的组件 commons-cli:1.4 这个版本线上50KB+，而最新的包达到 90MB+。
+解包后发现，是有人用 apktool 将其他依赖一同打入了此包，并上传至私服(artifactory)。
+于是联系负责人员，定位到部署错误公共包的人员，了解情况后，将公共包删除重新下载。
+至此问题解决。
+6月份不允许上线，如果6月后开始集中上线，那依赖此包的应用会有多少会发生异常，想想都可怕。
+经了解，私服只对 org. 开头的包进行了限制。没办法，这也是 apache 那些公共包命名不规范引起的吧。</description>
+    </item>
     
     <item>
       <title>spring 4.3.x &#43; spring-security 4.x 升级遇到的问题汇总</title>
