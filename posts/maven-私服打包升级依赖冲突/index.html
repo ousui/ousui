@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.55.6" />
+
+    
+    
+    
+
+<title>maven 私服打包升级依赖冲突解决 • {G.F.O}</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="maven 私服打包升级依赖冲突解决"/>
+<meta name="twitter:description" content="近日升级应用，改了某一行代码以后，使用公司的 j-one 集成部署工具打"/>
+
+<meta property="og:title" content="maven 私服打包升级依赖冲突解决" />
+<meta property="og:description" content="近日升级应用，改了某一行代码以后，使用公司的 j-one 集成部署工具打" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ousui.org/posts/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/" />
+<meta property="article:published_time" content="2019-06-19T18:05:52&#43;08:00"/>
+<meta property="article:modified_time" content="2019-06-19T18:05:52&#43;08:00"/><meta property="og:site_name" content="G.F.O." />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://ousui.org">{G.F.O}</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://ousui.orgimages/avatar-rmb.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">{G.F.O}</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>首页</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>文章</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/tags/">
+						<span>标签</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>关于</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://t.me/ppwangs" rel="me"><i class="fab fa-telegram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2019 ousui.org
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>maven 私服打包升级依赖冲突解决</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2019 年 06 月 19 日
+    
+    
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/jd.com">jd.com</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/java">java</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/maven">maven</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>近日升级应用，改了某一行代码以后，使用公司的 j-one 集成部署工具打包发布预发，之后发现某个接口报错。</p>
+
+<p>因为只改了一行代码且与报错地方无关，异常信息提示</p>
+
+<blockquote>
+<p>NoSuchMethodException&hellip;&hellip;</p>
+</blockquote>
+
+<p>一般报此异常为 jar 包冲突。</p>
+
+<p>于是先到服务器目录查看 lib 目录生成的 jar 包是否有异常，无果。</p>
+
+<p>然后比较线上包的 lib 目录和预发环境有问题的 lib 目录，发现 jar 包数量且版本一致。</p>
+
+<p>最后，使用对比工具对比 jar 包二进制，发现 apache 的组件 <code>commons-cli:1.4</code> 这个版本线上50KB+，而最新的包达到 90MB+。</p>
+
+<p>解包后发现，是有人用 apktool 将其他依赖一同打入了此包，并上传至私服(artifactory)。</p>
+
+<p>于是联系负责人员，定位到部署错误公共包的人员，了解情况后，将公共包删除重新下载。</p>
+
+<p>至此问题解决。</p>
+
+<p>6月份不允许上线，如果6月后开始集中上线，那依赖此包的应用会有多少会发生异常，想想都可怕。</p>
+
+<p>经了解，私服只对 <code>org.</code> 开头的包进行了限制。没办法，这也是 apache 那些公共包命名不规范引起的吧。</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">spring 4.3.x &#43; spring-security 4.x 升级遇到的问题汇总</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'ousui';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

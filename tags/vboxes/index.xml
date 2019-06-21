@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vboxes on {GFO}</title>
-    <link>https://ousui.org/tags/vboxes.html</link>
-    <description>Recent content in vboxes on {GFO}</description>
+    <title>vboxes on {G.F.O}</title>
+    <link>https://ousui.org/tags/vboxes/</link>
+    <description>Recent content in vboxes on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Wed, 13 Jul 2016 09:48:32 +0000</lastBuildDate>
     
 	<atom:link href="https://ousui.org/tags/vboxes/index.xml" rel="self" type="application/rss+xml" />
@@ -12,13 +13,11 @@
     
     <item>
       <title>linux 工作环境积累</title>
-      <link>https://ousui.org/posts/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF.html</link>
+      <link>https://ousui.org/posts/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</link>
       <pubDate>Wed, 13 Jul 2016 09:48:32 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF.html</guid>
-      <description>虚拟机 本来打算使用 gnome 自带的 boxes，但是装完系统以后体验实在太差，经过一番调研，在性能和占用上做了平衡之后，决定使用 virtualbox。 偶然发现 vbox 支持物理盘直接虚拟化，太爽了，不用装系统了。 记录一下正确步骤：
-  安装 VirtualBox(忽略) 当前用户加入到vboxusers用户组之后重新登录 sudo usermod -G vboxusers -a `whoami` 给要建立虚拟镜像的设备赋予权限 sudo chmod o+rw /dev/sda 建立虚拟镜像，_上面已经给设备权限了，下面就无需 root 权限执行命令_，因为我是 linux 与 windows 装在了同一块硬盘，所以指定了分区，这样可以避免启动选择 linux 分区，而导致什么乱七八糟的问题。。。 vboxmanage internalcommands createrawvmdk -filename ~/sda.vmdk -rawdisk /dev/sda -partitions 1,2,3,4,5 -relative 在虚拟机中添加磁盘 每次重启以后，需要重新执行 3 赋予权限。   Chrome http://chromium.woolyss.com/ windows 下使用 chrome 积累了太多的东西，所以在linux继续使用，但是 Fedora 官方源不支持，是因为捆绑了软件包。。。 可以直接使用 rpm 包安装 https://copr-be.cloud.fedoraproject.org/results/lantw44/chromium/fedora-24-x86_64/00362159-chromium/chromium-debuginfo-51.0.2704.106-1.fc24.x86_64.rpm 也可以先添加官方源，然后使用 dnf 命令安装
-sudo dnf copr enable spot/chromium sudo dnf install chromium  接下来是给浏览器安装flash插件</description>
+      <guid>https://ousui.org/posts/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</guid>
+      <description>虚拟机 本来打算使用 gnome 自带的 boxes，但是装完系统以后体验实</description>
     </item>
     
   </channel>

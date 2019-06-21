@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>copyq on {GFO}</title>
-    <link>https://ousui.org/tags/copyq.html</link>
-    <description>Recent content in copyq on {GFO}</description>
+    <title>copyq on {G.F.O}</title>
+    <link>https://ousui.org/tags/copyq/</link>
+    <description>Recent content in copyq on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Mon, 25 Jul 2016 15:23:15 +0000</lastBuildDate>
     
 	<atom:link href="https://ousui.org/tags/copyq/index.xml" rel="self" type="application/rss+xml" />
@@ -12,26 +13,20 @@
     
     <item>
       <title>copyq 真是个好东西</title>
-      <link>https://ousui.org/posts/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF.html</link>
+      <link>https://ousui.org/posts/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</link>
       <pubDate>Mon, 25 Jul 2016 15:23:15 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF.html</guid>
-      <description>copyq 真是个好东西，扩展性极高，玩了几天以后，写了一个有道词典的扩展： https://github.com/ousui/copyq-action-youdao， 划中要翻译的语句，然后按你设定好的快捷键即可。 也可以在主界面使用右键翻译。
-接下来有空写一个微博图床的工具，顺便熟悉 python。
-ps. python 轮子太多了……</description>
+      <guid>https://ousui.org/posts/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</guid>
+      <description>copyq 真是个好东西，扩展性极高，玩了几天以后，写了一个有道词典的</description>
     </item>
     
     <item>
       <title>linux 报告了个BUG并解决了</title>
-      <link>https://ousui.org/posts/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86.html</link>
+      <link>https://ousui.org/posts/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/</link>
       <pubDate>Sun, 17 Jul 2016 13:31:48 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86.html</guid>
-      <description>https://bugzilla.redhat.com/show_bug.cgi?id=1357235 https://github.com/hluk/CopyQ/issues/530
-copyq 是一款跨平台的高级的剪贴板管理工具。 十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui，很好看 {% asset_img images/160717-1.png %}
-然而 fedora 官方源装完以后，无法选择语言……明明自己编译的就可以。 经过一晚上折腾，不断的编译尝试最后还看了 rpmbuild，最终确认问题是 cmake 编译的时候有个参数写错了。。导致了查找 translations 路径有问题。 所以就造成了，如果在 /usr 目录下执行命令就没问题，但是在别的目录下执行就会找不到的奇怪问题。
-这一晚上折腾的，学了好多只是。。
-最后再安利下 copyq 吧，真的很好用： * 可以插件，可以扩展 * 可以执行 ecmascript，可以执行 shell * 全平台 * 支持图片复制，不支持文件复制，但是复制文件以后，会把路径存储 * 支持多标签 * 可以自定义多种操作，例如转换文字为二维码；过滤一些内容到单独的标签（例如图像） * 好处多多，自行体会。</description>
+      <guid>https://ousui.org/posts/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/</guid>
+      <description>https://bugzilla.redhat.com/show_bug.cgi?id=1357235 https://github.com/hluk/CopyQ/issues/530 copyq 是一款跨平台的高级的剪贴板管理工具。 十分好用，定制功能</description>
     </item>
     
   </channel>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>maven on {G.F.O}</title>
+    <link>https://ousui.org/tags/maven/</link>
+    <description>Recent content in maven on {G.F.O}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 19 Jun 2019 18:05:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://ousui.org/tags/maven/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>maven 私服打包升级依赖冲突解决</title>
+      <link>https://ousui.org/posts/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Wed, 19 Jun 2019 18:05:52 +0800</pubDate>
+      
+      <guid>https://ousui.org/posts/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/</guid>
+      <description>近日升级应用，改了某一行代码以后，使用公司的 j-one 集成部署工具打</description>
+    </item>
+    
+  </channel>
+</rss>

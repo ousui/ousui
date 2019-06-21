@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>centos6.x on {GFO}</title>
-    <link>https://ousui.org/tags/centos6.x.html</link>
-    <description>Recent content in centos6.x on {GFO}</description>
+    <title>centos6.x on {G.F.O}</title>
+    <link>https://ousui.org/tags/centos6.x/</link>
+    <description>Recent content in centos6.x on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Thu, 16 Feb 2017 08:54:21 +0000</lastBuildDate>
     
 	<atom:link href="https://ousui.org/tags/centos6.x/index.xml" rel="self" type="application/rss+xml" />
@@ -12,17 +13,11 @@
     
     <item>
       <title>centos 6.x 安装使用 docker</title>
-      <link>https://ousui.org/posts/centos-6-x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker.html</link>
+      <link>https://ousui.org/posts/centos-6-x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/</link>
       <pubDate>Thu, 16 Feb 2017 08:54:21 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/centos-6-x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker.html</guid>
-      <description>最近给公司系统搞 docker 部署，方便同事们外出部署项目，因为合作方的服务器都统一要求安装 centos，但是按照往年的经验，可能有些版本的 centos 没有升级，仍然停留在 6.x 时代。
-根据 docker 官方的要求，linux 系统内核需要在 3.10 以上才可以有效运行，且内核版本越新越好： &amp;gt; A 64-bit installation
-&amp;gt; Version 3.10 or higher of the Linux kernel. The latest version of the kernel available for you platform is recommended.
-&amp;gt; iptables version 1.4 or higher
-&amp;gt; git version 1.7 or higher
-&amp;gt; A ps executable, usually provided by procps or a similar package.
-&amp;gt; XZ Utils 4.9 or higher</description>
+      <guid>https://ousui.org/posts/centos-6-x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/</guid>
+      <description>最近给公司系统搞 docker 部署，方便同事们外出部署项目，因为合作方的</description>
     </item>
     
   </channel>

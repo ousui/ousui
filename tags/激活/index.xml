@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>激活 on {GFO}</title>
-    <link>https://ousui.org/tags/%E6%BF%80%E6%B4%BB.html</link>
-    <description>Recent content in 激活 on {GFO}</description>
+    <title>激活 on {G.F.O}</title>
+    <link>https://ousui.org/tags/%E6%BF%80%E6%B4%BB/</link>
+    <description>Recent content in 激活 on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 12 Jul 2016 15:40:46 +0000</lastBuildDate>
     
 	<atom:link href="https://ousui.org/tags/%E6%BF%80%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
@@ -12,16 +13,11 @@
     
     <item>
       <title>windows keys</title>
-      <link>https://ousui.org/posts/windows-keys.html</link>
+      <link>https://ousui.org/posts/windows-keys/</link>
       <pubDate>Tue, 12 Jul 2016 15:40:46 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/windows-keys.html</guid>
-      <description>这个礼拜把工作站正式从 windows10 迁移到了 Fedora24，感觉还不错，就是工作需要必须运行 QQ，虚拟机折腾了不少时间，还好 vbox 支持物理驱动器虚拟化，省了我不少硬盘空间。
-虚拟机启动后，系统需要重新激活，找了很多key都不行，看了下 KMS 激活的原理，听简单的，正好家里路由器空闲着，搭建了 kms 服务器，放开端口，找到 kms key，激活搞定。
-下面记录下使用的 key，方便180天后重新激活……
-windows10:
-Windows 10 Professional	W269N-WFGWX-YVC9B-4J6C9-T83GX Windows 10 Professional N （N 代表欧洲市场定制版）	MH37W-N47XK-V7XM9-C7227-GCQG9 Windows 10 Enterprise	NPPR9-FWDCX-D2C8J-H872K-2YT43 Windows 10 Enterprise N	DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4 Windows 10 Education	NW6C2-QMPVW-D7KKK-3GKT6-VCFB2 Windows 10 Education N	2WH4N-8QGBV-H22JP-CT43Q-MDWWJ Windows 10 Enterprise 2015 LTSB（长期服务分支）	WNMTR-4C88C-JK8YV-HQ7T2-76DF9 Windows 10 Enterprise 2015 LTSB N	2F77B-TNFGY-69QQF-B8YKP-D69TJ  office16 :
-Office Professional Plus 2016：	XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99 Office Standard 2016：	JNRGM-WHDWX-FJJG3-K47QV-DRTFM Project Professional 2016：	YG9NW-3K39V-2T3HJ-93F3Q-G83KT Project Standard 2016：	GNFHQ-F6YQM-KQDGJ-327XX-KQBVC Visio Professional 2016：	PD3PC-RHNGV-FXJ29-8JK7D-RJRJK Visio Standard 2016：	7WHWM-4T7MP-G96JF-G33KR-W8GF4 Access 2016：	GNH9Y-D2J4T-FJHGG-QRVH7-QPFDW Excel 2016：	9C2PK-NWTVB-JMPW8-BFT28-7FTBF OneNote 2016：	DR92N-9HTF2-97XKM-XW2WJ-XW3J6 Outlook 2016：	R69KK-NTPKF-7M3Q4-QYBHW-6MT9B PowerPoint 2016：	J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6 Publisher 2016：	F47MM-N3XJP-TQXJ9-BP99D-8K837 SKype for Business 2016：	869NQ-FJ69K-466HW-QYCP2-DDBV6 Word 2016：	WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6  下面是激活步骤：</description>
+      <guid>https://ousui.org/posts/windows-keys/</guid>
+      <description>这个礼拜把工作站正式从 windows10 迁移到了 Fedora24，感觉还不错</description>
     </item>
     
   </channel>

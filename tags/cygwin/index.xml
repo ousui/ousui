@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>cygwin on {GFO}</title>
-    <link>https://ousui.org/tags/cygwin.html</link>
-    <description>Recent content in cygwin on {GFO}</description>
+    <title>cygwin on {G.F.O}</title>
+    <link>https://ousui.org/tags/cygwin/</link>
+    <description>Recent content in cygwin on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 30 Aug 2016 09:19:49 +0000</lastBuildDate>
     
 	<atom:link href="https://ousui.org/tags/cygwin/index.xml" rel="self" type="application/rss+xml" />
@@ -12,14 +13,11 @@
     
     <item>
       <title>linux openssh 的巧妙使用跨过sangfor vpn</title>
-      <link>https://ousui.org/posts/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn.html</link>
+      <link>https://ousui.org/posts/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/</link>
       <pubDate>Tue, 30 Aug 2016 09:19:49 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn.html</guid>
-      <description>公司的网络很让人无语的： 公司无线，网络不是很稳定，经常出现掉线连接不上的情况 公司有线，需要使用 iNode 连接…… 公司生产服务器，原本使用 openvpn 连接，后来改成了深信服 sangfor
-然后我使用 linux，不支持inode，部支持 sangfor（配置了很久，可以登录网站，但是不会产生虚拟网卡……）
-刚开始破解 inode，我安装了 xp 虚拟机，内存256，网卡 mac 地址和本机一致，使用桥接模式，连接后，本机可以使用有线上网了，速度稳定够快。 然后有一天需要连接生产服务器vpn，使用网站方式连接，有相关组件，java工作正常，但是死活连接不上……没辙，想其他办法。 我在同一台虚拟机上，安装了 easyconnect，可以使用 putty 正常连接。 我就想拿这台机器做跳板，然后连接到生产服务器行不行，肯定可以啊，主要是什么方式呢。 刚开始想用ss，或者http代理，但是本机执行命令的时候，还需要连接一下代理，很麻烦。 翻ssh命令的时候发现 ProxyJump，也就是支持 ssh 代理，那就在 虚拟机上搭一个 ssh 服务呗。 首先加块网卡，使用 localhost 模式只建立两台机器的通信， 然后安装 openssh for windows 5.x 版本，可以启动服务，但是本机 ssh 登录后立刻断开，不知道为什么…… 后来想，只能模拟一个环境了，那就装 cygwin 吧。
- 下载 cygwin，地址就不给了，安装的时候添加镜像 https://mirrors.ustc.edu.cn/cygwin/ 中科大的镜像速度很快，我各种镜像源都用的这个。 安装过程在 net 包下，选择 openssh openssl 两个包 安装好以后，使用 ssh-host-config 配置服务 使用 cygrunsrv -S sshd 启动服务即可 如果还是不能登录，可以查看下是否导入了用户使用 mkpasswd mkgroups 保存到 /etc/passwd /etc/group 下  然后测试登录，使用 -J 参数，可以顺利登录到生产服务器了，在 .</description>
+      <guid>https://ousui.org/posts/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/</guid>
+      <description>公司的网络很让人无语的： 公司无线，网络不是很稳定，经常出现掉</description>
     </item>
     
   </channel>

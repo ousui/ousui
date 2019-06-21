@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hardware on {G.F.O}</title>
+    <link>https://ousui.org/tags/hardware/</link>
+    <description>Recent content in hardware on {G.F.O}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 07 Sep 2016 16:34:44 +0000</lastBuildDate>
+    
+	<atom:link href="https://ousui.org/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>hardware M570 轨迹球清理</title>
+      <link>https://ousui.org/posts/hardware-m570-%E8%BD%A8%E8%BF%B9%E7%90%83%E6%B8%85%E7%90%86/</link>
+      <pubDate>Wed, 07 Sep 2016 16:34:44 +0000</pubDate>
+      
+      <guid>https://ousui.org/posts/hardware-m570-%E8%BD%A8%E8%BF%B9%E7%90%83%E6%B8%85%E7%90%86/</guid>
+      <description>逻辑 M570 轨迹球是个不错的鼠标，用起来手不累很舒适，很适合大手。</description>
+    </item>
+    
+  </channel>
+</rss>

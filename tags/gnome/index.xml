@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gnome on {GFO}</title>
-    <link>https://ousui.org/tags/gnome.html</link>
-    <description>Recent content in gnome on {GFO}</description>
+    <title>gnome on {G.F.O}</title>
+    <link>https://ousui.org/tags/gnome/</link>
+    <description>Recent content in gnome on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Jul 2016 11:32:22 +0000</lastBuildDate>
     
 	<atom:link href="https://ousui.org/tags/gnome/index.xml" rel="self" type="application/rss+xml" />
@@ -12,14 +13,11 @@
     
     <item>
       <title>linux gnome</title>
-      <link>https://ousui.org/posts/linux-gnome-%E6%89%A9%E5%B1%95.html</link>
+      <link>https://ousui.org/posts/linux-gnome-%E6%89%A9%E5%B1%95/</link>
       <pubDate>Fri, 15 Jul 2016 11:32:22 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-gnome-%E6%89%A9%E5%B1%95.html</guid>
-      <description>当初选择 Fedora 24 桌面的时候纠结了很久，最后还是决定使用 workstation 版本，作为一个非处女座强迫症，忍受不了装完 kde 以后各种问题…… 最后还是选择 gnome 桌面吧。折腾了一下扩展以后还是很好用的。
-下面记录一下使用的扩展，做个备份，而后会将扩展打包备份一下。 分享一下我装得扩展
-  Activities Configurator # 将 activities 隐藏后，自定一添加的移动到 top right，已经提交给作者建议，作者说会增加功能。 AppKeys
- Applications Overview Tooltip Auto Move Windows Autohide Battery Background Logo Dash to Dock # 取消圆角效果 Dynamic Panel Transparency Frippery Move Clock # 调整始终显示位置 2 Hibernate Status Button # // 这个好像有问题，无法休眠 Input Method Panel # // 暂时不知道怎么用…… Laine # 调整位置到网络连接左侧 -2 Lock Keys # 完全隐藏状态栏提示，只有按下 大小写/数字 切换的时候给一个提示。 Maximus NG Media player indicator Native Window Placement Panel OSD Proxy Switcher Removable Drive Menu ShellTile Simple net speed # 调整文字居中，位置始终在最左侧 1 Status Area Horizontal Spacing</description>
+      <guid>https://ousui.org/posts/linux-gnome-%E6%89%A9%E5%B1%95/</guid>
+      <description>当初选择 Fedora 24 桌面的时候纠结了很久，最后还是决定使用 workstation 版本，作</description>
     </item>
     
   </channel>

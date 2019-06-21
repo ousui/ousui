@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>macos on {GFO}</title>
-    <link>https://ousui.org/tags/macos.html</link>
-    <description>Recent content in macos on {GFO}</description>
+    <title>macos on {G.F.O}</title>
+    <link>https://ousui.org/tags/macos/</link>
+    <description>Recent content in macos on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
     <lastBuildDate>Thu, 30 Mar 2017 10:49:25 +0000</lastBuildDate>
     
 	<atom:link href="https://ousui.org/tags/macos/index.xml" rel="self" type="application/rss+xml" />
@@ -12,14 +13,11 @@
     
     <item>
       <title>vmware fusion 网络配置</title>
-      <link>https://ousui.org/posts/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE.html</link>
+      <link>https://ousui.org/posts/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Thu, 30 Mar 2017 10:49:25 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE.html</guid>
-      <description>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例如 u 盾无法挂载，资源无法分配，然后试了 pd 和 vmware, 都可以正常使用。
-无语，故换之。 经过对比后，选择了 vmware，还好虚拟机互转还方便。 安装后发现了 vmware 的网络配置这里的一些问题，特地记录一下。
- macos 下，ui 上改不了网络配置，需要在 &amp;ldquo;/Library/Preferences/VMware Fusion&amp;rdquo; 目录下更改。 默认网卡配置 vmnet1/only host，vmnet8/nat 都可以修改，修改对应 ip 就可以。 有时候要用到 ssh 代理跳转，例如某些特定的 vpn 只有 windows 版本，那么在 dhcpd.conf 文件下新增
-host windows-xp { hardware ethernet 00:**:**:**:**; fixed-address 172.20.33.*; }   </description>
+      <guid>https://ousui.org/posts/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
+      <description>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例</description>
     </item>
     
   </channel>
