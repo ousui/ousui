@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>centos on {G.F.O}</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>linux-把公司服务器搞挂了</title>
-      <link>https://ousui.org/posts/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/</link>
+      <link>https://ousui.org/2016/08/24/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/</link>
       <pubDate>Wed, 24 Aug 2016 14:08:30 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/</guid>
-      <description>呃，公司一台测试服务器，我用来装各种服务例如 svn、jenk</description>
+      <guid>https://ousui.org/2016/08/24/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/</guid>
+      <description>呃，公司一台测试服务器，我用来装各种服务例如 svn、jenkins 之类的，另外还有 ss 服务，为啥呢，公</description>
     </item>
     
   </channel>

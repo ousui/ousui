@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vboxes on {G.F.O}</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>linux 工作环境积累</title>
-      <link>https://ousui.org/posts/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</link>
+      <link>https://ousui.org/2016/07/13/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</link>
       <pubDate>Wed, 13 Jul 2016 09:48:32 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</guid>
-      <description>虚拟机 本来打算使用 gnome 自带的 boxes，但是装完系统以后体验实</description>
+      <guid>https://ousui.org/2016/07/13/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</guid>
+      <description>虚拟机 本来打算使用 gnome 自带的 boxes，但是装完系统以后体验实在太差，经过一番调研，在性能和占用上做了</description>
     </item>
     
   </channel>

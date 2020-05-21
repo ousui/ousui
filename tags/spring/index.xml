@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>spring on {G.F.O}</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>spring 4.3.x &#43; spring-security 4.x 升级遇到的问题汇总</title>
-      <link>https://ousui.org/posts/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://ousui.org/2017/06/15/spring-4.3.x-spring-security-4.x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Thu, 15 Jun 2017 10:39:33 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-      <description>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spr</description>
+      <guid>https://ousui.org/2017/06/15/spring-4.3.x-spring-security-4.x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x</description>
     </item>
     
   </channel>

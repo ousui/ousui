@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>java on {G.F.O}</title>
+    <title>Java on {G.F.O}</title>
     <link>https://ousui.org/tags/java/</link>
-    <description>Recent content in java on {G.F.O}</description>
+    <description>Recent content in Java on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 19 Jun 2019 18:05:52 +0800</lastBuildDate>
@@ -13,20 +13,20 @@
     
     <item>
       <title>maven 私服打包升级依赖冲突解决</title>
-      <link>https://ousui.org/posts/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/</link>
+      <link>https://ousui.org/2019/06/19/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</link>
       <pubDate>Wed, 19 Jun 2019 18:05:52 +0800</pubDate>
       
-      <guid>https://ousui.org/posts/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/</guid>
-      <description>近日升级应用，改了某一行代码以后，使用公司的 j-one 集成部署工具打</description>
+      <guid>https://ousui.org/2019/06/19/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</guid>
+      <description>近日升级应用，改了某一行代码以后，使用公司的 j-one 集成部署工具打包发布预发，之后发现某个接口报错。 因为只</description>
     </item>
     
     <item>
       <title>spring 4.3.x &#43; spring-security 4.x 升级遇到的问题汇总</title>
-      <link>https://ousui.org/posts/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://ousui.org/2017/06/15/spring-4.3.x-spring-security-4.x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Thu, 15 Jun 2017 10:39:33 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-      <description>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spr</description>
+      <guid>https://ousui.org/2017/06/15/spring-4.3.x-spring-security-4.x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x</description>
     </item>
     
   </channel>

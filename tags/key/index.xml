@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>key on {G.F.O}</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>windows keys</title>
-      <link>https://ousui.org/posts/windows-keys/</link>
+      <link>https://ousui.org/2016/07/12/windows-keys/</link>
       <pubDate>Tue, 12 Jul 2016 15:40:46 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/windows-keys/</guid>
-      <description>这个礼拜把工作站正式从 windows10 迁移到了 Fedora24，感觉还不错</description>
+      <guid>https://ousui.org/2016/07/12/windows-keys/</guid>
+      <description>这个礼拜把工作站正式从 windows10 迁移到了 Fedora24，感觉还不错，就是工作需要必须运行 QQ，虚拟机折腾了</description>
     </item>
     
   </channel>

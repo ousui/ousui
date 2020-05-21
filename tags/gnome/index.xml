@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gnome on {G.F.O}</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>linux gnome</title>
-      <link>https://ousui.org/posts/linux-gnome-%E6%89%A9%E5%B1%95/</link>
+      <link>https://ousui.org/2016/07/15/linux-gnome/</link>
       <pubDate>Fri, 15 Jul 2016 11:32:22 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-gnome-%E6%89%A9%E5%B1%95/</guid>
-      <description>当初选择 Fedora 24 桌面的时候纠结了很久，最后还是决定使用 workstation 版本，作</description>
+      <guid>https://ousui.org/2016/07/15/linux-gnome/</guid>
+      <description>当初选择 Fedora 24 桌面的时候纠结了很久，最后还是决定使用 workstation 版本，作为一个非处女座强迫症，忍受不了装完 kde 以后</description>
     </item>
     
   </channel>

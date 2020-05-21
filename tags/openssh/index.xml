@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>openssh on {G.F.O}</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>linux openssh 的巧妙使用跨过sangfor vpn</title>
-      <link>https://ousui.org/posts/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/</link>
+      <link>https://ousui.org/2016/08/30/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/</link>
       <pubDate>Tue, 30 Aug 2016 09:19:49 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/</guid>
-      <description>公司的网络很让人无语的： 公司无线，网络不是很稳定，经常出现掉</description>
+      <guid>https://ousui.org/2016/08/30/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/</guid>
+      <description>公司的网络很让人无语的： 公司无线，网络不是很稳定，经常出现掉线连接不上的情况 公司有线，需要使用 iNode 连接</description>
     </item>
     
   </channel>

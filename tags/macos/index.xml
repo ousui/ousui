@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>macos on {G.F.O}</title>
@@ -13,11 +13,11 @@
     
     <item>
       <title>vmware fusion 网络配置</title>
-      <link>https://ousui.org/posts/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
+      <link>https://ousui.org/2017/03/30/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Thu, 30 Mar 2017 10:49:25 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
-      <description>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例</description>
+      <guid>https://ousui.org/2017/03/30/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
+      <description>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例如 u 盾无法挂载，资源无法分配，然后试了 pd</description>
     </item>
     
   </channel>

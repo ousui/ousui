@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+    
+    
+    
+
+<title>rslsync  在 R6300v2 上的使用 • {G.F.O}</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="rslsync  在 R6300v2 上的使用"/>
+<meta name="twitter:description" content="最近百度网盘要实名制了。家里路由器空闲，挂载着一个 2T 硬盘，想着做个同步什么的挺方便，一直没弄。 之前偶"/>
+
+<meta property="og:title" content="rslsync  在 R6300v2 上的使用" />
+<meta property="og:description" content="最近百度网盘要实名制了。家里路由器空闲，挂载着一个 2T 硬盘，想着做个同步什么的挺方便，一直没弄。 之前偶" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ousui.org/2017/05/11/rslsync-%E5%9C%A8-r6300v2-%E4%B8%8A%E7%9A%84%E4%BD%BF%E7%94%A8/" />
+<meta property="article:published_time" content="2017-05-11T11:34:30+00:00" />
+<meta property="article:modified_time" content="2017-05-11T11:34:30+00:00" /><meta property="og:site_name" content="G.F.O." />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://ousui.org/">{G.F.O}</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://ousui.org/images/avatar-rmb.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">{G.F.O}</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>首页</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>文章</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/tags/">
+						<span>标签</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>关于</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://t.me/ppwangs" rel="me"><i class="fab fa-telegram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 ousui.org
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>rslsync  在 R6300v2 上的使用</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2017 年 05 月 11 日
+    
+    
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/linux">linux</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>最近百度网盘要实名制了。家里路由器空闲，挂载着一个 2T 硬盘，想着做个同步什么的挺方便，一直没弄。</p>
+
+<p>之前偶尔用一下 btsync，现在改名叫 rslsync 了。<br />
+去官网查看，发现支持 arm 处理器。<br />
+但是上传到了路由器运行，发现不可以执行，提示</p>
+
+<pre><code>-sh: ./rslsync: not found
+</code></pre>
+
+<p>我耍了 kongac 的 dd-wrt，一直稳定运行，很舒服。华硕固件会发生偶尔导致 cpu 飙升掉线的情况，故舍弃。</p>
+
+<p>又下载 x64 尝试提示没权限，那应该是某些依赖有问题了。<br />
+根据提示看了下 /lib 下的依赖。<br />
+发现 <code>/lib/ld-musl-arm.so.1</code> 存在。</p>
+
+<p>于是关键字查找 <a href="https://racede.me/bittorrent-sync-run-on-arm-openwrt.html">dd-wrt rslsync</a>，发现这篇文章。<br />
+直接在路由器执行：</p>
+
+<pre><code>file rslsync
+</code></pre>
+
+<p>返回</p>
+
+<pre><code>rslsync: ELF 32-bit LSB executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked, interpreter /lib/ld-linux.so.3, for GNU/Linux 3.2.0, BuildID[sha1]=aed6ecdcc75f6878bc63d37f153a34f25a9041e2, stripped
+</code></pre>
+
+<p>可以看到果然如博主所说，依赖 <code>/lib/ld-linux.so.3</code>，而 dd-wrt 默认 /lib 下没有此依赖，且为只读，不可写。<br />
+kongac 的固件内置了 entware，所以 <code>/opt/lib</code> 中是有这个依赖的。那就改二进制就好了（当我看到此处感觉好牛逼啊，这个硬件工程师！）。<br />
+找一台 linux，登录，<a href="https://nixos.org/releases/patchelf/patchelf-0.9/patchelf-0.9.tar.gz"> 下载</a>，编译安装</p>
+
+<pre><code>./configure &amp;&amp; make &amp;&amp; sudo make install
+</code></pre>
+
+<p>然后直接执行以下命令即可：</p>
+
+<pre><code>patchelf --set-interpreter /opt/lib/ld-linux.so.3 ./rslsync
+</code></pre>
+
+<p>可以看到，链接库信息已经变更。</p>
+
+<pre><code>file rslsync
+rslsync: ELF 32-bit LSB  executable, ARM, EABI5 version 1 (GNU/Linux), dynamically linked (uses shared libs), for GNU/Linux 3.2.0, BuildID[sha1]=aed6ecdcc75f6878bc63d37f153a34f25a9041e2, stripped
+</code></pre>
+
+<p>重新传到路由器上运行，没有错误提示，直接压到后台了。</p>
+
+<p>最后附上已经修改好的 rslsync <a href="../zips/rslsync-R6300v2.tgz">  点击下载 </a></p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2017/03/30/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">vmware fusion 网络配置</span>
+    </a>
+    
+    
+    <a href="/2017/06/15/spring-4.3.x-spring-security-4.x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" class="navigation-next">
+      <span class="navigation-tittle">spring 4.3.x &#43; spring-security 4.x 升级遇到的问题汇总</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'ousui';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

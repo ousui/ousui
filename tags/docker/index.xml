@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>docker on {G.F.O}</title>
@@ -13,20 +13,20 @@
     
     <item>
       <title>centos 6.x 安装使用 docker</title>
-      <link>https://ousui.org/posts/centos-6-x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/</link>
+      <link>https://ousui.org/2017/02/16/centos-6.x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/</link>
       <pubDate>Thu, 16 Feb 2017 08:54:21 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/centos-6-x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/</guid>
-      <description>最近给公司系统搞 docker 部署，方便同事们外出部署项目，因为合作方的</description>
+      <guid>https://ousui.org/2017/02/16/centos-6.x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/</guid>
+      <description>最近给公司系统搞 docker 部署，方便同事们外出部署项目，因为合作方的服务器都统一要求安装 centos，但是按</description>
     </item>
     
     <item>
       <title>docker 学习笔记</title>
-      <link>https://ousui.org/posts/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://ousui.org/2016/12/30/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Fri, 30 Dec 2016 13:57:00 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>docker 是个好东西。 常用命令不说了，这个基本上用过几次就会记住，下</description>
+      <guid>https://ousui.org/2016/12/30/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>docker 是个好东西。 常用命令不说了，这个基本上用过几次就会记住，下面是一些比较不容易记的东西： 当 dubbo 使用 docker 作</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on {G.F.O}</title>
@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>java</title>
+      <title>Java</title>
       <link>https://ousui.org/tags/java/</link>
       <pubDate>Wed, 19 Jun 2019 18:05:52 +0800</pubDate>
       
@@ -102,20 +102,20 @@
     </item>
     
     <item>
-      <title>M570</title>
-      <link>https://ousui.org/tags/m570/</link>
-      <pubDate>Wed, 07 Sep 2016 16:34:44 +0000</pubDate>
-      
-      <guid>https://ousui.org/tags/m570/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>hardware</title>
       <link>https://ousui.org/tags/hardware/</link>
       <pubDate>Wed, 07 Sep 2016 16:34:44 +0000</pubDate>
       
       <guid>https://ousui.org/tags/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>M570</title>
+      <link>https://ousui.org/tags/m570/</link>
+      <pubDate>Wed, 07 Sep 2016 16:34:44 +0000</pubDate>
+      
+      <guid>https://ousui.org/tags/m570/</guid>
       <description></description>
     </item>
     

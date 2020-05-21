@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+    
+    
+    
+
+<title>Rest Template Test • {G.F.O}</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rest Template Test"/>
+<meta name="twitter:description" content="最近后端用到 Http 请求，由于对性能有较高要求，然后又要解耦，顾使用 RestTemplate，然而在各种实"/>
+
+<meta property="og:title" content="Rest Template Test" />
+<meta property="og:description" content="最近后端用到 Http 请求，由于对性能有较高要求，然后又要解耦，顾使用 RestTemplate，然而在各种实" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ousui.org/2020/05/21/rest-template-test/" />
+<meta property="article:published_time" content="2020-05-21T16:34:38+08:00" />
+<meta property="article:modified_time" content="2020-05-21T16:34:38+08:00" /><meta property="og:site_name" content="G.F.O." />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.6a83d62c39a364f036df4db1ecd564645635d6c7fc182425cb501218fec485f5.css" integrity="sha256-aoPWLDmjZPA2302x7NVkZFY11sf8GCQly1ASGP7EhfU=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://ousui.org/">{G.F.O}</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://ousui.org/images/avatar-rmb.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">{G.F.O}</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>首页</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>文章</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/tags/">
+						<span>标签</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>关于</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://t.me/ppwangs" rel="me"><i class="fab fa-telegram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 ousui.org
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Rest Template Test</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2020 年 05 月 21 日
+    
+    
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 4 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>最近后端用到 Http 请求，由于对性能有较高要求，然后又要解耦，顾使用 RestTemplate，然而在各种实现当中，哪种性能最好呢？
+写了个单元测试，做个简单的测试。</p>
+
+<pre><code class="language-Java">public class RestTemplateTest {
+    int count = 10; // 执行次数
+    String ua = &quot;&quot;; 
+    // 此 UA okHttp3 会报异常。
+//    String ua = &quot; jdapp;android;8.5.12;10;869939042546399-24da3300f7a2;network/4g;model/VCE-AL00;addressid/0;aid/3ef52e7359958728;oaid/7f77ff9b-757e-2241-ff3b-bdfd6a6ff8ed;osVer/29;appBuild/73078;psn/869939042546399-24da3300f7a2|173;psq/14;uid/869939042546399-24da3300f7a2;adk/;ads/;pap/JA2015_311210|8.5.12|ANDROID 10;osv/10;pv/172.17;jdv/0|kong|t_1000170135|tuiguang|notset|1589769462067|1589769462;ref/https://airtickets.jd.com/?fromtype=search&amp;depCity=å\u008C\u0097äº¬&amp;arrCity=ä¸\u008Aæµ·&amp;lineType=OW&amp;lng=104.165616&amp;lat=30.83199&amp;sid=3463647525f7fdc6c376e6351ab834aw&amp;un_area=22_1930_49314_49351;partner/huawei;apprpd/Search_ProductList;Mozilla/5.0 (Linux; Android 10; VCE-AL00 Build/HUAWEIVCE-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045136 Mobile Safari/537.36&quot;;
+
+    String url = &quot;https://www.baidu.com&quot;;
+//    String url = &quot;https://www.jd.com&quot;;
+
+    @Test
+    public void test() throws SSLException {
+
+        RestTemplate httpClient = new RestTemplate();
+
+        for (int i = 0; i &lt; 3; i++) {
+            httpClient.setRequestFactory(simple());
+            this.request(httpClient);
+
+            httpClient.setRequestFactory(okHttpClient3());
+            this.request(httpClient);
+
+            httpClient.setRequestFactory(apcheHttp());
+            this.request(httpClient);
+
+            httpClient.setRequestFactory(apcheHttpAsync());
+            this.request(httpClient);
+
+
+            httpClient.setRequestFactory(netty());
+            this.request(httpClient);
+
+//            httpClient.setRequestFactory(okHttpClient());
+//            this.request(httpClient);
+
+            System.out.println(&quot;--------------------------------&quot;);
+        }
+    }
+
+
+    private void request(RestTemplate httpclient) {
+        System.out.println(&quot;&quot;);
+        System.out.println(httpclient.getRequestFactory().getClass().getSimpleName() + &quot;--&quot;);
+        long start, end;
+
+
+        long total = 0, max = Long.MIN_VALUE, min = Long.MAX_VALUE;
+
+
+        for (int i = 0; i &lt; count; i++) {
+            start = System.nanoTime();
+
+            RequestEntity input = RequestEntity.get(URI.create(url + &quot;/?ts=&quot; + i)).header(HttpHeaders.USER_AGENT, ua).build();
+
+            ResponseEntity&lt;String&gt; output = httpclient.exchange(input, String.class);
+            String body = output.getBody(); // 确保进行了 content read
+
+            end = System.nanoTime() - start;
+
+            if (end &gt; max) {
+                max = end;
+            }
+            if (end &lt; min) {
+                min = end;
+            }
+            total += end;
+
+        }
+        System.out.printf(&quot;共执行 %s 次，&quot; +
+                        &quot;总耗时：%s ms(%s ns)，&quot; +
+                        &quot;平均耗时：%s ms(%s ns)，&quot; +
+                        &quot;最长耗时：%s ms(%s ns)，&quot; +
+                        &quot;最短耗时：%s ms(%s ns) \n&quot;,
+                count,
+                TimeUnit.NANOSECONDS.toMillis(total), total,
+                TimeUnit.NANOSECONDS.toMillis(total / count), total / count,
+                TimeUnit.NANOSECONDS.toMillis(max), max,
+                TimeUnit.NANOSECONDS.toMillis(min), min,
+                &quot;&quot;
+        );
+
+    }
+
+
+    private ClientHttpRequestFactory simple() {
+        SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
+        factory.setConnectTimeout(500);
+        return factory;
+    }
+
+    private ClientHttpRequestFactory okHttpClient3() {
+        OkHttp3ClientHttpRequestFactory factory = new OkHttp3ClientHttpRequestFactory();
+        factory.setConnectTimeout(500);
+        return factory;
+    }
+
+    private ClientHttpRequestFactory okHttpClient() {
+        OkHttpClientHttpRequestFactory factory = new OkHttpClientHttpRequestFactory();
+        factory.setConnectTimeout(500);
+        return factory;
+    }
+
+    private ClientHttpRequestFactory apcheHttp() {
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
+        factory.setConnectTimeout(500);
+        return factory;
+    }
+
+    private ClientHttpRequestFactory apcheHttpAsync() {
+        HttpComponentsAsyncClientHttpRequestFactory factory = new HttpComponentsAsyncClientHttpRequestFactory();
+        factory.setConnectTimeout(500);
+        return factory;
+    }
+
+    private ClientHttpRequestFactory netty() throws SSLException {
+        Netty4ClientHttpRequestFactory factory = new Netty4ClientHttpRequestFactory();
+        factory.setConnectTimeout(500);
+        factory.setSslContext(SslContextBuilder.forClient().build());
+        return factory;
+    }
+
+}
+</code></pre>
+
+<p>需要注意的是，okHttp 新老版本之间存在 Jar 包冲突问题，顾不能同时进行测试。</p>
+
+<p>以下为测试结果</p>
+
+<pre><code>SimpleClientHttpRequestFactory--
+共执行 10 次，总耗时：542 ms(542633909 ns)，平均耗时：54 ms(54263390 ns)，最长耗时：477 ms(477163566 ns)，最短耗时：5 ms(5635716 ns) 
+
+OkHttp3ClientHttpRequestFactory--
+共执行 10 次，总耗时：114 ms(114705228 ns)，平均耗时：11 ms(11470522 ns)，最长耗时：60 ms(60509177 ns)，最短耗时：5 ms(5273339 ns) 
+
+HttpComponentsClientHttpRequestFactory--
+共执行 10 次，总耗时：195 ms(195219070 ns)，平均耗时：19 ms(19521907 ns)，最长耗时：134 ms(134212594 ns)，最短耗时：5 ms(5474009 ns) 
+
+HttpComponentsAsyncClientHttpRequestFactory--
+共执行 10 次，总耗时：74 ms(74646056 ns)，平均耗时：7 ms(7464605 ns)，最长耗时：18 ms(18346667 ns)，最短耗时：5 ms(5253975 ns) 
+
+Netty4ClientHttpRequestFactory--
+共执行 10 次，总耗时：455 ms(455278498 ns)，平均耗时：45 ms(45527849 ns)，最长耗时：190 ms(190412009 ns)，最短耗时：26 ms(26410596 ns) 
+--------------------------------
+
+SimpleClientHttpRequestFactory--
+共执行 10 次，总耗时：60 ms(60364356 ns)，平均耗时：6 ms(6036435 ns)，最长耗时：6 ms(6995622 ns)，最短耗时：5 ms(5125890 ns) 
+
+OkHttp3ClientHttpRequestFactory--
+共执行 10 次，总耗时：140 ms(140261580 ns)，平均耗时：14 ms(14026158 ns)，最长耗时：32 ms(32825435 ns)，最短耗时：5 ms(5473792 ns) 
+
+HttpComponentsClientHttpRequestFactory--
+共执行 10 次，总耗时：89 ms(89699477 ns)，平均耗时：8 ms(8969947 ns)，最长耗时：22 ms(22417619 ns)，最短耗时：6 ms(6006689 ns) 
+
+HttpComponentsAsyncClientHttpRequestFactory--
+共执行 10 次，总耗时：93 ms(93985978 ns)，平均耗时：9 ms(9398597 ns)，最长耗时：21 ms(21574814 ns)，最短耗时：5 ms(5969015 ns) 
+
+Netty4ClientHttpRequestFactory--
+共执行 10 次，总耗时：382 ms(382709684 ns)，平均耗时：38 ms(38270968 ns)，最长耗时：64 ms(64371437 ns)，最短耗时：28 ms(28696667 ns) 
+--------------------------------
+
+SimpleClientHttpRequestFactory--
+共执行 10 次，总耗时：76 ms(76566207 ns)，平均耗时：7 ms(7656620 ns)，最长耗时：11 ms(11322061 ns)，最短耗时：5 ms(5739523 ns) 
+
+OkHttp3ClientHttpRequestFactory--
+共执行 10 次，总耗时：102 ms(102434885 ns)，平均耗时：10 ms(10243488 ns)，最长耗时：40 ms(40112993 ns)，最短耗时：5 ms(5810617 ns) 
+
+HttpComponentsClientHttpRequestFactory--
+共执行 10 次，总耗时：90 ms(90013417 ns)，平均耗时：9 ms(9001341 ns)，最长耗时：21 ms(21347728 ns)，最短耗时：6 ms(6392409 ns) 
+
+HttpComponentsAsyncClientHttpRequestFactory--
+共执行 10 次，总耗时：89 ms(89806396 ns)，平均耗时：8 ms(8980639 ns)，最长耗时：23 ms(23757876 ns)，最短耗时：5 ms(5845881 ns) 
+
+Netty4ClientHttpRequestFactory--
+共执行 10 次，总耗时：371 ms(371003694 ns)，平均耗时：37 ms(37100369 ns)，最长耗时：47 ms(47806368 ns)，最短耗时：30 ms(30156193 ns) 
+--------------------------------
+</code></pre>
+
+<p>综上 HttpComponentsAsyncClientHttpRequestFactory 性能其实是最好的，SimpleClientHttpRequestFactory 不是很稳定。</p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/2019/06/19/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">maven 私服打包升级依赖冲突解决</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'ousui';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

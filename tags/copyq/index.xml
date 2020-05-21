@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>copyq on {G.F.O}</title>
@@ -13,20 +13,20 @@
     
     <item>
       <title>copyq 真是个好东西</title>
-      <link>https://ousui.org/posts/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</link>
+      <link>https://ousui.org/2016/07/25/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</link>
       <pubDate>Mon, 25 Jul 2016 15:23:15 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</guid>
-      <description>copyq 真是个好东西，扩展性极高，玩了几天以后，写了一个有道词典的</description>
+      <guid>https://ousui.org/2016/07/25/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</guid>
+      <description>copyq 真是个好东西，扩展性极高，玩了几天以后，写了一个有道词典的扩展： https://github.co</description>
     </item>
     
     <item>
       <title>linux 报告了个BUG并解决了</title>
-      <link>https://ousui.org/posts/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/</link>
+      <link>https://ousui.org/2016/07/17/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/</link>
       <pubDate>Sun, 17 Jul 2016 13:31:48 +0000</pubDate>
       
-      <guid>https://ousui.org/posts/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/</guid>
-      <description>https://bugzilla.redhat.com/show_bug.cgi?id=1357235 https://github.com/hluk/CopyQ/issues/530 copyq 是一款跨平台的高级的剪贴板管理工具。 十分好用，定制功能</description>
+      <guid>https://ousui.org/2016/07/17/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/</guid>
+      <description>https://bugzilla.redhat.com/show_bug.cgi?id=1357235 https://github.com/hluk/CopyQ/issues/530 copyq 是一款跨平台的高级的剪贴板管理工具。 十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui</description>
     </item>
     
   </channel>
