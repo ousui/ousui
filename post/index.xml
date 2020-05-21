@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on {G.F.O}</title>
+    <link>https://ousui.org/post/</link>
+    <description>Recent content in Posts on {G.F.O}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 May 2020 16:34:38 +0800</lastBuildDate>
+    
+	<atom:link href="https://ousui.org/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rest Template Test</title>
+      <link>https://ousui.org/post/rest-template-test/</link>
+      <pubDate>Thu, 21 May 2020 16:34:38 +0800</pubDate>
+      
+      <guid>https://ousui.org/post/rest-template-test/</guid>
+      <description>最近后端用到 Http 请求，由于对性能有较高要求，然后又要解耦，顾使用 RestTemplate，然而在各种实</description>
+    </item>
+    
+    <item>
+      <title>maven 私服打包升级依赖冲突解决</title>
+      <link>https://ousui.org/post/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Wed, 19 Jun 2019 18:05:52 +0800</pubDate>
+      
+      <guid>https://ousui.org/post/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/</guid>
+      <description>近日升级应用，改了某一行代码以后，使用公司的 j-one 集成部署工具打包发布预发，之后发现某个接口报错。 因为只</description>
+    </item>
+    
+    <item>
+      <title>spring 4.3.x &#43; spring-security 4.x 升级遇到的问题汇总</title>
+      <link>https://ousui.org/post/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Thu, 15 Jun 2017 10:39:33 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/4-3-x-spring-security-4-x-%E5%8D%87%E7%BA%A7%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>最近给一个项目升级依赖，spring 从 4.0 升级到 4.3，spring-security 从 3.x 升级到 4.x</description>
+    </item>
+    
+    <item>
+      <title>rslsync  在 R6300v2 上的使用</title>
+      <link>https://ousui.org/post/rslsync-%E5%9C%A8-r6300v2-%E4%B8%8A%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Thu, 11 May 2017 11:34:30 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/rslsync-%E5%9C%A8-r6300v2-%E4%B8%8A%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>最近百度网盘要实名制了。家里路由器空闲，挂载着一个 2T 硬盘，想着做个同步什么的挺方便，一直没弄。 之前偶</description>
+    </item>
+    
+    <item>
+      <title>vmware fusion 网络配置</title>
+      <link>https://ousui.org/post/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 30 Mar 2017 10:49:25 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/vmware-fusion-%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
+      <description>之前一直是用开源的 virtualbox，后来发现某些 usb 设备例如 u 盾无法挂载，资源无法分配，然后试了 pd</description>
+    </item>
+    
+    <item>
+      <title>centos 6.x 安装使用 docker</title>
+      <link>https://ousui.org/post/centos-6-x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/</link>
+      <pubDate>Thu, 16 Feb 2017 08:54:21 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/centos-6-x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/</guid>
+      <description>最近给公司系统搞 docker 部署，方便同事们外出部署项目，因为合作方的服务器都统一要求安装 centos，但是按</description>
+    </item>
+    
+    <item>
+      <title>docker 学习笔记</title>
+      <link>https://ousui.org/post/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 30 Dec 2016 13:57:00 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>docker 是个好东西。 常用命令不说了，这个基本上用过几次就会记住，下面是一些比较不容易记的东西： 当 dubbo 使用 docker 作</description>
+    </item>
+    
+    <item>
+      <title>macos-开发环境切换</title>
+      <link>https://ousui.org/post/macos-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%88%87%E6%8D%A2/</link>
+      <pubDate>Fri, 18 Nov 2016 19:16:23 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/macos-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E5%88%87%E6%8D%A2/</guid>
+      <description>10 月份 苹果发布了新 macbook pro，结果对于我来说相当失望…… 当然主要是价格贵了。 双十一到来，价格合适了，然</description>
+    </item>
+    
+    <item>
+      <title>hardware M570 轨迹球清理</title>
+      <link>https://ousui.org/post/hardware-m570-%E8%BD%A8%E8%BF%B9%E7%90%83%E6%B8%85%E7%90%86/</link>
+      <pubDate>Wed, 07 Sep 2016 16:34:44 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/hardware-m570-%E8%BD%A8%E8%BF%B9%E7%90%83%E6%B8%85%E7%90%86/</guid>
+      <description>逻辑 M570 轨迹球是个不错的鼠标，用起来手不累很舒适，很适合大手。 自从买来轨迹球就不太好滚，也懒得弄。 今天</description>
+    </item>
+    
+    <item>
+      <title>linux openssh 的巧妙使用跨过sangfor vpn</title>
+      <link>https://ousui.org/post/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/</link>
+      <pubDate>Tue, 30 Aug 2016 09:19:49 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/</guid>
+      <description>公司的网络很让人无语的： 公司无线，网络不是很稳定，经常出现掉线连接不上的情况 公司有线，需要使用 iNode 连接</description>
+    </item>
+    
+    <item>
+      <title>linux-把公司服务器搞挂了</title>
+      <link>https://ousui.org/post/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/</link>
+      <pubDate>Wed, 24 Aug 2016 14:08:30 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/</guid>
+      <description>呃，公司一台测试服务器，我用来装各种服务例如 svn、jenkins 之类的，另外还有 ss 服务，为啥呢，公</description>
+    </item>
+    
+    <item>
+      <title>linux 切换到 archlinux</title>
+      <link>https://ousui.org/post/linux-%E5%88%87%E6%8D%A2%E5%88%B0-archlinux/</link>
+      <pubDate>Sun, 07 Aug 2016 12:30:50 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/linux-%E5%88%87%E6%8D%A2%E5%88%B0-archlinux/</guid>
+      <description>周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，</description>
+    </item>
+    
+    <item>
+      <title>copyq 真是个好东西</title>
+      <link>https://ousui.org/post/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</link>
+      <pubDate>Mon, 25 Jul 2016 15:23:15 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</guid>
+      <description>copyq 真是个好东西，扩展性极高，玩了几天以后，写了一个有道词典的扩展： https://github.co</description>
+    </item>
+    
+    <item>
+      <title>linux 报告了个BUG并解决了</title>
+      <link>https://ousui.org/post/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/</link>
+      <pubDate>Sun, 17 Jul 2016 13:31:48 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/</guid>
+      <description>https://bugzilla.redhat.com/show_bug.cgi?id=1357235 https://github.com/hluk/CopyQ/issues/530 copyq 是一款跨平台的高级的剪贴板管理工具。 十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui</description>
+    </item>
+    
+    <item>
+      <title>linux gnome</title>
+      <link>https://ousui.org/post/linux-gnome-%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Fri, 15 Jul 2016 11:32:22 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/linux-gnome-%E6%89%A9%E5%B1%95/</guid>
+      <description>当初选择 Fedora 24 桌面的时候纠结了很久，最后还是决定使用 workstation 版本，作为一个非处女座强迫症，忍受不了装完 kde 以后</description>
+    </item>
+    
+    <item>
+      <title>linux 工作环境积累</title>
+      <link>https://ousui.org/post/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</link>
+      <pubDate>Wed, 13 Jul 2016 09:48:32 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</guid>
+      <description>虚拟机 本来打算使用 gnome 自带的 boxes，但是装完系统以后体验实在太差，经过一番调研，在性能和占用上做了</description>
+    </item>
+    
+    <item>
+      <title>windows keys</title>
+      <link>https://ousui.org/post/windows-keys/</link>
+      <pubDate>Tue, 12 Jul 2016 15:40:46 +0000</pubDate>
+      
+      <guid>https://ousui.org/post/windows-keys/</guid>
+      <description>这个礼拜把工作站正式从 windows10 迁移到了 Fedora24，感觉还不错，就是工作需要必须运行 QQ，虚拟机折腾了</description>
+    </item>
+    
+  </channel>
+</rss>

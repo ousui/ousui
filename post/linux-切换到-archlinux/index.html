@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+    
+    
+    
+
+<title>linux 切换到 archlinux • {G.F.O}</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linux 切换到 archlinux"/>
+<meta name="twitter:description" content="周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，"/>
+
+<meta property="og:title" content="linux 切换到 archlinux" />
+<meta property="og:description" content="周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ousui.org/post/linux-%E5%88%87%E6%8D%A2%E5%88%B0-archlinux/" />
+<meta property="article:published_time" content="2016-08-07T12:30:50+00:00" />
+<meta property="article:modified_time" content="2016-08-07T12:30:50+00:00" /><meta property="og:site_name" content="G.F.O." />
+
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.92c66d107d7b219f0792cfd67223179af884b03f386ac46894f9f735932bbca3.css" integrity="sha256-ksZtEH17IZ8Hks/WciMXmviEsD84asRolPn3NZMrvKM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://ousui.org/">{G.F.O}</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://ousui.org/images/avatar-rmb.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">{G.F.O}</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		 
+			 
+				<li>
+					<a href="/">
+						<span>首页</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/posts/">
+						<span>文章</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/tags/">
+						<span>标签</span>
+					</a>
+				</li>
+			 
+		 
+			 
+				<li>
+					<a href="/about/">
+						<span>关于</span>
+					</a>
+				</li>
+			 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://t.me/ppwangs" rel="me"><i class="fab fa-telegram fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+
+      </div>
+    </div>
+    
+<div class="copyright">
+  &copy; 2020 ousui.org
+  
+</div>
+
+
+<div class="builtwith">
+Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.com/htr3n/hyde-hyde">hyde-hyde</a>.
+</div>
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>linux 切换到 archlinux</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 2016 年 08 月 07 日
+    
+    
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/linxu">linxu</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/archlinux">archlinux</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>周六手贱，看到 home 分区空间不够，碰巧是 lvm 的 filesystem，然后就调整了一下，调整的时候忘记 resize 了，然后，就启动不了了……
+尝试恢复的时候，报文件可能损坏。
+恩，然后想干脆直接重装 archlinux 吧。
+于是开始折腾……</p>
+
+<p>安装过程还算简便，重新将分区空间调整，格式化以后，mount 后安装就好了。
+GUI还是装的 KDE，因为真心漂亮。</p>
+
+<p>需要注意的是，在<code>mkinitcpio -p linux</code>前，需要修改 <code>/etc/mkinitcpio.conf</code> 文件的 <code>HOOK</code> 一行，加入 lvm2
+<code>HOOKS=&quot;base udev ... block lvm2 filesystems&quot;</code>，否则启动不了。
+其他没有太大的变化。</p>
+
+<p>其实，archlinux 的文档写的很清楚： <a href="https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM">https://wiki.archlinux.org/index.php/LVM#Add_lvm2_hook_to_mkinitcpio.conf_for_root_on_LVM</a></p>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/post/copyq-%E7%9C%9F%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">copyq 真是个好东西</span>
+    </a>
+    
+    
+    <a href="/post/linux-%E6%8A%8A%E5%85%AC%E5%8F%B8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%9E%E6%8C%82%E4%BA%86/" class="navigation-next">
+      <span class="navigation-tittle">linux-把公司服务器搞挂了</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'ousui';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>
