@@ -6,12 +6,14 @@
 
     <head>
     <link href="https://gmpg.org/xfn/11" rel="profile">
+    
+    <link rel="canonical" href="https://ousui.org/2020/05/21/rest-template-test/">
+    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.1" />
 
     
     
@@ -44,7 +46,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.89c6feed53dea8d705a80de176777407d77f23a69e9fa924d5c9d4504471d45c.css" integrity="sha256-icb&#43;7VPeqNcFqA3hdnd0B9d/I6aen6kk1cnUUERx1Fw=">
+<link rel="stylesheet" href="/scss/hyde-hyde.a4f0a88d627dc30b5166398db7a191087ceceadcb3cb9e66b365436d889bec9e.css" integrity="sha256-pPCojWJ9wwtRZjmNt6GRCHzs6tyzy55ms2VDbYib7J4=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -71,7 +73,11 @@
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://ousui.org/">{G.F.O}</a>
+        <a href="https://ousui.org/">
+        
+          {G.F.O}
+        
+        </a>
       </span>
       
         
@@ -84,7 +90,7 @@
       
       
       <p class="site__description">
-         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+         Github.io For Ousui. 记录。 
       </p>
     </div>
     <div class="collapsible-menu">
@@ -134,7 +140,9 @@
 	
 	
 	
+	
 	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
 	
 	
 	
@@ -154,13 +162,16 @@
 	
 	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
+	
+	
+	
 </section>
 
       </div>
     </div>
     
 <div class="copyright">
-  &copy; 2020 ousui.org
+  &copy; 2021 ousui.org
   
 </div>
 
@@ -201,134 +212,129 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   <div class="post">
     <p>最近后端用到 Http 请求，由于对性能有较高要求，然后又要解耦，顾使用 RestTemplate，然而在各种实现当中，哪种性能最好呢？
 写了个单元测试，做个简单的测试。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RestTemplateTest</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span> count <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span> <span style="color:#75715e">// 执行次数
+</span><span style="color:#75715e"></span>    String ua <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span> 
+    <span style="color:#75715e">// 此 UA okHttp3 会报异常。
+</span><span style="color:#75715e">//    String ua = &#34; jdapp;android;8.5.12;10;869939042546399-24da3300f7a2;network/4g;model/VCE-AL00;addressid/0;aid/3ef52e7359958728;oaid/7f77ff9b-757e-2241-ff3b-bdfd6a6ff8ed;osVer/29;appBuild/73078;psn/869939042546399-24da3300f7a2|173;psq/14;uid/869939042546399-24da3300f7a2;adk/;ads/;pap/JA2015_311210|8.5.12|ANDROID 10;osv/10;pv/172.17;jdv/0|kong|t_1000170135|tuiguang|notset|1589769462067|1589769462;ref/https://airtickets.jd.com/?fromtype=search&amp;depCity=å\u008C\u0097äº¬&amp;arrCity=ä¸\u008Aæµ·&amp;lineType=OW&amp;lng=104.165616&amp;lat=30.83199&amp;sid=3463647525f7fdc6c376e6351ab834aw&amp;un_area=22_1930_49314_49351;partner/huawei;apprpd/Search_ProductList;Mozilla/5.0 (Linux; Android 10; VCE-AL00 Build/HUAWEIVCE-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045136 Mobile Safari/537.36&#34;;
+</span><span style="color:#75715e"></span>
+    String url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.baidu.com&#34;</span><span style="color:#f92672">;</span>
+<span style="color:#75715e">//    String url = &#34;https://www.jd.com&#34;;
+</span><span style="color:#75715e"></span>
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">test</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> SSLException <span style="color:#f92672">{</span>
 
-<pre><code class="language-Java">public class RestTemplateTest {
-    int count = 10; // 执行次数
-    String ua = &quot;&quot;; 
-    // 此 UA okHttp3 会报异常。
-//    String ua = &quot; jdapp;android;8.5.12;10;869939042546399-24da3300f7a2;network/4g;model/VCE-AL00;addressid/0;aid/3ef52e7359958728;oaid/7f77ff9b-757e-2241-ff3b-bdfd6a6ff8ed;osVer/29;appBuild/73078;psn/869939042546399-24da3300f7a2|173;psq/14;uid/869939042546399-24da3300f7a2;adk/;ads/;pap/JA2015_311210|8.5.12|ANDROID 10;osv/10;pv/172.17;jdv/0|kong|t_1000170135|tuiguang|notset|1589769462067|1589769462;ref/https://airtickets.jd.com/?fromtype=search&amp;depCity=å\u008C\u0097äº¬&amp;arrCity=ä¸\u008Aæµ·&amp;lineType=OW&amp;lng=104.165616&amp;lat=30.83199&amp;sid=3463647525f7fdc6c376e6351ab834aw&amp;un_area=22_1930_49314_49351;partner/huawei;apprpd/Search_ProductList;Mozilla/5.0 (Linux; Android 10; VCE-AL00 Build/HUAWEIVCE-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045136 Mobile Safari/537.36&quot;;
+        RestTemplate httpClient <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RestTemplate<span style="color:#f92672">();</span>
 
-    String url = &quot;https://www.baidu.com&quot;;
-//    String url = &quot;https://www.jd.com&quot;;
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 3<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            httpClient<span style="color:#f92672">.</span><span style="color:#a6e22e">setRequestFactory</span><span style="color:#f92672">(</span>simple<span style="color:#f92672">());</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">request</span><span style="color:#f92672">(</span>httpClient<span style="color:#f92672">);</span>
 
-    @Test
-    public void test() throws SSLException {
+            httpClient<span style="color:#f92672">.</span><span style="color:#a6e22e">setRequestFactory</span><span style="color:#f92672">(</span>okHttpClient3<span style="color:#f92672">());</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">request</span><span style="color:#f92672">(</span>httpClient<span style="color:#f92672">);</span>
 
-        RestTemplate httpClient = new RestTemplate();
+            httpClient<span style="color:#f92672">.</span><span style="color:#a6e22e">setRequestFactory</span><span style="color:#f92672">(</span>apcheHttp<span style="color:#f92672">());</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">request</span><span style="color:#f92672">(</span>httpClient<span style="color:#f92672">);</span>
 
-        for (int i = 0; i &lt; 3; i++) {
-            httpClient.setRequestFactory(simple());
-            this.request(httpClient);
-
-            httpClient.setRequestFactory(okHttpClient3());
-            this.request(httpClient);
-
-            httpClient.setRequestFactory(apcheHttp());
-            this.request(httpClient);
-
-            httpClient.setRequestFactory(apcheHttpAsync());
-            this.request(httpClient);
-
-
-            httpClient.setRequestFactory(netty());
-            this.request(httpClient);
-
-//            httpClient.setRequestFactory(okHttpClient());
-//            this.request(httpClient);
-
-            System.out.println(&quot;--------------------------------&quot;);
-        }
-    }
+            httpClient<span style="color:#f92672">.</span><span style="color:#a6e22e">setRequestFactory</span><span style="color:#f92672">(</span>apcheHttpAsync<span style="color:#f92672">());</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">request</span><span style="color:#f92672">(</span>httpClient<span style="color:#f92672">);</span>
 
 
-    private void request(RestTemplate httpclient) {
-        System.out.println(&quot;&quot;);
-        System.out.println(httpclient.getRequestFactory().getClass().getSimpleName() + &quot;--&quot;);
-        long start, end;
+            httpClient<span style="color:#f92672">.</span><span style="color:#a6e22e">setRequestFactory</span><span style="color:#f92672">(</span>netty<span style="color:#f92672">());</span>
+            <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">request</span><span style="color:#f92672">(</span>httpClient<span style="color:#f92672">);</span>
+
+<span style="color:#75715e">//            httpClient.setRequestFactory(okHttpClient());
+</span><span style="color:#75715e">//            this.request(httpClient);
+</span><span style="color:#75715e"></span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;--------------------------------&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
 
-        long total = 0, max = Long.MIN_VALUE, min = Long.MAX_VALUE;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">request</span><span style="color:#f92672">(</span>RestTemplate httpclient<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>httpclient<span style="color:#f92672">.</span><span style="color:#a6e22e">getRequestFactory</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getSimpleName</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;--&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">long</span> start<span style="color:#f92672">,</span> end<span style="color:#f92672">;</span>
 
 
-        for (int i = 0; i &lt; count; i++) {
-            start = System.nanoTime();
-
-            RequestEntity input = RequestEntity.get(URI.create(url + &quot;/?ts=&quot; + i)).header(HttpHeaders.USER_AGENT, ua).build();
-
-            ResponseEntity&lt;String&gt; output = httpclient.exchange(input, String.class);
-            String body = output.getBody(); // 确保进行了 content read
-
-            end = System.nanoTime() - start;
-
-            if (end &gt; max) {
-                max = end;
-            }
-            if (end &lt; min) {
-                min = end;
-            }
-            total += end;
-
-        }
-        System.out.printf(&quot;共执行 %s 次，&quot; +
-                        &quot;总耗时：%s ms(%s ns)，&quot; +
-                        &quot;平均耗时：%s ms(%s ns)，&quot; +
-                        &quot;最长耗时：%s ms(%s ns)，&quot; +
-                        &quot;最短耗时：%s ms(%s ns) \n&quot;,
-                count,
-                TimeUnit.NANOSECONDS.toMillis(total), total,
-                TimeUnit.NANOSECONDS.toMillis(total / count), total / count,
-                TimeUnit.NANOSECONDS.toMillis(max), max,
-                TimeUnit.NANOSECONDS.toMillis(min), min,
-                &quot;&quot;
-        );
-
-    }
+        <span style="color:#66d9ef">long</span> total <span style="color:#f92672">=</span> 0<span style="color:#f92672">,</span> max <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">MIN_VALUE</span><span style="color:#f92672">,</span> min <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span><span style="color:#f92672">;</span>
 
 
-    private ClientHttpRequestFactory simple() {
-        SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
-        factory.setConnectTimeout(500);
-        return factory;
-    }
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> count<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">();</span>
 
-    private ClientHttpRequestFactory okHttpClient3() {
-        OkHttp3ClientHttpRequestFactory factory = new OkHttp3ClientHttpRequestFactory();
-        factory.setConnectTimeout(500);
-        return factory;
-    }
+            RequestEntity input <span style="color:#f92672">=</span> RequestEntity<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>URI<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span>url <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/?ts=&#34;</span> <span style="color:#f92672">+</span> i<span style="color:#f92672">)).</span><span style="color:#a6e22e">header</span><span style="color:#f92672">(</span>HttpHeaders<span style="color:#f92672">.</span><span style="color:#a6e22e">USER_AGENT</span><span style="color:#f92672">,</span> ua<span style="color:#f92672">).</span><span style="color:#a6e22e">build</span><span style="color:#f92672">();</span>
 
-    private ClientHttpRequestFactory okHttpClient() {
-        OkHttpClientHttpRequestFactory factory = new OkHttpClientHttpRequestFactory();
-        factory.setConnectTimeout(500);
-        return factory;
-    }
+            ResponseEntity<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> output <span style="color:#f92672">=</span> httpclient<span style="color:#f92672">.</span><span style="color:#a6e22e">exchange</span><span style="color:#f92672">(</span>input<span style="color:#f92672">,</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+            String body <span style="color:#f92672">=</span> output<span style="color:#f92672">.</span><span style="color:#a6e22e">getBody</span><span style="color:#f92672">();</span> <span style="color:#75715e">// 确保进行了 content read
+</span><span style="color:#75715e"></span>
+            end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">nanoTime</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> start<span style="color:#f92672">;</span>
 
-    private ClientHttpRequestFactory apcheHttp() {
-        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-        factory.setConnectTimeout(500);
-        return factory;
-    }
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>end <span style="color:#f92672">&gt;</span> max<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                max <span style="color:#f92672">=</span> end<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>end <span style="color:#f92672">&lt;</span> min<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                min <span style="color:#f92672">=</span> end<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+            total <span style="color:#f92672">+=</span> end<span style="color:#f92672">;</span>
 
-    private ClientHttpRequestFactory apcheHttpAsync() {
-        HttpComponentsAsyncClientHttpRequestFactory factory = new HttpComponentsAsyncClientHttpRequestFactory();
-        factory.setConnectTimeout(500);
-        return factory;
-    }
+        <span style="color:#f92672">}</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;共执行 %s 次，&#34;</span> <span style="color:#f92672">+</span>
+                        <span style="color:#e6db74">&#34;总耗时：%s ms(%s ns)，&#34;</span> <span style="color:#f92672">+</span>
+                        <span style="color:#e6db74">&#34;平均耗时：%s ms(%s ns)，&#34;</span> <span style="color:#f92672">+</span>
+                        <span style="color:#e6db74">&#34;最长耗时：%s ms(%s ns)，&#34;</span> <span style="color:#f92672">+</span>
+                        <span style="color:#e6db74">&#34;最短耗时：%s ms(%s ns) \n&#34;</span><span style="color:#f92672">,</span>
+                count<span style="color:#f92672">,</span>
+                TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">NANOSECONDS</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toMillis</span><span style="color:#f92672">(</span>total<span style="color:#f92672">),</span> total<span style="color:#f92672">,</span>
+                TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">NANOSECONDS</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toMillis</span><span style="color:#f92672">(</span>total <span style="color:#f92672">/</span> count<span style="color:#f92672">),</span> total <span style="color:#f92672">/</span> count<span style="color:#f92672">,</span>
+                TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">NANOSECONDS</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toMillis</span><span style="color:#f92672">(</span>max<span style="color:#f92672">),</span> max<span style="color:#f92672">,</span>
+                TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">NANOSECONDS</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toMillis</span><span style="color:#f92672">(</span>min<span style="color:#f92672">),</span> min<span style="color:#f92672">,</span>
+                <span style="color:#e6db74">&#34;&#34;</span>
+        <span style="color:#f92672">);</span>
 
-    private ClientHttpRequestFactory netty() throws SSLException {
-        Netty4ClientHttpRequestFactory factory = new Netty4ClientHttpRequestFactory();
-        factory.setConnectTimeout(500);
-        factory.setSslContext(SslContextBuilder.forClient().build());
-        return factory;
-    }
+    <span style="color:#f92672">}</span>
 
-}
-</code></pre>
 
-<p>需要注意的是，okHttp 新老版本之间存在 Jar 包冲突问题，顾不能同时进行测试。</p>
+    <span style="color:#66d9ef">private</span> ClientHttpRequestFactory <span style="color:#a6e22e">simple</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        SimpleClientHttpRequestFactory factory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SimpleClientHttpRequestFactory<span style="color:#f92672">();</span>
+        factory<span style="color:#f92672">.</span><span style="color:#a6e22e">setConnectTimeout</span><span style="color:#f92672">(</span>500<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> factory<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
+    <span style="color:#66d9ef">private</span> ClientHttpRequestFactory <span style="color:#a6e22e">okHttpClient3</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        OkHttp3ClientHttpRequestFactory factory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> OkHttp3ClientHttpRequestFactory<span style="color:#f92672">();</span>
+        factory<span style="color:#f92672">.</span><span style="color:#a6e22e">setConnectTimeout</span><span style="color:#f92672">(</span>500<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> factory<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> ClientHttpRequestFactory <span style="color:#a6e22e">okHttpClient</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        OkHttpClientHttpRequestFactory factory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> OkHttpClientHttpRequestFactory<span style="color:#f92672">();</span>
+        factory<span style="color:#f92672">.</span><span style="color:#a6e22e">setConnectTimeout</span><span style="color:#f92672">(</span>500<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> factory<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> ClientHttpRequestFactory <span style="color:#a6e22e">apcheHttp</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        HttpComponentsClientHttpRequestFactory factory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HttpComponentsClientHttpRequestFactory<span style="color:#f92672">();</span>
+        factory<span style="color:#f92672">.</span><span style="color:#a6e22e">setConnectTimeout</span><span style="color:#f92672">(</span>500<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> factory<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> ClientHttpRequestFactory <span style="color:#a6e22e">apcheHttpAsync</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        HttpComponentsAsyncClientHttpRequestFactory factory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HttpComponentsAsyncClientHttpRequestFactory<span style="color:#f92672">();</span>
+        factory<span style="color:#f92672">.</span><span style="color:#a6e22e">setConnectTimeout</span><span style="color:#f92672">(</span>500<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> factory<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">private</span> ClientHttpRequestFactory <span style="color:#a6e22e">netty</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> SSLException <span style="color:#f92672">{</span>
+        Netty4ClientHttpRequestFactory factory <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Netty4ClientHttpRequestFactory<span style="color:#f92672">();</span>
+        factory<span style="color:#f92672">.</span><span style="color:#a6e22e">setConnectTimeout</span><span style="color:#f92672">(</span>500<span style="color:#f92672">);</span>
+        factory<span style="color:#f92672">.</span><span style="color:#a6e22e">setSslContext</span><span style="color:#f92672">(</span>SslContextBuilder<span style="color:#f92672">.</span><span style="color:#a6e22e">forClient</span><span style="color:#f92672">().</span><span style="color:#a6e22e">build</span><span style="color:#f92672">());</span>
+        <span style="color:#66d9ef">return</span> factory<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>需要注意的是，okHttp 新老版本之间存在 Jar 包冲突问题，顾不能同时进行测试。</p>
 <p>以下为测试结果</p>
-
 <pre><code>SimpleClientHttpRequestFactory--
 共执行 10 次，总耗时：542 ms(542633909 ns)，平均耗时：54 ms(54263390 ns)，最长耗时：477 ms(477163566 ns)，最短耗时：5 ms(5635716 ns) 
 
@@ -377,7 +383,6 @@ Netty4ClientHttpRequestFactory--
 共执行 10 次，总耗时：371 ms(371003694 ns)，平均耗时：37 ms(37100369 ns)，最长耗时：47 ms(47806368 ns)，最短耗时：30 ms(30156193 ns) 
 --------------------------------
 </code></pre>
-
 <p>综上 HttpComponentsAsyncClientHttpRequestFactory 性能其实是最好的，SimpleClientHttpRequestFactory 不是很稳定。</p>
 
   </div>
@@ -390,6 +395,11 @@ Netty4ClientHttpRequestFactory--
       <span class="navigation-tittle">maven 私服打包升级依赖冲突解决</span>
     </a>
     
+    
+    <a href="/2021/05/27/spring-%E7%9A%84-9-%E5%A4%A7%E7%BB%84%E4%BB%B6/" class="navigation-next">
+      <span class="navigation-tittle">Spring 的 9 大组件</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
     
 </div>
 
@@ -436,20 +446,17 @@ Netty4ClientHttpRequestFactory--
         
     
 
-<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 
 
     
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
         
-    
     <script type="text/javascript">
         
         hljs.initHighlightingOnLoad();
     </script>
     
-
 
 
 

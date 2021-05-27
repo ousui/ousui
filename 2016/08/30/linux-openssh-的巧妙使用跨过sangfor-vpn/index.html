@@ -6,12 +6,14 @@
 
     <head>
     <link href="https://gmpg.org/xfn/11" rel="profile">
+    
+    <link rel="canonical" href="https://ousui.org/2016/08/30/linux-openssh-%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8%E8%B7%A8%E8%BF%87sangfor-vpn/">
+    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.1" />
 
     
     
@@ -44,7 +46,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.89c6feed53dea8d705a80de176777407d77f23a69e9fa924d5c9d4504471d45c.css" integrity="sha256-icb&#43;7VPeqNcFqA3hdnd0B9d/I6aen6kk1cnUUERx1Fw=">
+<link rel="stylesheet" href="/scss/hyde-hyde.a4f0a88d627dc30b5166398db7a191087ceceadcb3cb9e66b365436d889bec9e.css" integrity="sha256-pPCojWJ9wwtRZjmNt6GRCHzs6tyzy55ms2VDbYib7J4=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -71,7 +73,11 @@
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://ousui.org/">{G.F.O}</a>
+        <a href="https://ousui.org/">
+        
+          {G.F.O}
+        
+        </a>
       </span>
       
         
@@ -84,7 +90,7 @@
       
       
       <p class="site__description">
-         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+         Github.io For Ousui. 记录。 
       </p>
     </div>
     <div class="collapsible-menu">
@@ -134,7 +140,9 @@
 	
 	
 	
+	
 	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
 	
 	
 	
@@ -154,13 +162,16 @@
 	
 	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
+	
+	
+	
 </section>
 
       </div>
     </div>
     
 <div class="copyright">
-  &copy; 2020 ousui.org
+  &copy; 2021 ousui.org
   
 </div>
 
@@ -216,12 +227,10 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   <div class="post">
     <p>公司的网络很让人无语的：
-  公司无线，网络不是很稳定，经常出现掉线连接不上的情况
-  公司有线，需要使用 iNode 连接……
-  公司生产服务器，原本使用 openvpn 连接，后来改成了深信服 sangfor</p>
-
+公司无线，网络不是很稳定，经常出现掉线连接不上的情况
+公司有线，需要使用 iNode 连接……
+公司生产服务器，原本使用 openvpn 连接，后来改成了深信服 sangfor</p>
 <p>然后我使用 linux，不支持inode，部支持 sangfor（配置了很久，可以登录网站，但是不会产生虚拟网卡……）</p>
-
 <p>刚开始破解 inode，我安装了 xp 虚拟机，内存256，网卡 mac 地址和本机一致，使用桥接模式，连接后，本机可以使用有线上网了，速度稳定够快。
 然后有一天需要连接生产服务器vpn，使用网站方式连接，有相关组件，java工作正常，但是死活连接不上……没辙，想其他办法。
 我在同一台虚拟机上，安装了 easyconnect，可以使用 putty 正常连接。
@@ -231,7 +240,6 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 首先加块网卡，使用 localhost 模式只建立两台机器的通信，
 然后安装 openssh for windows 5.x 版本，可以启动服务，但是本机 ssh 登录后立刻断开，不知道为什么……
 后来想，只能模拟一个环境了，那就装 cygwin 吧。</p>
-
 <ol>
 <li>下载 cygwin，地址就不给了，安装的时候添加镜像 <a href="https://mirrors.ustc.edu.cn/cygwin/">https://mirrors.ustc.edu.cn/cygwin/</a> 中科大的镜像速度很快，我各种镜像源都用的这个。</li>
 <li>安装过程在 net 包下，选择 openssh openssl 两个包</li>
@@ -239,7 +247,6 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <li>使用 cygrunsrv -S sshd 启动服务即可</li>
 <li>如果还是不能登录，可以查看下是否导入了用户使用 mkpasswd mkgroups 保存到 /etc/passwd /etc/group 下</li>
 </ol>
-
 <p>然后测试登录，使用 -J 参数，可以顺利登录到生产服务器了，在 .ssh/config 下配置中多加一行 ProxyJump [user@]host 即可直接使用别名登录，着实很方便。</p>
 
   </div>
@@ -303,20 +310,17 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
         
     
 
-<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 
 
     
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
         
-    
     <script type="text/javascript">
         
         hljs.initHighlightingOnLoad();
     </script>
     
-
 
 
 

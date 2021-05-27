@@ -6,12 +6,14 @@
 
     <head>
     <link href="https://gmpg.org/xfn/11" rel="profile">
+    
+    <link rel="canonical" href="https://ousui.org/2017/02/16/centos-6.x-%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8-docker/">
+    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.1" />
 
     
     
@@ -44,7 +46,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.89c6feed53dea8d705a80de176777407d77f23a69e9fa924d5c9d4504471d45c.css" integrity="sha256-icb&#43;7VPeqNcFqA3hdnd0B9d/I6aen6kk1cnUUERx1Fw=">
+<link rel="stylesheet" href="/scss/hyde-hyde.a4f0a88d627dc30b5166398db7a191087ceceadcb3cb9e66b365436d889bec9e.css" integrity="sha256-pPCojWJ9wwtRZjmNt6GRCHzs6tyzy55ms2VDbYib7J4=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -71,7 +73,11 @@
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://ousui.org/">{G.F.O}</a>
+        <a href="https://ousui.org/">
+        
+          {G.F.O}
+        
+        </a>
       </span>
       
         
@@ -84,7 +90,7 @@
       
       
       <p class="site__description">
-         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+         Github.io For Ousui. 记录。 
       </p>
     </div>
     <div class="collapsible-menu">
@@ -134,7 +140,9 @@
 	
 	
 	
+	
 	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
 	
 	
 	
@@ -154,13 +162,16 @@
 	
 	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
+	
+	
+	
 </section>
 
       </div>
     </div>
     
 <div class="copyright">
-  &copy; 2020 ousui.org
+  &copy; 2021 ousui.org
   
 </div>
 
@@ -215,115 +226,104 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   
   <div class="post">
-    
-
-<p>最近给公司系统搞 docker 部署，方便同事们外出部署项目，因为合作方的服务器都统一要求安装 centos，但是按照往年的经验，可能有些版本的 centos 没有升级，仍然停留在 6.x 时代。<br />
-根据 docker 官方的要求，linux 系统内核需要在 3.10 以上才可以有效运行，且内核版本越新越好：
-&gt; A 64-bit installation<br />
-&gt; Version 3.10 or higher of the Linux kernel. The latest version of the kernel available for you platform is recommended.<br />
-&gt; iptables version 1.4 or higher<br />
-&gt; git version 1.7 or higher<br />
-&gt; A <code>ps</code> executable, usually provided by <code>procps</code> or a similar package.<br />
-&gt; XZ Utils 4.9 or higher<br />
-&gt; a properly mounted cgroupfs hierarchy; a single, all-encompassing cgroup mount point is not sufficient. See Github issues <a href="https://github.com/docker/docker/issues/2683">#2683</a>, <a href="https://github.com/docker/docker/issues/3485">#3485</a>, <a href="https://github.com/docker/docker/issues/4568">#4568</a>).</p>
-
+    <p>最近给公司系统搞 docker 部署，方便同事们外出部署项目，因为合作方的服务器都统一要求安装 centos，但是按照往年的经验，可能有些版本的 centos 没有升级，仍然停留在 6.x 时代。<br>
+根据 docker 官方的要求，linux 系统内核需要在 3.10 以上才可以有效运行，且内核版本越新越好：</p>
+<blockquote>
+<p>A 64-bit installation<br>
+Version 3.10 or higher of the Linux kernel. The latest version of the kernel available for you platform is recommended.<br>
+iptables version 1.4 or higher<br>
+git version 1.7 or higher<br>
+A <code>ps</code> executable, usually provided by <code>procps</code> or a similar package.<br>
+XZ Utils 4.9 or higher<br>
+a properly mounted cgroupfs hierarchy; a single, all-encompassing cgroup mount point is not sufficient. See Github issues <a href="https://github.com/docker/docker/issues/2683">#2683</a>, <a href="https://github.com/docker/docker/issues/3485">#3485</a>, <a href="https://github.com/docker/docker/issues/4568">#4568</a>).</p>
+</blockquote>
 <h2 id="升级内核">升级内核</h2>
-
 <p>明显 centos6.x 2.xx 的内核版本已经不满足需求，那就需要先升级内核，才可以正常使用。</p>
-
 <ol>
-<li><p>升级内核，需要用到 elrepo 的 yum 源，首先导入 key</p>
-
-<pre><code>rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-</code></pre></li>
-
-<li><p>然后安装软件源</p>
-
-<pre><code> # RHEL-7, SL-7 or CentOS-7  
- sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
-
- # RHEL-6, SL-6 or CentOS-6  
- sudo rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm
-
- # RHEL-5, SL-5 or CentOS-5  
- sudo rpm -Uvh http://www.elrepo.org/elrepo-release-5-5.el5.elrepo.noarch.rpm
-</code></pre></li>
-
-<li><p>最后安装新版内核，由于 elrepo-kernel 软件源没有启用，故而需要在安装的时候启用一下</p>
-
-<pre><code># 安装 main line（主线）的内核，保持最新，安装 docker 推荐使用这个内核
-sudo yum --enablerepo=elrepo-kernel install kernel-ml
-
-# 安装 long time（长期支持）的内核，**不推荐**，docker 一些新特性可能无法使用
-sudo yum --enablerepo=elrepo-kernel install kernel-lt
-</code></pre></li>
-
-<li><p>更改启动顺序</p>
-
-<pre><code># centos7.x
-sudo grub2-set-default 0
-
-# centos6.x 需要修改下面的文件 default=0
-sudo vi /etc/grub.conf
-</code></pre></li>
-
-<li><p>重启后，查看内核版本</p>
-
-<pre><code>$ uname -r
-</code></pre></li>
+<li>
+<p>升级内核，需要用到 elrepo 的 yum 源，首先导入 key</p>
+<pre><code> rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+</code></pre>
+</li>
+<li>
+<p>然后安装软件源</p>
+<pre><code>  # RHEL-7, SL-7 or CentOS-7  
+  sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+	
+  # RHEL-6, SL-6 or CentOS-6  
+  sudo rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm
+	
+  # RHEL-5, SL-5 or CentOS-5  
+  sudo rpm -Uvh http://www.elrepo.org/elrepo-release-5-5.el5.elrepo.noarch.rpm
+</code></pre>
+</li>
+<li>
+<p>最后安装新版内核，由于 elrepo-kernel 软件源没有启用，故而需要在安装的时候启用一下</p>
+<pre><code> # 安装 main line（主线）的内核，保持最新，安装 docker 推荐使用这个内核
+ sudo yum --enablerepo=elrepo-kernel install kernel-ml
+	
+ # 安装 long time（长期支持）的内核，**不推荐**，docker 一些新特性可能无法使用
+ sudo yum --enablerepo=elrepo-kernel install kernel-lt
+</code></pre>
+</li>
+<li>
+<p>更改启动顺序</p>
+<pre><code> # centos7.x
+ sudo grub2-set-default 0
+	
+ # centos6.x 需要修改下面的文件 default=0
+ sudo vi /etc/grub.conf
+</code></pre>
+</li>
+<li>
+<p>重启后，查看内核版本</p>
+<pre><code> $ uname -r
+</code></pre>
+</li>
 </ol>
-
-<hr />
-
+<hr>
 <h2 id="进行安装">进行安装</h2>
-
-<h3 id="centos-7-x">centos 7.x</h3>
-
+<h3 id="centos-7x">centos 7.x</h3>
 <p>直接添加官方源进行安装即可</p>
-
 <ol>
-<li><p>添加源，可以将源地址修改为 <code>https://mirrors.ustc.edu.cn/docker-yum/repo/centos7/</code> 进行加速</p>
-
-<pre><code>sudo yum install -y yum-utils &amp;&amp;
-sudo yum-config-manager \
-  --add-repo \
-  https://download.docker.com/linux/centos/docker-ce.repo
-</code></pre></li>
-
-<li><p>安装</p>
-
-<pre><code>sudo yum makecache fast &amp;&amp;
-sudo yum -y install docker-engine
-</code></pre></li>
+<li>
+<p>添加源，可以将源地址修改为 <code>https://mirrors.ustc.edu.cn/docker-yum/repo/centos7/</code> 进行加速</p>
+<pre><code> sudo yum install -y yum-utils &amp;&amp;
+ sudo yum-config-manager \
+   --add-repo \
+   https://download.docker.com/linux/centos/docker-ce.repo
+</code></pre>
+</li>
+<li>
+<p>安装</p>
+<pre><code> sudo yum makecache fast &amp;&amp;
+ sudo yum -y install docker-engine
+</code></pre>
+</li>
 </ol>
-
-<h3 id="centos-6-x">centos 6.x</h3>
-
+<h3 id="centos-6x">centos 6.x</h3>
 <p>比较麻烦，需要下载源码包：
 <a href="https://github.com/docker/docker/releases">Github 下载最新版</a></p>
-
 <ol>
-<li><p>解压</p>
-
-<pre><code>tar xzvf /path/to/&lt;FILE&gt;.tar.gz
-</code></pre></li>
-
-<li><p><strong>可选</strong> 复制到 /usr/bin 目录</p>
-
-<pre><code>sudo cp docker/docker* /usr/local/bin
-</code></pre></li>
-
-<li><p>执行启动</p>
-
-<pre><code>sudo dockerd &amp;
-</code></pre></li>
+<li>
+<p>解压</p>
+<pre><code> tar xzvf /path/to/&lt;FILE&gt;.tar.gz
+</code></pre>
+</li>
+<li>
+<p><strong>可选</strong> 复制到 /usr/bin 目录</p>
+<pre><code> sudo cp docker/docker* /usr/local/bin
+</code></pre>
+</li>
+<li>
+<p>执行启动</p>
+<pre><code> sudo dockerd &amp;
+</code></pre>
+</li>
 </ol>
-
 <p>** 有时候执行不成功，需要先挂载 cgroupfs:</p>
-
 <pre><code>wget https://raw.githubusercontent.com/tianon/cgroupfs-mount/master/cgroupfs-mount
 </code></pre>
-
 <p>** 可以不用那么复杂手动挂载 cgroup，可以下载 <a href="https://raw.githubusercontent.com/dotcloud/docker/master/contrib/init/sysvinit-redhat/docker">docker.service</a> 文件作为启动服务脚本</p>
 
   </div>
@@ -387,20 +387,17 @@ sudo yum -y install docker-engine
         
     
 
-<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 
 
     
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
         
-    
     <script type="text/javascript">
         
         hljs.initHighlightingOnLoad();
     </script>
     
-
 
 
 

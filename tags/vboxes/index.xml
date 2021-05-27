@@ -6,11 +6,7 @@
     <description>Recent content in vboxes on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 13 Jul 2016 09:48:32 +0000</lastBuildDate>
-    
-	<atom:link href="https://ousui.org/tags/vboxes/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 13 Jul 2016 09:48:32 +0000</lastBuildDate><atom:link href="https://ousui.org/tags/vboxes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux 工作环境积累</title>
       <link>https://ousui.org/2016/07/13/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/</link>

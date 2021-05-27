@@ -1,11 +1,11 @@
 {
 	"version": 3,
 	"file": "print.css",
-	"sourceRoot": "/Users/shuai.w/Workspace/ousui.org/ousui.github.io",
+	"sourceRoot": "/Users/shuai.w/ws/ousui.org/ousui.github.io",
 	"sources": [
 		"themes/hyde-hyde/assets/scss/print.scss",
-		"themes/hyde-hyde/assets/scss/hyde-hyde/_variables.scss",
-		"themes/hyde-hyde/assets/scss/hyde-hyde/_print.scss"
+		"../../../ws/ousui.org/ousui.github.io/themes/hyde-hyde/assets/scss/hyde-hyde/_variables.scss",
+		"../../../ws/ousui.org/ousui.github.io/themes/hyde-hyde/assets/scss/hyde-hyde/_print.scss"
 	],
 	"sourcesContent": [
 		"@import \"hyde-hyde/variables\";\n@import 'hyde-hyde/print';\n",

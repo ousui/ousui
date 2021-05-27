@@ -6,12 +6,14 @@
 
     <head>
     <link href="https://gmpg.org/xfn/11" rel="profile">
+    
+    <link rel="canonical" href="https://ousui.org/2016/07/17/linux-%E6%8A%A5%E5%91%8A%E4%BA%86%E4%B8%AAbug%E5%B9%B6%E8%A7%A3%E5%86%B3%E4%BA%86/">
+    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.1" />
 
     
     
@@ -44,7 +46,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.89c6feed53dea8d705a80de176777407d77f23a69e9fa924d5c9d4504471d45c.css" integrity="sha256-icb&#43;7VPeqNcFqA3hdnd0B9d/I6aen6kk1cnUUERx1Fw=">
+<link rel="stylesheet" href="/scss/hyde-hyde.a4f0a88d627dc30b5166398db7a191087ceceadcb3cb9e66b365436d889bec9e.css" integrity="sha256-pPCojWJ9wwtRZjmNt6GRCHzs6tyzy55ms2VDbYib7J4=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -71,7 +73,11 @@
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://ousui.org/">{G.F.O}</a>
+        <a href="https://ousui.org/">
+        
+          {G.F.O}
+        
+        </a>
       </span>
       
         
@@ -84,7 +90,7 @@
       
       
       <p class="site__description">
-         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+         Github.io For Ousui. 记录。 
       </p>
     </div>
     <div class="collapsible-menu">
@@ -134,7 +140,9 @@
 	
 	
 	
+	
 	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
 	
 	
 	
@@ -154,13 +162,16 @@
 	
 	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
+	
+	
+	
 </section>
 
       </div>
     </div>
     
 <div class="copyright">
-  &copy; 2020 ousui.org
+  &copy; 2021 ousui.org
   
 </div>
 
@@ -217,27 +228,24 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   <div class="post">
     <p><a href="https://bugzilla.redhat.com/show_bug.cgi?id=1357235">https://bugzilla.redhat.com/show_bug.cgi?id=1357235</a>
 <a href="https://github.com/hluk/CopyQ/issues/530">https://github.com/hluk/CopyQ/issues/530</a></p>
-
 <p>copyq 是一款跨平台的高级的剪贴板管理工具。
 十分好用，定制功能强大，在 linux 平台找了很久才找到，qt gui，很好看
-<img src="/images/160717-1.png" alt="screen" /></p>
-
+<img src="/images/160717-1.png" alt="screen"></p>
 <p>{% asset_img images/160717-1.png %}</p>
-
 <p>然而 fedora 官方源装完以后，无法选择语言……明明自己编译的就可以。
 经过一晚上折腾，不断的编译尝试最后还看了 rpmbuild，最终确认问题是 cmake 编译的时候有个参数写错了。。导致了查找 translations 路径有问题。
 所以就造成了，如果在 <code>/usr</code> 目录下执行命令就没问题，但是在别的目录下执行就会找不到的奇怪问题。</p>
-
 <p>这一晚上折腾的，学了好多只是。。</p>
-
-<p>最后再安利下 copyq 吧，真的很好用：
-* 可以插件，可以扩展
-* 可以执行 ecmascript，可以执行 shell
-* 全平台
-* 支持图片复制，不支持文件复制，但是复制文件以后，会把路径存储
-* 支持多标签
-* 可以自定义多种操作，例如转换文字为二维码；过滤一些内容到单独的标签（例如图像）
-* 好处多多，自行体会。</p>
+<p>最后再安利下 copyq 吧，真的很好用：</p>
+<ul>
+<li>可以插件，可以扩展</li>
+<li>可以执行 ecmascript，可以执行 shell</li>
+<li>全平台</li>
+<li>支持图片复制，不支持文件复制，但是复制文件以后，会把路径存储</li>
+<li>支持多标签</li>
+<li>可以自定义多种操作，例如转换文字为二维码；过滤一些内容到单独的标签（例如图像）</li>
+<li>好处多多，自行体会。</li>
+</ul>
 
   </div>
   
@@ -300,20 +308,17 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
         
     
 
-<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 
 
     
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
         
-    
     <script type="text/javascript">
         
         hljs.initHighlightingOnLoad();
     </script>
     
-
 
 
 

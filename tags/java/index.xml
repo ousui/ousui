@@ -6,11 +6,7 @@
     <description>Recent content in Java on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 19 Jun 2019 18:05:52 +0800</lastBuildDate>
-    
-	<atom:link href="https://ousui.org/tags/java/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 19 Jun 2019 18:05:52 +0800</lastBuildDate><atom:link href="https://ousui.org/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>maven 私服打包升级依赖冲突解决</title>
       <link>https://ousui.org/2019/06/19/maven-%E7%A7%81%E6%9C%8D%E6%89%93%E5%8C%85%E5%8D%87%E7%BA%A7%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</link>

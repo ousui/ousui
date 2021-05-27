@@ -6,12 +6,14 @@
 
     <head>
     <link href="https://gmpg.org/xfn/11" rel="profile">
+    
+    <link rel="canonical" href="https://ousui.org/2016/07/12/windows-keys/">
+    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.1" />
 
     
     
@@ -44,7 +46,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.89c6feed53dea8d705a80de176777407d77f23a69e9fa924d5c9d4504471d45c.css" integrity="sha256-icb&#43;7VPeqNcFqA3hdnd0B9d/I6aen6kk1cnUUERx1Fw=">
+<link rel="stylesheet" href="/scss/hyde-hyde.a4f0a88d627dc30b5166398db7a191087ceceadcb3cb9e66b365436d889bec9e.css" integrity="sha256-pPCojWJ9wwtRZjmNt6GRCHzs6tyzy55ms2VDbYib7J4=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -71,7 +73,11 @@
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://ousui.org/">{G.F.O}</a>
+        <a href="https://ousui.org/">
+        
+          {G.F.O}
+        
+        </a>
       </span>
       
         
@@ -84,7 +90,7 @@
       
       
       <p class="site__description">
-         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+         Github.io For Ousui. 记录。 
       </p>
     </div>
     <div class="collapsible-menu">
@@ -134,7 +140,9 @@
 	
 	
 	
+	
 	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
 	
 	
 	
@@ -154,13 +162,16 @@
 	
 	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
+	
+	
+	
 </section>
 
       </div>
     </div>
     
 <div class="copyright">
-  &copy; 2020 ousui.org
+  &copy; 2021 ousui.org
   
 </div>
 
@@ -216,13 +227,9 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   <div class="post">
     <p>这个礼拜把工作站正式从 windows10 迁移到了 Fedora24，感觉还不错，就是工作需要必须运行 QQ，虚拟机折腾了不少时间，还好 vbox 支持物理驱动器虚拟化，省了我不少硬盘空间。</p>
-
 <p>虚拟机启动后，系统需要重新激活，找了很多key都不行，看了下 KMS 激活的原理，听简单的，正好家里路由器空闲着，搭建了 kms 服务器，放开端口，找到 kms key，激活搞定。</p>
-
 <p>下面记录下使用的 key，方便180天后重新激活……</p>
-
 <p>windows10:</p>
-
 <pre><code>Windows 10 Professional					W269N-WFGWX-YVC9B-4J6C9-T83GX
 Windows 10 Professional N  （N 代表欧洲市场定制版）		MH37W-N47XK-V7XM9-C7227-GCQG9
 Windows 10 Enterprise					NPPR9-FWDCX-D2C8J-H872K-2YT43
@@ -231,10 +238,7 @@ Windows 10 Education					NW6C2-QMPVW-D7KKK-3GKT6-VCFB2
 Windows 10 Education N					2WH4N-8QGBV-H22JP-CT43Q-MDWWJ
 Windows 10 Enterprise 2015 LTSB（长期服务分支）		WNMTR-4C88C-JK8YV-HQ7T2-76DF9
 Windows 10 Enterprise 2015 LTSB N			2F77B-TNFGY-69QQF-B8YKP-D69TJ
-</code></pre>
-
-<p>office16 :</p>
-
+</code></pre><p>office16 :</p>
 <pre><code>Office Professional Plus 2016：				XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99
 Office Standard 2016：					JNRGM-WHDWX-FJJG3-K47QV-DRTFM
 Project Professional 2016：				YG9NW-3K39V-2T3HJ-93F3Q-G83KT
@@ -249,11 +253,8 @@ PowerPoint 2016：					J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6
 Publisher 2016：						F47MM-N3XJP-TQXJ9-BP99D-8K837
 SKype for Business 2016：				869NQ-FJ69K-466HW-QYCP2-DDBV6
 Word 2016：						WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6
-</code></pre>
-
-<p>下面是激活步骤：</p>
-
-<pre><code class="language-bat">; windows 10 激活
+</code></pre><p>下面是激活步骤：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bat" data-lang="bat">; windows 10 激活
 ;
 ; 更新 key
 slmgr.vbs /ipk {keys}
@@ -265,16 +266,12 @@ slmgr.vbs /ato
 slmgr.vbs /xpr
 
 ; office16 激活
-cd C:\Program Files\Microsoft Office\Office16
+<span style="color:#66d9ef">cd</span> C:\Program Files\Microsoft Office\Office16
 cscript OSPP.VBS /sethst:{server}
 
-</code></pre>
-
-<p>不知道为何我直接输入 kms key，然后office16直接激活了。。。
+</code></pre></div><p>不知道为何我直接输入 kms key，然后office16直接激活了。。。
 先这样吧，有问题以后再说</p>
-
-<hr />
-
+<hr>
 <p>我的路由器是 netgear R6300v2，附上kms服务：
 <a href="./zips/vlmcs.zip">vlmcs</a>
 vlmcs-d 为守护进程，vlmcs 为测试服务是否可用的程序。</p>
@@ -335,20 +332,17 @@ vlmcs-d 为守护进程，vlmcs 为测试服务是否可用的程序。</p>
         
     
 
-<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 
 
     
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
         
-    
     <script type="text/javascript">
         
         hljs.initHighlightingOnLoad();
     </script>
     
-
 
 
 

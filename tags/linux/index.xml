@@ -6,11 +6,7 @@
     <description>Recent content in linux on {G.F.O}</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 11 May 2017 11:34:30 +0000</lastBuildDate>
-    
-	<atom:link href="https://ousui.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 11 May 2017 11:34:30 +0000</lastBuildDate><atom:link href="https://ousui.org/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>rslsync  在 R6300v2 上的使用</title>
       <link>https://ousui.org/2017/05/11/rslsync-%E5%9C%A8-r6300v2-%E4%B8%8A%E7%9A%84%E4%BD%BF%E7%94%A8/</link>

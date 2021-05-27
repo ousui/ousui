@@ -6,12 +6,14 @@
 
     <head>
     <link href="https://gmpg.org/xfn/11" rel="profile">
+    
+    <link rel="canonical" href="https://ousui.org/2016/07/13/linux-%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83%E7%A7%AF%E7%B4%AF/">
+    
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-<meta name="generator" content="Hugo 0.59.1" />
+<meta name="generator" content="Hugo 0.79.1" />
 
     
     
@@ -44,7 +46,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.89c6feed53dea8d705a80de176777407d77f23a69e9fa924d5c9d4504471d45c.css" integrity="sha256-icb&#43;7VPeqNcFqA3hdnd0B9d/I6aen6kk1cnUUERx1Fw=">
+<link rel="stylesheet" href="/scss/hyde-hyde.a4f0a88d627dc30b5166398db7a191087ceceadcb3cb9e66b365436d889bec9e.css" integrity="sha256-pPCojWJ9wwtRZjmNt6GRCHzs6tyzy55ms2VDbYib7J4=">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
@@ -71,7 +73,11 @@
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://ousui.org/">{G.F.O}</a>
+        <a href="https://ousui.org/">
+        
+          {G.F.O}
+        
+        </a>
       </span>
       
         
@@ -84,7 +90,7 @@
       
       
       <p class="site__description">
-         Github.io For Ousui. 记录一些该记录的和不该记录的。 
+         Github.io For Ousui. 记录。 
       </p>
     </div>
     <div class="collapsible-menu">
@@ -134,7 +140,9 @@
 	
 	
 	
+	
 	<a href="https://github.com/ousui" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
 	
 	
 	
@@ -154,13 +162,16 @@
 	
 	<a href="mailto:i[at]ousui.org" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
 	
+	
+	
+	
 </section>
 
       </div>
     </div>
     
 <div class="copyright">
-  &copy; 2020 ousui.org
+  &copy; 2021 ousui.org
   
 </div>
 
@@ -212,14 +223,10 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
   
   
   <div class="post">
-    
-
-<h3 id="虚拟机">虚拟机</h3>
-
+    <h3 id="虚拟机">虚拟机</h3>
 <p>本来打算使用 gnome 自带的 boxes，但是装完系统以后体验实在太差，经过一番调研，在性能和占用上做了平衡之后，决定使用 virtualbox。
 偶然发现 vbox 支持物理盘直接虚拟化，太爽了，不用装系统了。
 记录一下正确步骤：</p>
-
 <blockquote>
 <ol>
 <li>安装 VirtualBox(忽略)</li>
@@ -227,27 +234,21 @@ Built with <a href="https://gohugo.io">Hugo</a> ❤️ <a href="https://github.c
 <code>sudo usermod -G vboxusers -a `whoami`</code></li>
 <li>给要建立虚拟镜像的设备赋予权限
 <code>sudo chmod o+rw /dev/sda</code></li>
-<li>建立虚拟镜像，_上面已经给设备权限了，下面就无需 root 权限执行命令_，因为我是 linux 与 windows 装在了同一块硬盘，所以指定了分区，这样可以避免启动选择 linux 分区，而导致什么乱七八糟的问题。。。
+<li>建立虚拟镜像，<em>上面已经给设备权限了，下面就无需 root 权限执行命令</em>，因为我是 linux 与 windows 装在了同一块硬盘，所以指定了分区，这样可以避免启动选择 linux 分区，而导致什么乱七八糟的问题。。。
 <code>vboxmanage internalcommands createrawvmdk -filename ~/sda.vmdk -rawdisk /dev/sda -partitions 1,2,3,4,5 -relative</code></li>
 <li>在虚拟机中添加磁盘</li>
 <li>每次重启以后，需要重新执行 3 赋予权限。</li>
 </ol>
 </blockquote>
-
 <h3 id="chrome">Chrome</h3>
-
 <p><a href="http://chromium.woolyss.com/">http://chromium.woolyss.com/</a>
 windows 下使用 chrome 积累了太多的东西，所以在linux继续使用，但是 Fedora 官方源不支持，是因为捆绑了软件包。。。
 可以直接使用 rpm 包安装
 <a href="https://copr-be.cloud.fedoraproject.org/results/lantw44/chromium/fedora-24-x86_64/00362159-chromium/chromium-debuginfo-51.0.2704.106-1.fc24.x86_64.rpm">https://copr-be.cloud.fedoraproject.org/results/lantw44/chromium/fedora-24-x86_64/00362159-chromium/chromium-debuginfo-51.0.2704.106-1.fc24.x86_64.rpm</a>
 也可以先添加官方源，然后使用 dnf 命令安装</p>
-
 <pre><code>sudo dnf copr enable spot/chromium
 sudo dnf install chromium
-</code></pre>
-
-<p>接下来是给浏览器安装flash插件</p>
-
+</code></pre><p>接下来是给浏览器安装flash插件</p>
 <pre><code># 这是安装 firefox 的插件
 wget https://fpdownload.macromedia.com/get/flashplayer/current/licensing/linux/flash-plugin-11.2.202.632-release.x86_64.rpm
 rpm -i flash-plugin-11.2.202.632-release.x86_64.rpm
@@ -257,14 +258,9 @@ cd /usr/lib64/chromium-browser
 mkdir PepperFlash
 wget https://fpdownload.adobe.com/pub/flashplayer/pdc/22.0.0.209/flash_player_ppapi_linux.x86_64.tar.gz
 tar xzvf flash_player_ppapi_linux.x86_64.tar.gz &amp;&amp; rm -f flash_player_ppapi_linux.x86_64.tar.gz
-</code></pre>
-
-<p>在 linux 下 flash 是个很难搞的问题，每个发行版处理方式不同，家里的 Ubuntu 就搞了很久，Fedora 还是要搞很久。。。 Flash 怎么还不死呢。</p>
-
+</code></pre><p>在 linux 下 flash 是个很难搞的问题，每个发行版处理方式不同，家里的 Ubuntu 就搞了很久，Fedora 还是要搞很久。。。 Flash 怎么还不死呢。</p>
 <h3 id="别名">别名</h3>
-
 <p>linxu 命令行下建立别名可以更快速的进行一些访问，</p>
-
 <pre><code>cd ~
 mkdir .alias
 vim .bashrc
@@ -274,15 +270,11 @@ for i in $(/usr/bin/find ~/.alias/ -type f) ;
 do
         . $i
 done
-</code></pre>
-
-<h3 id="java-应用中文字体显示不全">java 应用中文字体显示不全</h3>
-
+</code></pre><h3 id="java-应用中文字体显示不全">java 应用中文字体显示不全</h3>
 <pre><code>cd /usr/lib/jvm/java/jre/lib/
 sudo mkdir -p fonts/fallback
 sudo ln /usr/share/fonts/****** fonts/fallback
 </code></pre>
-
   </div>
   
 
@@ -344,20 +336,17 @@ sudo ln /usr/share/fonts/****** fonts/fallback
         
     
 
-<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
 
 
     
-    
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
         
-    
     <script type="text/javascript">
         
         hljs.initHighlightingOnLoad();
     </script>
     
-
 
 
 
